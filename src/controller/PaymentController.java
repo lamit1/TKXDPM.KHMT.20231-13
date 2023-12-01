@@ -33,7 +33,7 @@ public class PaymentController extends BaseController {
 	 * Represent the Interbank subsystem
 	 */
 
-	//test create pull request
+	//test create pull request new
 	private IPayment iPayment;
 
 	/**
