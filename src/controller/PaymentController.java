@@ -4,14 +4,15 @@ import java.util.Calendar;
 import java.util.Hashtable;
 import java.util.Map;
 
+import common.exception.CanceledPaymentException;
 import common.exception.InvalidCardException;
 import common.exception.PaymentException;
 import common.exception.UnrecognizedException;
 import entity.cart.Cart;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
-import subsystem.InterbankInterface;
-import subsystem.InterbankSubsystem;
+import subsystem.IPayment;
+import subsystem.VNPaySubsystem;
 
 
 /**
@@ -31,7 +32,7 @@ public class PaymentController extends BaseController {
 	/**
 	 * Represent the Interbank subsystem
 	 */
-	private InterbankInterface interbank;
+	private IPayment iPayment;
 
 	/**
 	 * Validate the input date which should be in the format "mm/yy", and then
@@ -74,30 +75,25 @@ public class PaymentController extends BaseController {
 	 * 
 	 * @param amount         - the amount to pay
 	 * @param contents       - the transaction contents
-	 * @param cardNumber     - the card number
-	 * @param cardHolderName - the card holder name
-	 * @param expirationDate - the expiration date in the format "mm/yy"
-	 * @param securityCode   - the cvv/cvc code of the credit card
 	 * @return {@link java.util.Map Map} represent the payment result with a
 	 *         message.
+	 *
 	 */
-	public Map<String, String> payOrder(int amount, String contents, String cardNumber, String cardHolderName,
-			String expirationDate, String securityCode) {
+	public Map<String, String> payOrder(int amount, String contents) {
 		Map<String, String> result = new Hashtable<String, String>();
 		result.put("RESULT", "PAYMENT FAILED!");
 		try {
-			this.card = new CreditCard(cardNumber, cardHolderName, Integer.parseInt(securityCode),
-					getExpirationDate(expirationDate));
-
-			this.interbank = new InterbankSubsystem();
-			PaymentTransaction transaction = interbank.payOrder(card, amount, contents);
-
-			result.put("RESULT", "PAYMENT SUCCESSFUL!");
-			result.put("MESSAGE", "You have succesffully paid the order!");
-		} catch (PaymentException | UnrecognizedException ex) {
+			this.iPayment = new VNPaySubsystem();
+			PaymentTransaction transaction = iPayment.payOrder(100000, "contents");
+			if (transaction != null) {
+				result.put("RESULT", "PAYMENT SUCCESSFUL!");
+				result.put("MESSAGE", "You have succesffully paid the order!");
+			}
+			throw new CanceledPaymentException("Payment was canceled");
+		} catch (PaymentException | UnrecognizedException | CanceledPaymentException ex) {
 			result.put("MESSAGE", ex.getMessage());
 		}
-		return result;
+        return result;
 	}
 
 	public void emptyCart(){

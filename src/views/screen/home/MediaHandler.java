@@ -16,6 +16,7 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.shape.Rectangle;
 import utils.Utils;
 import views.screen.FXMLScreenHandler;
 import views.screen.home.HomeScreenHandler;
@@ -93,8 +94,12 @@ public class MediaHandler extends FXMLScreenHandler{
         // set the cover image of media
         File file = new File(media.getImageURL());
         Image image = new Image(file.toURI().toString());
-        mediaImage.setFitHeight(200);
+        mediaImage.setFitHeight(260);
         mediaImage.setFitWidth(300);
+
+        // Set the preserveRatio property to true
+        mediaImage.setPreserveRatio(false);
+
         mediaImage.setImage(image);
 
         mediaTitle.setText(media.getTitle());

@@ -40,7 +40,6 @@ public class Media {
         this.quantity = quantity;
         this.type = type;
 
-        //stm = AIMSDB.getConnection().createStatement();
     }
 
     public int getQuantity() throws SQLException{

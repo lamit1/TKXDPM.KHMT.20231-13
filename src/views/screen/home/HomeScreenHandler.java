@@ -19,10 +19,7 @@ import entity.cart.Cart;
 import entity.media.Media;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Label;
-import javafx.scene.control.MenuButton;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.SplitMenuButton;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
@@ -136,17 +133,21 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
     public void addMediaHome(List items){
         ArrayList mediaItems = (ArrayList)((ArrayList) items).clone();
         hboxMedia.getChildren().forEach(node -> {
-            VBox vBox = (VBox) node;
-            vBox.getChildren().clear();
+            if (!node.getClass().equals(ScrollBar.class)) {
+                VBox vBox = (VBox) node;
+                vBox.getChildren().clear();
+            }
         });
         while(!mediaItems.isEmpty()){
             hboxMedia.getChildren().forEach(node -> {
-                int vid = hboxMedia.getChildren().indexOf(node);
-                VBox vBox = (VBox) node;
-                while(vBox.getChildren().size()<3 && !mediaItems.isEmpty()){
-                    MediaHandler media = (MediaHandler) mediaItems.get(0);
-                    vBox.getChildren().add(media.getContent());
-                    mediaItems.remove(media);
+                if (!node.getClass().equals(ScrollBar.class)) {
+                    int vid = hboxMedia.getChildren().indexOf(node);
+                    VBox vBox = (VBox) node;
+                    while(vBox.getChildren().size()<3 && !mediaItems.isEmpty()){
+                        MediaHandler media = (MediaHandler) mediaItems.get(0);
+                        vBox.getChildren().add(media.getContent());
+                        mediaItems.remove(media);
+                    }
                 }
             });
             return;
@@ -161,13 +162,10 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         label.setTextAlignment(TextAlignment.RIGHT);
         menuItem.setGraphic(label);
         menuItem.setOnAction(e -> {
-            // empty home media
             hboxMedia.getChildren().forEach(node -> {
                 VBox vBox = (VBox) node;
                 vBox.getChildren().clear();
             });
-
-            // filter only media with the choosen category
             List filteredItems = new ArrayList<>();
             homeItems.forEach(me -> {
                 MediaHandler media = (MediaHandler) me;
@@ -175,8 +173,6 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
                     filteredItems.add(media);
                 }
             });
-
-            // fill out the home with filted media as category
             addMediaHome(filteredItems);
         });
         menuButton.getItems().add(position, menuItem);
