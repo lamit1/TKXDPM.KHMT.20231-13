@@ -10,13 +10,23 @@ import java.util.*;
 public class Request {
     private final String vnp_Version = "2.1.0";
     private final String vnp_Command = "pay";
+    /**
+     * Common coupling
+     */
     private final String vnp_TmnCode = Config.vnp_TmnCode;
     private String vnp_Amount;
     private String vnp_CurrCode = "VND";
     private String vnp_Locale = "vn";
+
+    /**
+     * Data coupling
+     */
     private final String vnp_TxnRef = Config.getRandomNumber(8);
     private String vnp_OrderInfo;
     private final String vnp_OrderType = "100000";
+    /**
+     * Common coupling
+     */
     private final String vnp_ReturnUrl = Config.vnp_ReturnUrl;
     private final String vnp_IpAddr = "192.168.1.16";
     private String vnp_CreateDate;
@@ -115,7 +125,7 @@ public class Request {
         String queryUrl = query.toString();
         vnp_SecureHash = Config.hmacSHA512(Config.vnp_HashSecret, hashData.toString());
         queryUrl += "&vnp_SecureHash=" + vnp_SecureHash;
-        String paymentUrl = Config.vnp_PayUrl + "?" + queryUrl;
+        String paymentUrl = vnp_ReturnUrl + "?" + queryUrl;
         return paymentUrl;
     }
 

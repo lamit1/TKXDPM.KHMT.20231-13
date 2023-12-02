@@ -23,6 +23,9 @@ public class Response {
     private String payTime;
 
     public Response(String responseString) throws CanceledPaymentException, MalformedURLException, UnsupportedEncodingException, ParseException {
+        /**
+         * Common couping with Config class
+         */
         if (!responseString.startsWith(Config.vnp_ReturnUrl)){
             throw new CanceledPaymentException("Not follow enough paying step!");
         }
@@ -48,6 +51,9 @@ public class Response {
     }
 
     public PaymentTransaction getTransaction() throws CanceledPaymentException {
+        /**
+         *
+         */
         PaymentTransaction transaction = new PaymentTransaction(id, contents, amounts,  payTime);
         switch (responseCode){
             case "00":

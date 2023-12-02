@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -16,13 +17,6 @@ import java.util.concurrent.CompletableFuture;
 public class VNPayView {
     @FXML
     private WebView vnpayWebView;
-
-    @FXML
-    public void handleBackButton(ActionEvent e) {
-        Stage stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-        stage.fireEvent(new WindowEvent(stage, WindowEvent.WINDOW_CLOSE_REQUEST));
-    }
-
     public WebView getWebView() {
         return vnpayWebView;
     }
@@ -33,7 +27,6 @@ public class VNPayView {
         try {
             CompletableFuture<String> responseUrlFuture = new CompletableFuture<>();
             FXMLLoader newWindowLoader = new FXMLLoader(getClass().getResource("/views/fxml/vnpay_view.fxml"));
-
             Parent newWindowRoot = newWindowLoader.load();
             VNPayView vnPayView = newWindowLoader.getController();
             vnPayView.getWebView().getEngine().load(url);
@@ -44,6 +37,9 @@ public class VNPayView {
             newWindowStage.setScene(new Scene(newWindowRoot));
 
             newWindowStage.setOnCloseRequest(event -> {
+                /*
+                  Content coupling
+                 */
                 String responseUrl = vnPayView.getWebView().getEngine().getLocation();
                 responseUrlFuture.complete(responseUrl);
             });

@@ -12,6 +12,9 @@ public class VNPaySubsystem  implements IPayment {
 
     @Override
     public PaymentTransaction payOrder(double amounts, String content) {
+        /**
+         * Content coupling
+         */
         return manager.payOrder( amounts, content);
     }
 }

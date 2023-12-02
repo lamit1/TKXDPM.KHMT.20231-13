@@ -12,10 +12,20 @@ public class VNPayManager {
     }
     public PaymentTransaction payOrder(double amounts, String content) {
         try {
+            /*
+             * Content coupling
+             */
             if (validator.validate(amounts, content)) {
                 Request request = new Request();
+                /*
+                  Content coupling
+                 */
                 String url = request.createUrl(content, amounts);
-                Response response = new Response(view.query(url));
+                /*
+                  Content coupling
+                 */
+                String responseString = view.query(url);
+                Response response = new Response(responseString);
                 return response.getTransaction();
             }
         } catch (Exception e) {
