@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DBNavigator.Project.DatabaseBrowserManager">
+    <autoscroll-to-editor value="true" />
+    <autoscroll-from-editor value="true" />
+    <show-object-properties value="true" />
+    <loaded-nodes />
+  </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="13730d24-4b6a-4f3e-bb84-bf7f15152583">
       <console name="AIMS" type="STANDARD" schema="" session="Main" />
-      <console name="Connection" type="STANDARD" schema="aims" session="Pool"><![CDATA[select * from aims."Book"]]></console>
+      <console name="Connection" type="STANDARD" schema="aims" session="Pool">select * from aims.&quot;Book&quot;</console>
     </connection>
     <connection id="2776a711-7284-4baa-9dd7-faf084f72662">
       <console name="AIMS_MYSQL" type="STANDARD" schema="" session="Main" />
