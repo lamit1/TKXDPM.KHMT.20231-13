@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="db">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/AIMS/assets/db" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

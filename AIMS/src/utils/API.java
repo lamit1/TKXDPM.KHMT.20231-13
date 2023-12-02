@@ -18,10 +18,14 @@ import java.util.Set;
 import java.util.logging.Logger;
 
 public class API {
-
+    /*
+    * common coupling
+    * */
 	public static DateFormat DATE_FORMATER = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	private static Logger LOGGER = Utils.getLogger(Utils.class.getName());
-
+	/*
+	* Data coupling
+	* */
 	public static String get(String url, String token) throws Exception {
 		LOGGER.info("Request URL: " + url + "\n");
 		URL line_api_url = new URL(url);
@@ -43,7 +47,7 @@ public class API {
 	}
 
 	int var;
-
+	/*Stamp coupling with data */
 	public static String post(String url, String data
 //			, String token
 	) throws IOException {
@@ -75,6 +79,7 @@ public class API {
 		return response.toString();
 	}
 
+	/*Stamp coupling*/
 	private static void allowMethods(String... methods) {
 		try {
 			Field methodsField = HttpURLConnection.class.getDeclaredField("methods");
