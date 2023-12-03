@@ -7,6 +7,6 @@ aims.session.sql
 *.ipynb
 test/notebook
 AIMS/.idea
+.idea
 out
 test
-.idea

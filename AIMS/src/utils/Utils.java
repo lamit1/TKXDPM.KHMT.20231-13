@@ -21,6 +21,7 @@ public class Utils {
 		System.setProperty("java.util.logging.SimpleFormatter.format", "[%4$-4s] [%1$tF %1$tT] [%2$-7s] %5$s %n");
 	}
 
+	//control coupling
 	public static Logger getLogger(String className) {
 		return Logger.getLogger(className);
 	}
@@ -51,6 +52,8 @@ public class Utils {
 	 * @param message - plain text as {@link java.lang.String String}.
 	 * @return cipher text as {@link java.lang.String String}.
 	 */
+
+	//Data coupling
 	public static String md5(String message) {
 		String digest = null;
 		try {

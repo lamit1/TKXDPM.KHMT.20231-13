@@ -44,11 +44,12 @@ public class ShippingScreenHandler extends BaseScreenHandler implements Initiali
 	private ComboBox<String> province;
 
 	private Order order;
-
+// data coupling
 	public ShippingScreenHandler(Stage stage, String screenPath, Order order) throws IOException {
 		super(stage, screenPath);
 		this.order = order;
 	}
+// no coupling
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -61,6 +62,7 @@ public class ShippingScreenHandler extends BaseScreenHandler implements Initiali
         });
 		this.province.getItems().addAll(Configs.PROVINCES);
 	}
+// no coupling
 
 	@FXML
 	void submitDeliveryInfo(MouseEvent event) throws IOException, InterruptedException, SQLException {
@@ -78,12 +80,12 @@ public class ShippingScreenHandler extends BaseScreenHandler implements Initiali
 		} catch (InvalidDeliveryInfoException e) {
 			throw new InvalidDeliveryInfoException(e.getMessage());
 		}
-	
+
 		// calculate shipping fees
 		int shippingFees = getBController().calculateShippingFee(order);
 		order.setShippingFees(shippingFees);
 		order.setDeliveryInfo(messages);
-		
+
 		// create invoice screen
 		Invoice invoice = getBController().createInvoice(order);
 		BaseScreenHandler InvoiceScreenHandler = new InvoiceScreenHandler(this.stage, Configs.INVOICE_SCREEN_PATH, invoice);
@@ -93,6 +95,7 @@ public class ShippingScreenHandler extends BaseScreenHandler implements Initiali
 		InvoiceScreenHandler.setBController(getBController());
 		InvoiceScreenHandler.show();
 	}
+// no coupling
 
 	public PlaceOrderController getBController(){
 		return (PlaceOrderController) super.getBController();

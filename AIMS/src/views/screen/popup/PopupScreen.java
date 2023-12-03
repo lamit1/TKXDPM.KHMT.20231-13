@@ -16,7 +16,7 @@ import views.screen.BaseScreenHandler;
 
 
 public class PopupScreen extends BaseScreenHandler{
-    
+
 
     @FXML
     ImageView tickicon;
@@ -24,10 +24,13 @@ public class PopupScreen extends BaseScreenHandler{
     @FXML
     Label message;
 
-    
+    // no coupling
+// data coupling
+
     public PopupScreen(Stage stage) throws IOException{
         super(stage, Configs.POPUP_PATH);
     }
+// no coupling
 
     private static PopupScreen popup(String message, String imagepath, Boolean undecorated) throws IOException{
         PopupScreen popup = new PopupScreen(new Stage());
@@ -36,32 +39,39 @@ public class PopupScreen extends BaseScreenHandler{
         popup.setImage(imagepath);
         return popup;
     }
+// no coupling
 
     public static void success(String message) throws IOException{
         popup(message, Configs.IMAGE_PATH + "/" + "tickgreen.png", true).show(true);
     }
+// no coupling
 
     public static void error(String message) throws IOException{
         popup(message, Configs.IMAGE_PATH + "/" + "tickerror.png", false).show(false);
     }
+// no coupling
 
     public static PopupScreen loading(String message) throws IOException{
         return popup(message, Configs.IMAGE_PATH + "/" + "loading.gif", true);
     }
+// no coupling
 
     public void setImage(String path) {
         super.setImage(tickicon, path);
     }
+// no coupling
 
     public void show(Boolean autoclose) {
         super.show();
         if (autoclose) close(0.8);
     }
+// no coupling
 
     public void show(double time) {
         super.show();
         close(time);
     }
+// no coupling
 
     public void close(double time){
         PauseTransition delay = new PauseTransition(Duration.seconds(time));
