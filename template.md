@@ -20,15 +20,15 @@ This is a Capstone's source code for Software Design and Construction project
 <br>
 
 - Assigned tasks:
-    - Task 1
-    - Task 2
-    - ...
+  - Task 1
+  - Task 2
+  - ...
 
 - Implementation details:
-    - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-    - Specific implementation details:
-        - Describe specific in detail what you did last week
-        - You can attach images if you want
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
 
 </details>
 
@@ -37,15 +37,15 @@ This is a Capstone's source code for Software Design and Construction project
 <br>
 
 - Assigned tasks:
-    - Task 1
-    - Task 2
-    - ...
+  - Task 1
+  - Task 2
+  - ...
 
 - Implementation details:
-    - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-    - Specific implementation details:
-        - Describe specific in detail what you did last week
-        - You can attach images if you want
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
 
 </details>
 
@@ -60,15 +60,15 @@ This is a Capstone's source code for Software Design and Construction project
 <br>
 
 - Assigned tasks:
-    - Task 1
-    - Task 2
-    - ...
+  - Task 1
+  - Task 2
+  - ...
 
 - Implementation details:
-    - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-    - Specific implementation details:
-        - Describe specific in detail what you did last week
-        - You can attach images if you want
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
 
 </details>
 
@@ -77,15 +77,15 @@ This is a Capstone's source code for Software Design and Construction project
 <br>
 
 - Assigned tasks:
-    - Task 1
-    - Task 2
-    - ...
+  - Task 1
+  - Task 2
+  - ...
 
 - Implementation details:
-    - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-    - Specific implementation details:
-        - Describe specific in detail what you did last week
-        - You can attach images if you want
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
 
 </details>
 
@@ -101,15 +101,15 @@ This is a Capstone's source code for Software Design and Construction project
 <br>
 
 - Assigned tasks:
-    - Task 1
-    - Task 2
-    - ...
+  - Task 1
+  - Task 2
+  - ...
 
 - Implementation details:
-    - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-    - Specific implementation details:
-        - Describe specific in detail what you did last week
-        - You can attach images if you want
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
 
 </details>
 
@@ -118,15 +118,15 @@ This is a Capstone's source code for Software Design and Construction project
 <br>
 
 - Assigned tasks:
-    - Task 1
-    - Task 2
-    - ...
+  - Task 1
+  - Task 2
+  - ...
 
 - Implementation details:
-    - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-    - Specific implementation details:
-        - Describe specific in detail what you did last week
-        - You can attach images if you want
+  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Specific implementation details:
+    - Describe specific in detail what you did last week
+    - You can attach images if you want
 
 </details>
 
