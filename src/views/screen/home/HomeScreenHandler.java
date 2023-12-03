@@ -65,20 +65,21 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
     public HomeScreenHandler(Stage stage, String screenPath) throws IOException{
         super(stage, screenPath);
     }
-
+    //no coupling
     public Label getNumMediaCartLabel(){
         return this.numMediaInCart;
     }
-
+    //no coupling
     public HomeController getBController() {
         return (HomeController) super.getBController();
     }
-
+    //no coupling
     @Override
     public void show() {
         numMediaInCart.setText(String.valueOf(Cart.getCart().getListMedia().size()) + " media");
         super.show();
     }
+    //no coupling
 
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
@@ -95,12 +96,12 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
             LOGGER.info("Errors occured: " + e.getMessage());
             e.printStackTrace();
         }
-        
-            
+
+
         aimsImage.setOnMouseClicked(e -> {
             addMediaHome(this.homeItems);
         });
-        
+
         cartImage.setOnMouseClicked(e -> {
             CartScreenHandler cartScreen;
             try {
@@ -118,6 +119,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         addMenuItem(1, "DVD", splitMenuBtnSearch);
         addMenuItem(2, "CD", splitMenuBtnSearch);
     }
+    //no coupling
 
     public void setImage(){
         // fix image path caused by fxml
@@ -153,6 +155,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
             return;
         }
     }
+    //no coupling
 
     private void addMenuItem(int position, String text, MenuButton menuButton){
         MenuItem menuItem = new MenuItem();
@@ -178,6 +181,6 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         menuButton.getItems().add(position, menuItem);
     }
 
-    
-    
+
+
 }

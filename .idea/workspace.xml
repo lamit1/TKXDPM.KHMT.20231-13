@@ -4,150 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92e3834f-d2b5-44ec-9da6-f5413eaa353f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/TKXDPM.KHMT.20231-13.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-console-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-console-l1-2-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-datetime-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-debug-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-errorhandling-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-file-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-file-l1-2-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-file-l2-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-handle-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-heap-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-interlocked-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-libraryloader-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-localization-l1-2-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-memory-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-namedpipe-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-processenvironment-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-processthreads-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-processthreads-l1-1-1.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-profile-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-rtlsupport-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-string-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-synch-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-synch-l1-2-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-sysinfo-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-timezone-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-core-util-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-crt-conio-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-crt-convert-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-crt-environment-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-crt-filesystem-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-crt-heap-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-crt-locale-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-crt-math-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-crt-multibyte-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-crt-private-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-crt-process-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-crt-runtime-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-crt-stdio-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-crt-string-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-crt-time-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/api-ms-win-crt-utility-l1-1-0.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/decora_sse.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/fxplugins.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/glass.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/glib-lite.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/gstreamer-lite.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/javafx_font.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/javafx_iio.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/jfxmedia.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/jfxwebkit.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/msvcp140.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/msvcp140_1.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/msvcp140_2.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/prism_common.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/prism_d3d.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/prism_sw.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/ucrtbase.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/vcruntime140.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/bin/vcruntime140_1.dll" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.base/ADDITIONAL_LICENSE_INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.base/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.base/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.controls/ADDITIONAL_LICENSE_INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.controls/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.controls/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.fxml/ADDITIONAL_LICENSE_INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.fxml/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.fxml/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.graphics/ADDITIONAL_LICENSE_INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.graphics/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.graphics/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.graphics/jpeg_fx.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.graphics/mesa3d.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.media/ADDITIONAL_LICENSE_INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.media/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.media/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.media/directshow.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.media/glib.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.media/gstreamer.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.media/libffi.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.swing/ADDITIONAL_LICENSE_INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.swing/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.swing/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.web/ADDITIONAL_LICENSE_INFO" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.web/ASSEMBLY_EXCEPTION" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.web/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.web/icu_web.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.web/libxml2.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.web/libxslt.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/legal/javafx.web/webkit.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/lib/javafx-swt.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/lib/javafx.base.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/lib/javafx.controls.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/lib/javafx.fxml.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/lib/javafx.graphics.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/lib/javafx.media.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/lib/javafx.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/lib/javafx.swing.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/lib/javafx.web.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/win/javafx-sdk-21.0.1/src.zip" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/exception/AddressNotSupportRushDeliveryException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/exception/CanceledPaymentException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/exception/InvalidInputException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/exception/InvalidQuantityException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/exception/NoMediaInCartException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/exception/NoRushMediaException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/exception/NotEnoughQuantityException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/config/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/subsystem/ExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/subsystem/IPayment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/subsystem/Request.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/subsystem/Response.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/subsystem/VNPayManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/subsystem/VNPaySubsystem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/subsystem/VNPayView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/subsystem/Validator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/fxml/vnpay_view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/lib.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/AIMS-Student/production/AIMS-Student/views/fxml/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/classes/production/AIMS-Student/production/AIMS-Student/views/fxml/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/AIMS-Student/production/AIMS-Student/views/fxml/media_home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/classes/production/AIMS-Student/production/AIMS-Student/views/fxml/media_home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/AIMS-Student/views/fxml/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/classes/production/AIMS-Student/views/fxml/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/classes/production/AIMS-Student/views/fxml/media_home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/classes/production/AIMS-Student/views/fxml/media_home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/media/Media.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/media/Media.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/entity/payment/PaymentTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/entity/payment/PaymentTransaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/subsystem/InterbankInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/subsystem/InterbankSubsystem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/subsystem/interbank/InterbankBoundary.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/subsystem/interbank/InterbankSubsystemController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/Configs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Configs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/fxml/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/fxml/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/fxml/media_home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/fxml/media_home.fxml" afterDir="false" />
+    <list default="true" id="92e3834f-d2b5-44ec-9da6-f5413eaa353f" name="Changes" comment="feature: add coupling in controller package">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/PlaceOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/PlaceOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/screen/BaseScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/screen/BaseScreenHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/screen/cart/CartScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/screen/cart/CartScreenHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/screen/cart/MediaHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/screen/cart/MediaHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/screen/home/HomeScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/screen/home/HomeScreenHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/screen/home/MediaHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/screen/home/MediaHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/screen/invoice/InvoiceScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/screen/invoice/InvoiceScreenHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/screen/invoice/MediaInvoiceScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/screen/invoice/MediaInvoiceScreenHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/screen/payment/PaymentScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/screen/payment/PaymentScreenHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/screen/payment/ResultScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/screen/payment/ResultScreenHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/screen/popup/PopupScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/screen/popup/PopupScreen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/views/screen/shipping/ShippingScreenHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/screen/shipping/ShippingScreenHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,35 +26,50 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2YrFehEeoGrTxmZvWhNMgPpBRJ6" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "release",
-    "last_opened_file_path": "C:/Users/Admin/Desktop/aims/TKXDPM.KHMT.20231-13/lib/win/javafx-sdk-21.0.1/lib",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.42413792",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;release&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/AIMS2/TKXDPM.KHMT.20231-13/src&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.42413792&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\AIMS2\TKXDPM.KHMT.20231-13\src" />
       <recent name="C:\Users\Admin\Desktop\aims\TKXDPM.KHMT.20231-13\lib\win" />
     </key>
   </component>
@@ -207,7 +93,49 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1701275892045</updated>
+      <workItem from="1701595868679" duration="54000" />
+      <workItem from="1701596116354" duration="391000" />
+      <workItem from="1701597151235" duration="1691000" />
     </task>
+    <task id="LOCAL-00001" summary="feature: add coupling in controller package">
+      <option name="closed" value="true" />
+      <created>1701575038484</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701575038484</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="loi" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feature: add coupling in controller package" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: add coupling in controller package" />
   </component>
 </project>

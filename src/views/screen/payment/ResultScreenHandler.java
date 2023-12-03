@@ -31,11 +31,12 @@ public class ResultScreenHandler extends BaseScreenHandler {
 
 	@FXML
 	private Button okButton;
-	
+
 	@FXML
 	private Label messageLabel;
 
-	@FXML
+	@FXML// no coupling
+
 	void confirmPayment(MouseEvent event) throws IOException {
 		homeScreenHandler.show();
 	}

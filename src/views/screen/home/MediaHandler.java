@@ -45,7 +45,7 @@ public class MediaHandler extends FXMLScreenHandler{
     private static Logger LOGGER = Utils.getLogger(MediaHandler.class.getName());
     private Media media;
     private HomeScreenHandler home;
-
+// Stamp coupling
     public MediaHandler(String screenPath, Media media, HomeScreenHandler home) throws SQLException, IOException{
         super(screenPath);
         this.media = media;
@@ -77,7 +77,7 @@ public class MediaHandler extends FXMLScreenHandler{
                 } catch (Exception e) {
                     LOGGER.severe("Cannot add media to cart: ");
                 }
-                
+
             } catch (Exception exp) {
                 LOGGER.severe("Cannot add media to cart: ");
                 exp.printStackTrace();
@@ -85,10 +85,11 @@ public class MediaHandler extends FXMLScreenHandler{
         });
         setMediaInfo();
     }
-
+// no coupling
     public Media getMedia(){
         return media;
     }
+// no coupling
 
     private void setMediaInfo() throws SQLException {
         // set the cover image of media
@@ -111,5 +112,5 @@ public class MediaHandler extends FXMLScreenHandler{
 
         setImage(mediaImage, media.getImageURL());
     }
-    
+
 }

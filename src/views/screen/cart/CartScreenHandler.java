@@ -54,6 +54,8 @@ public class CartScreenHandler extends BaseScreenHandler {
 	@FXML
 	private Button btnPlaceOrder;
 
+	//no coupling
+
 	public CartScreenHandler(Stage stage, String screenPath) throws IOException {
 		super(stage, screenPath);
 
@@ -77,22 +79,26 @@ public class CartScreenHandler extends BaseScreenHandler {
 				exp.printStackTrace();
 				throw new PlaceOrderException(Arrays.toString(exp.getStackTrace()).replaceAll(", ", "\n"));
 			}
-			
+
 		});
 	}
+
+	//no coupling
 
 	public Label getLabelAmount() {
 		return labelAmount;
 	}
+	//no coupling
 
 	public Label getLabelSubtotal() {
 		return labelSubtotal;
 	}
-
+	//no coupling
 	public ViewCartController getBController(){
 		return (ViewCartController) super.getBController();
 	}
 
+	// data coupling
 	public void requestToViewCart(BaseScreenHandler prevScreen) throws SQLException {
 		setPreviousScreen(prevScreen);
 		setScreenTitle("Cart Screen");
@@ -101,6 +107,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 		show();
 	}
 
+	//no coupling
 	public void requestToPlaceOrder() throws SQLException, IOException {
 		try {
 			// create placeOrderController and process the order
@@ -111,7 +118,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 			}
 
 			placeOrderController.placeOrder();
-			
+
 			// display available media
 			displayCartWithMediaAvailability();
 
@@ -132,11 +139,12 @@ public class CartScreenHandler extends BaseScreenHandler {
 		}
 	}
 
+	//no coupling
 	public void updateCart() throws SQLException{
 		getBController().checkAvailabilityOfProduct();
 		displayCartWithMediaAvailability();
 	}
-
+	//no coupling
 	void updateCartAmount(){
 		// calculate subtotal and amount
 		int subtotal = getBController().getCartSubtotal();
@@ -149,7 +157,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 		labelVAT.setText(Utils.getCurrencyFormat(vat));
 		labelAmount.setText(Utils.getCurrencyFormat(amount));
 	}
-	
+	//no coupling
 	private void displayCartWithMediaAvailability(){
 		// clear all old cartMedia
 		vboxCart.getChildren().clear();

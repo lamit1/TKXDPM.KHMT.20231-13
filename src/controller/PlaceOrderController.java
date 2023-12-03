@@ -87,7 +87,7 @@ public class PlaceOrderController extends BaseController{
 
     }
 
-    //nou coupling
+    //no coupling
     public boolean validatePhoneNumber(String phoneNumber) {
     	// TODO: your work
     	return false;

@@ -59,17 +59,19 @@ public class MediaHandler extends FXMLScreenHandler {
 	private Spinner<Integer> spinner;
 	private CartScreenHandler cartScreen;
 
+
 	public MediaHandler(String screenPath, CartScreenHandler cartScreen) throws IOException {
 		super(screenPath);
 		this.cartScreen = cartScreen;
 		hboxMedia.setAlignment(Pos.CENTER);
 	}
-	
+
+	//no coupling
 	public void setCartMedia(CartMedia cartMedia) {
 		this.cartMedia = cartMedia;
 		setMediaInfo();
 	}
-
+	//no coupling
 	private void setMediaInfo() {
 		title.setText(cartMedia.getMedia().getTitle());
 		price.setText(Utils.getCurrencyFormat(cartMedia.getPrice()));
@@ -96,6 +98,8 @@ public class MediaHandler extends FXMLScreenHandler {
 		initializeSpinner();
 	}
 
+
+	// no coupling
 	private void initializeSpinner(){
 		SpinnerValueFactory<Integer> valueFactory = //
 			new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, cartMedia.getQuantity());
@@ -124,7 +128,7 @@ public class MediaHandler extends FXMLScreenHandler {
 			} catch (SQLException e1) {
 				throw new MediaUpdateException(Arrays.toString(e1.getStackTrace()).replaceAll(", ", "\n"));
 			}
-			
+
 		});
 		spinnerFX.setAlignment(Pos.CENTER);
 		spinnerFX.getChildren().add(this.spinner);

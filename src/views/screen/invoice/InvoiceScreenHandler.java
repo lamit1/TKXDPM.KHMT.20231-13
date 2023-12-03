@@ -56,13 +56,13 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 	private VBox vboxItems;
 
 	private Invoice invoice;
-
+	// data coupling
 	public InvoiceScreenHandler(Stage stage, String screenPath, Invoice invoice) throws IOException {
 		super(stage, screenPath);
 		this.invoice = invoice;
 		setInvoiceInfo();
 	}
-
+	//no coupling
 	private void setInvoiceInfo(){
 		HashMap<String, String> deliveryInfo = invoice.getOrder().getDeliveryInfo();
 		name.setText(deliveryInfo.get("name"));
@@ -83,11 +83,11 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 				System.err.println("errors: " + e.getMessage());
 				throw new ProcessInvoiceException(e.getMessage());
 			}
-			
+
 		});
 
 	}
-
+	//no coupling
 	@FXML
 	void confirmInvoice(MouseEvent event) throws IOException {
 		BaseScreenHandler paymentScreen = new PaymentScreenHandler(this.stage, Configs.PAYMENT_SCREEN_PATH, invoice);

@@ -12,6 +12,7 @@ public class FXMLScreenHandler {
 
 	protected FXMLLoader loader;
 	protected AnchorPane content;
+// no coupling
 
 	public FXMLScreenHandler(String screenPath) throws IOException {
 		this.loader = new FXMLLoader(getClass().getResource(screenPath));
@@ -27,6 +28,7 @@ public class FXMLScreenHandler {
 	public FXMLLoader getLoader() {
 		return this.loader;
 	}
+// no coupling
 
 	public void setImage(ImageView imv, String path){
 		File file = new File(path);

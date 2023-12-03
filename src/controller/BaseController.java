@@ -18,7 +18,7 @@ public class BaseController {
      * @return CartMedia or null
      */
 
-    //stamp coupling
+    //data coupling
     public CartMedia checkMediaInCart(Media media){
         return Cart.getCart().checkMediaInCart(media);
     }
