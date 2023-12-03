@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.Map;
 
 import controller.PaymentController;
+import entity.cart.Cart;
+import common.exception.PlaceOrderException;
 import entity.invoice.Invoice;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
@@ -15,6 +17,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import utils.Configs;
 import views.screen.BaseScreenHandler;
+import views.screen.popup.PopupScreen;
 
 public class PaymentScreenHandler extends BaseScreenHandler {
 
@@ -25,11 +28,12 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 	private ImageView loadingImage;
 
 	private Invoice invoice;
+// no coupling
 
 	public PaymentScreenHandler(Stage stage, String screenPath, int amount, String contents) throws IOException {
 		super(stage, screenPath);
 	}
-
+//data coupling
 	public PaymentScreenHandler(Stage stage, String screenPath, Invoice invoice) throws IOException {
 		super(stage, screenPath);
 		this.invoice = invoice;
@@ -57,7 +61,7 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 
 	@FXML
 	private TextField securityCode;
-
+	// no coupling
 	void confirmToPayOrder() throws IOException{
 		String contents = "pay order";
 		PaymentController ctrl = (PaymentController) getBController();

@@ -40,15 +40,18 @@ public class MediaInvoiceScreenHandler extends FXMLScreenHandler{
     private Label price;
 
     private OrderMedia orderMedia;
+    // no coupling
 
     public MediaInvoiceScreenHandler(String screenPath) throws IOException{
         super(screenPath);
     }
+// data coupling
 
     public void setOrderMedia(OrderMedia orderMedia) throws SQLException{
         this.orderMedia = orderMedia;
         setMediaInfo();
     }
+// no coupling
 
     public void setMediaInfo() throws SQLException{
         title.setText(orderMedia.getMedia().getTitle());

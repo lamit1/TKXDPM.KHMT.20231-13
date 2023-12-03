@@ -13,6 +13,7 @@ public class SplashScreenHandler implements Initializable {
 
     @FXML
     ImageView logo;
+// no coupling
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

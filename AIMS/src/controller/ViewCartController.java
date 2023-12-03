@@ -1,19 +1,20 @@
 package controller;
 
-import java.sql.SQLException;
-
 import entity.cart.Cart;
+
+import java.sql.SQLException;
 
 /**
  * This class controls the flow of events when users view the Cart
  * @author nguyenlm
  */
 public class ViewCartController extends BaseController{
-    
+
     /**
      * This method checks the available products in Cart
      * @throws SQLException
      */
+    //no coupling
     public void checkAvailabilityOfProduct() throws SQLException{
         Cart.getCart().checkAvailabilityOfProduct();
     }
@@ -22,6 +23,7 @@ public class ViewCartController extends BaseController{
      * This method calculates the cart subtotal
      * @return subtotal
      */
+    //no coupling
     public int getCartSubtotal(){
         int subtotal = Cart.getCart().calSubtotal();
         return subtotal;
