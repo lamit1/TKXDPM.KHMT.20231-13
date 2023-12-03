@@ -38,7 +38,7 @@ The recommended structure is as follows:
 The recommended report structure will have a format as follows:
 
 <details>
-  <summary>W1: 25/11/2023~03/12/2023 </summary>
+  <summary>W13: 25/11/2023~03/12/2023 </summary>
 <br>
 <details>
 <summary>Nông Hoàng Lâm</summary>
