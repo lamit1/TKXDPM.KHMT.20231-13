@@ -21,6 +21,7 @@ Before using this Github repository, everyone needs to register their group info
 | Nông Hoàng Lâm    | Team Leader |
 | Nguyễn Văn Lợi    | Member      |
 | Nguyễn Ngọc Linh  | Member      |
+| Lang Thành Long   | Member      |
 
 ## What's included
 
