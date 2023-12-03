@@ -74,19 +74,14 @@ public class PaymentController extends BaseController {
 	/**
 	 * Pay order, and then return the result with a message.
 	 *
-	 * @param amount         - the amount to pay
-	 * @param contents       - the transaction contents
-	 * @param cardNumber     - the card number
-	 * @param cardHolderName - the card holder name
-	 * @param expirationDate - the expiration date in the format "mm/yy"
-	 * @param securityCode   - the cvv/cvc code of the credit card
+	 * @param amount   - the amount to pay
+	 * @param contents - the transaction contents
 	 * @return {@link java.util.Map Map} represent the payment result with a
-	 *         message.
+	 * message.
 	 */
 
 	// no coupling
-	public Map<String, String> payOrder(int amount, String contents, String cardNumber, String cardHolderName,
-			String expirationDate, String securityCode) {
+	public Map<String, String> payOrder(int amount, String contents) {
 		Map<String, String> result = new Hashtable<String, String>();
 		result.put("RESULT", "PAYMENT FAILED!");
 		try {
