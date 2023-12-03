@@ -21,6 +21,7 @@ public class VNPayManager {
                   Content coupling
                  */
                 String url = request.createUrl(content, amounts);
+                System.out.println(url);
                 /*
                   Content coupling
                  */
