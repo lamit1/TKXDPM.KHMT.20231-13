@@ -125,7 +125,7 @@ public class Request {
         String queryUrl = query.toString();
         vnp_SecureHash = Config.hmacSHA512(Config.vnp_HashSecret, hashData.toString());
         queryUrl += "&vnp_SecureHash=" + vnp_SecureHash;
-        String paymentUrl = vnp_ReturnUrl + "?" + queryUrl;
+        String paymentUrl = Config.vnp_PayUrl + "?" + queryUrl;
         return paymentUrl;
     }
 
