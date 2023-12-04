@@ -22,7 +22,7 @@ public class VNPayView {
     }
 
     public VNPayView() {}
-
+    // Functional cohesion
     public String query(String url) {
         try {
             CompletableFuture<String> responseUrlFuture = new CompletableFuture<>();

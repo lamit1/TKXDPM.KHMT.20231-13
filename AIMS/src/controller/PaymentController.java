@@ -101,6 +101,7 @@ public class PaymentController extends BaseController {
 
 
 	//no coupling
+	//Temporal cohesion
 	public void emptyCart(){
         Cart.getCart().emptyCart();
     }

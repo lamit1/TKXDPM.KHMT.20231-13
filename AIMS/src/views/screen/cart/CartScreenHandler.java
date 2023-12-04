@@ -84,12 +84,12 @@ public class CartScreenHandler extends BaseScreenHandler {
 	}
 
 	//no coupling
-
+	// Coincidental cohesion
 	public Label getLabelAmount() {
 		return labelAmount;
 	}
 	//no coupling
-
+	// Coincidental cohesion
 	public Label getLabelSubtotal() {
 		return labelSubtotal;
 	}
@@ -99,6 +99,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 	}
 
 	// data coupling
+	// Coincidental cohesion
 	public void requestToViewCart(BaseScreenHandler prevScreen) throws SQLException {
 		setPreviousScreen(prevScreen);
 		setScreenTitle("Cart Screen");
@@ -108,6 +109,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 	}
 
 	//no coupling
+	// functional cohesion
 	public void requestToPlaceOrder() throws SQLException, IOException {
 		try {
 			// create placeOrderController and process the order

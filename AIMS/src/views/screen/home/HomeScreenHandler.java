@@ -156,7 +156,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         }
     }
     //no coupling
-
+    // functional cohesion
     private void addMenuItem(int position, String text, MenuButton menuButton){
         MenuItem menuItem = new MenuItem();
         Label label = new Label();

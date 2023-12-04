@@ -10,6 +10,7 @@ public class VNPayManager {
         view = new VNPayView();
         validator =  new Validator();
     }
+    // Functional cohesion
     public PaymentTransaction payOrder(double amounts, String content) {
         try {
             /*

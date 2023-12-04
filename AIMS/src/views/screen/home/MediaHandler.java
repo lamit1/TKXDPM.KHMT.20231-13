@@ -89,7 +89,7 @@ public class MediaHandler extends FXMLScreenHandler{
     public Media getMedia(){
         return media;
     }
-// no coupling
+    // no coupling
 
     private void setMediaInfo() throws SQLException {
         // set the cover image of media

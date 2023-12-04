@@ -21,7 +21,7 @@ public class Response {
     private String responseCode;
     private double amounts;
     private String payTime;
-
+    //Func
     public Response(String responseString) throws CanceledPaymentException, MalformedURLException, UnsupportedEncodingException, ParseException {
         /**
          * Common couping with Config class
@@ -49,7 +49,7 @@ public class Response {
         Date parsedDate = dateFormat.parse(parameters.get("vnp_PayDate"));
         payTime = new Timestamp(parsedDate.getTime()).toString();
     }
-
+    // Coincidental cohesion
     public PaymentTransaction getTransaction() throws CanceledPaymentException {
         /**
          *
@@ -65,6 +65,7 @@ public class Response {
         return transaction;
     }
 
+    // Coincidental cohesion
     @Override
     public String toString() {
         return "Response{" +

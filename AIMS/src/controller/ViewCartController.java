@@ -15,6 +15,7 @@ public class ViewCartController extends BaseController{
      * @throws SQLException
      */
     //no coupling
+    //coincidental cohesion
     public void checkAvailabilityOfProduct() throws SQLException{
         Cart.getCart().checkAvailabilityOfProduct();
     }
@@ -24,6 +25,7 @@ public class ViewCartController extends BaseController{
      * @return subtotal
      */
     //no coupling
+    //coincidental cohesion
     public int getCartSubtotal(){
         int subtotal = Cart.getCart().calSubtotal();
         return subtotal;

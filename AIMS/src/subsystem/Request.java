@@ -34,7 +34,7 @@ public class Request {
     private String vnp_SecureHash;
     public Request() {
     }
-
+    // Functional cohesion
     public String createUrl(String contents, double amounts) {
 
         vnp_OrderInfo = contents;
