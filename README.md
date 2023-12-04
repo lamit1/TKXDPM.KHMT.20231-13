@@ -63,7 +63,7 @@ The recommended report structure will have a format as follows:
   - Add comment about coupling to views and controller folder 
 
 - Implementation details:
-  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/3](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/3)
+  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/2](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/2)
   - Specific implementation details:
     - Xem xét các phương thức của từng lớp trong folder AIMS/ controller và AIMS/ views
     - Thêm phần comment vào tại các nơi diễn ra coupling.
@@ -78,7 +78,7 @@ The recommended report structure will have a format as follows:
   - Add comment about coupling to utils folder 
 
 - Implementation details:
-  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/2](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/2)
+  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/3](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/3)
   - Specific implementation details:
     - Xem xét các phương thức của từng lớp trong folder AIMS/ utils
     - Thêm phần comment vào tại các nơi diễn ra coupling.
