@@ -123,7 +123,7 @@ public class Media {
     }
 
     public int getPrice() {
-        return this.price;
+        return this.price * 1000 ;
     }
 
     public Media setPrice(int price) {

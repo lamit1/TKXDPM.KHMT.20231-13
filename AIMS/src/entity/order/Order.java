@@ -41,7 +41,7 @@ public class Order {
     }
 
     public int getShippingFees() {
-        return shippingFees;
+        return shippingFees * 1000;
     }
 
     public HashMap getDeliveryInfo() {

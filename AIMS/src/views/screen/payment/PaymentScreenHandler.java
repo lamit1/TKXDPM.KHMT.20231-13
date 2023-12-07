@@ -63,7 +63,7 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 	private TextField securityCode;
 	// no coupling
 	void confirmToPayOrder() throws IOException{
-		String contents = "pay order";
+		String contents = "payorder";
 		PaymentController ctrl = (PaymentController) getBController();
 		Map<String, String> response = ctrl.payOrder(invoice.getAmount(), contents);
 		BaseScreenHandler resultScreen = new ResultScreenHandler(this.stage, Configs.RESULT_SCREEN_PATH, response.get("RESULT"), response.get("MESSAGE") );
