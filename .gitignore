@@ -42,3 +42,8 @@ atlassian-ide-plugin.xml
 
 # Crashlytics plugin (for Android Studio and IntelliJ)
 AIMS/.idea
+/.idea/.gitignore
+/.idea/dbnavigator.xml
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/TKXDPM.KHMT.20231-13.iml
