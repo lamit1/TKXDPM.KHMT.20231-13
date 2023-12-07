@@ -7,6 +7,10 @@ aims.session.sql
 *.ipynb
 test/notebook
 AIMS/.idea
+AIMS/out
+AIMS/test
 .idea
+.idea/vcs.xml
+.idea/workspace.xml
 out
 test
