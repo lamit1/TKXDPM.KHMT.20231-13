@@ -12,5 +12,6 @@ AIMS/test
 .idea
 .idea/vcs.xml
 .idea/workspace.xml
+classes
 out
 test

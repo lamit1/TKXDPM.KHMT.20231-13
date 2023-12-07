@@ -6,94 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ecf6e503-ae7d-4f7c-9f5a-6b6afa2320d7" name="Changes" comment="cohesion comment">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/TKXDPM.KHMT.20231-13.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/TKXDPM.KHMT.20231-13.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AIMS/src/controller/PaymentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/AIMS/src/controller/PaymentController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/App.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/TKXDPM.KHMT.20231-13.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/AddressNotSupportRushDeliveryException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/AimsException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/CanceledPaymentException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/InternalServerErrorException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/InvalidCardException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/InvalidDeliveryInfoException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/InvalidInputException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/InvalidQuantityException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/InvalidTransactionAmountException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/InvalidVersionException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/MediaNotAvailableException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/MediaUpdateException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/NoMediaInCartException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/NoRushMediaException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/NotEnoughBalanceException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/NotEnoughQuantityException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/NotEnoughTransactionInfoException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/PaymentException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/PlaceOrderException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/ProcessInvoiceException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/SuspiciousTransactionException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/UnrecognizedException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/common/exception/ViewCartException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/config/Config.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/controller/BaseController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/controller/HomeController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/controller/PaymentController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/controller/PlaceOrderController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/controller/ViewCartController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/entity/cart/Cart.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/entity/cart/CartMedia.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/entity/db/AIMSDB.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/entity/invoice/Invoice.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/entity/media/Book.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/entity/media/CD.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/entity/media/DVD.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/entity/media/Media.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/entity/order/Order.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/entity/order/OrderMedia.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/entity/payment/CreditCard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/entity/payment/PaymentTransaction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/entity/shipping/Shipment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/entity/user/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/subsystem/ExceptionHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/subsystem/IPayment.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/subsystem/Request.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/subsystem/Response.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/subsystem/VNPayManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/subsystem/VNPaySubsystem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/subsystem/VNPayView.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/subsystem/Validator.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/utils/API.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/utils/Configs.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/utils/MyMap.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/utils/Utils.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/fxml/cart.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/fxml/home.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/fxml/invoice.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/fxml/media_cart.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/fxml/media_home.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/fxml/media_invoice.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/fxml/payment.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/fxml/popup.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/fxml/result.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/fxml/shipping.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/fxml/splash.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/fxml/vnpay_view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/screen/BaseScreenHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/screen/FXMLScreenHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/screen/SplashScreenHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/screen/cart/CartScreenHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/screen/cart/MediaHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/screen/home/HomeScreenHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/screen/home/MediaHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/screen/invoice/InvoiceScreenHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/screen/invoice/MediaInvoiceScreenHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/screen/payment/PaymentScreenHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/screen/payment/ResultScreenHandler.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/screen/popup/PopupScreen.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/TKXDPM.KHMT.20231-13/views/screen/shipping/ShippingScreenHandler.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,7 +101,23 @@
       <option name="project" value="LOCAL" />
       <updated>1701681114747</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="cohesion comment">
+      <option name="closed" value="true" />
+      <created>1701968932121</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1701968932121</updated>
+    </task>
+    <task id="LOCAL-00003" summary="cohesion comment">
+      <option name="closed" value="true" />
+      <created>1701969038154</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701969038154</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
