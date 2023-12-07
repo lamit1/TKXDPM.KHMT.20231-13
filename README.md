@@ -38,7 +38,7 @@ The recommended structure is as follows:
 The recommended report structure will have a format as follows:
 
 <details>
-  <summary>W1: 25/11/2023~03/12/2023 </summary>
+  <summary>W13: 25/11/2023~03/12/2023 </summary>
 <br>
 <details>
 <summary>Nông Hoàng Lâm</summary>
@@ -48,7 +48,7 @@ The recommended report structure will have a format as follows:
   - Add comment about coupling to subsystem folder 
 
 - Implementation details:
-  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pulls](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pulls)
+  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/1](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/1)
   - Specific implementation details:
     - Xem xét các phương thức của từng lớp trong folder AIMS/ subsytem
     - Thêm phần comment vào tại các nơi diễn ra coupling.
@@ -56,19 +56,32 @@ The recommended report structure will have a format as follows:
 </details>
 
 <details>
-<summary>Team Member 2</summary>
+<summary>Vũ Văn Lợi</summary>
 <br>
 
 - Assigned tasks:
-  - Task 1
-  - Task 2
-  - ...
+  - Add comment about coupling to views and controller folder 
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/3](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/3)
   - Specific implementation details:
-    - Describe specific in detail what you did last week
-    - You can attach images if you want
+    - Xem xét các phương thức của từng lớp trong folder AIMS/ controller và AIMS/ views
+    - Thêm phần comment vào tại các nơi diễn ra coupling.
+
+</details>
+
+<details>
+<summary>Nguyễn Ngọc Linh</summary>
+<br>
+
+- Assigned tasks:
+  - Add comment about coupling to utils folder 
+
+- Implementation details:
+  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/4](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/4)
+  - Specific implementation details:
+    - Xem xét các phương thức của từng lớp trong folder AIMS/ utils
+    - Thêm phần comment vào tại các nơi diễn ra coupling.
 
 </details>
 
