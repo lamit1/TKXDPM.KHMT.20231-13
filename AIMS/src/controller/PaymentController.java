@@ -6,8 +6,8 @@ import common.exception.UnrecognizedException;
 import entity.cart.Cart;
 import entity.payment.CreditCard;
 import entity.payment.PaymentTransaction;
-import subsystem.InterbankInterface;
-import subsystem.InterbankSubsystem;
+import subsystem.IPayment;
+import subsystem.VNPaySubsystem;
 
 import java.util.Calendar;
 import java.util.Hashtable;
@@ -31,7 +31,7 @@ public class PaymentController extends BaseController {
 	/**
 	 * Represent the Interbank subsystem
 	 */
-	private InterbankInterface interbank;
+	private IPayment interbank;
 
 	/**
 	 * Validate the input date which should be in the format "mm/yy", and then
@@ -85,11 +85,8 @@ public class PaymentController extends BaseController {
 		Map<String, String> result = new Hashtable<String, String>();
 		result.put("RESULT", "PAYMENT FAILED!");
 		try {
-			this.card = new CreditCard(cardNumber, cardHolderName, Integer.parseInt(securityCode),
-					getExpirationDate(expirationDate));
-
-			this.interbank = new InterbankSubsystem();
-			PaymentTransaction transaction = interbank.payOrder(card, amount, contents);
+			this.interbank = new VNPaySubsystem();
+			PaymentTransaction transaction = interbank.payOrder(amount, contents);
 
 			result.put("RESULT", "PAYMENT SUCCESSFUL!");
 			result.put("MESSAGE", "You have succesffully paid the order!");

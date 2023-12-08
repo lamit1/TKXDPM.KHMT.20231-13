@@ -38,7 +38,7 @@ The recommended structure is as follows:
 The recommended report structure will have a format as follows:
 
 <details>
-  <summary>W1: 25/11/2023~03/12/2023 </summary>
+  <summary>W13: 25/11/2023~03/12/2023 </summary>
 <br>
 <details>
 <summary>Nông Hoàng Lâm</summary>
@@ -48,10 +48,63 @@ The recommended report structure will have a format as follows:
   - Add comment about coupling to subsystem folder 
 
 - Implementation details:
-  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pulls](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pulls)
+  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/1](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/1)
   - Specific implementation details:
     - Xem xét các phương thức của từng lớp trong folder AIMS/ subsytem
     - Thêm phần comment vào tại các nơi diễn ra coupling.
+
+</details>
+
+<details>
+<summary>Vũ Văn Lợi</summary>
+<br>
+
+- Assigned tasks:
+  - Add comment about coupling to views and controller folder 
+
+- Implementation details:
+  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/3](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/3)
+  - Specific implementation details:
+    - Xem xét các phương thức của từng lớp trong folder AIMS/ controller và AIMS/ views
+    - Thêm phần comment vào tại các nơi diễn ra coupling.
+
+</details>
+
+<details>
+<summary>Nguyễn Ngọc Linh</summary>
+<br>
+
+- Assigned tasks:
+  - Add comment about coupling to utils folder 
+
+- Implementation details:
+  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/4](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/4)
+  - Specific implementation details:
+    - Xem xét các phương thức của từng lớp trong folder AIMS/ utils
+    - Thêm phần comment vào tại các nơi diễn ra coupling.
+
+</details>
+
+
+
+</details>
+
+---
+
+<details>
+  <summary>W14: 03/12/2023~10/12/2023 </summary>
+<br>
+<details>
+<summary>Nông Hoàng Lâm</summary>
+<br>
+
+- Assigned tasks:
+  - Cohesion Comment on subsystem and entity folder
+
+- Implementation details:
+  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/5]](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/5)
+  - Specific implementation details:
+    - Add comment cohesion in folder entity and subsytem
 
 </details>
 
@@ -63,21 +116,6 @@ The recommended report structure will have a format as follows:
   - Task 1
   - Task 2
   - ...
-
-- Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
-  - Specific implementation details:
-    - Describe specific in detail what you did last week
-    - You can attach images if you want
-
-</details>
-
-
-
-</details>
-
----
-
 <details>
   <summary>W2: 01/10/2023~08/10/2023 </summary>
 <br>

@@ -10,7 +10,7 @@ public class VNPaySubsystem  implements IPayment {
         manager = new VNPayManager();
     }
 
-    // Coincidental cohesion
+    // Functional cohesion
     @Override
     public PaymentTransaction payOrder(double amounts, String content) {
         /**

@@ -35,6 +35,10 @@ public class Book extends Media {
         this.bookCategory = bookCategory;
     }
 
+    /**
+     * All function getter, setter here are all communicational cohesion
+     * because all are used for purpose get book media information
+     */
     // getter and setter
     public int getId() {
         return this.id;
@@ -136,25 +140,5 @@ public class Book extends Media {
 		} else {
 			throw new SQLException();
 		}
-    }
-
-    @Override
-    public List getAllMedia() {
-        return null;
-    }
-
-
-    @Override
-    public String toString() {
-        return "{" +
-            super.toString() +
-            " author='" + author + "'" +
-            ", coverType='" + coverType + "'" +
-            ", publisher='" + publisher + "'" +
-            ", publishDate='" + publishDate + "'" +
-            ", numOfPages='" + numOfPages + "'" +
-            ", language='" + language + "'" +
-            ", bookCategory='" + bookCategory + "'" +
-            "}";
     }
 }

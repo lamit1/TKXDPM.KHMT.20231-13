@@ -11,6 +11,10 @@ public class AIMSDB {
 	private static Logger LOGGER = Utils.getLogger(Connection.class.getName());
 	private static Connection connect;
 
+    /**
+     * Functional cohesion
+     *
+     */
     public static Connection getConnection() {
         if (connect != null) return connect;
         try {
@@ -23,9 +27,5 @@ public class AIMSDB {
         } 
         return connect;
     }
-    
 
-    public static void main(String[] args) {
-        AIMSDB.getConnection();
-    }
 }

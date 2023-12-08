@@ -10,7 +10,10 @@ public class Invoice {
     public Invoice(){
 
     }
-
+    /**
+     * All function here are all communicational cohesion
+     * because all are used for purpose get invoice information
+     */
     public Invoice(Order order){
         this.order = order;
     }

@@ -31,6 +31,11 @@ public class DVD extends Media {
         this.filmType = filmType;
     }
 
+    /**
+     * All function here are all communicational cohesion
+     * because all are used for purpose get dvd media information
+     */
+
     public String getDiscType() {
         return this.discType;
     }

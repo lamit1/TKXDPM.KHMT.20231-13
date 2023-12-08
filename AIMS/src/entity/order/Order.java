@@ -12,6 +12,10 @@ public class Order {
     private List lstOrderMedia;
     private HashMap<String, String> deliveryInfo;
 
+    /**
+     * All function here are all communicational cohesion
+     * because all are used for purpose get order media information
+     */
     public Order(){
         this.lstOrderMedia = new ArrayList<>();
     }
@@ -41,7 +45,7 @@ public class Order {
     }
 
     public int getShippingFees() {
-        return shippingFees;
+        return shippingFees ;
     }
 
     public HashMap getDeliveryInfo() {

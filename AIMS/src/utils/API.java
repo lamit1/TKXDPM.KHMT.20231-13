@@ -79,7 +79,8 @@ public class API {
 		return response.toString();
 	}
 
-	/*Stamp coupling*/
+	/*Stamp coupling
+	* */
 	private static void allowMethods(String... methods) {
 		try {
 			Field methodsField = HttpURLConnection.class.getDeclaredField("methods");

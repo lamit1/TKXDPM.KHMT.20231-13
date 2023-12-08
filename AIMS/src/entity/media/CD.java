@@ -16,6 +16,11 @@ public class CD extends Media {
 
     }
 
+    /**
+     * All function here are all communicational cohesion
+     * because all are used for purpose get cd media information
+     */
+
     public CD(int id, String title, String category, int price, int quantity, String type, String artist,
             String recordLabel, String musicType, Date releasedDate) throws SQLException{
         super(id, title, category, price, quantity, type);

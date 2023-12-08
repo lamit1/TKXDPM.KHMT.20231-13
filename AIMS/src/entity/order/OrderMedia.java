@@ -8,21 +8,16 @@ public class OrderMedia {
     private int price;
     private int quantity;
 
+    /**
+     * All function here are all communicational cohesion
+     * because all are used for purpose get order media information
+     */
+
     public OrderMedia(Media media, int quantity, int price) {
         this.media = media;
         this.quantity = quantity;
         this.price = price;
     }
-    
-    @Override
-    public String toString() {
-        return "{" +
-            "  media='" + media + "'" +
-            ", quantity='" + quantity + "'" +
-            ", price='" + price + "'" +
-            "}";
-    }
-    
     public Media getMedia() {
         return this.media;
     }
