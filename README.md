@@ -92,6 +92,31 @@ The recommended report structure will have a format as follows:
 ---
 
 <details>
+  <summary>W14: 03/12/2023~10/12/2023 </summary>
+<br>
+<details>
+<summary>Nông Hoàng Lâm</summary>
+<br>
+
+- Assigned tasks:
+  - Cohesion Comment on subsystem and entity folder
+
+- Implementation details:
+  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/5]](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/5)
+  - Specific implementation details:
+    - Add comment cohesion in folder entity and subsytem
+
+</details>
+
+<details>
+<summary>Team Member 2</summary>
+<br>
+
+- Assigned tasks:
+  - Task 1
+  - Task 2
+  - ...
+<details>
   <summary>W2: 01/10/2023~08/10/2023 </summary>
 <br>
 <details>
