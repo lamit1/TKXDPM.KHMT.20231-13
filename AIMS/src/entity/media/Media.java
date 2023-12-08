@@ -32,6 +32,11 @@ public class Media {
         stm = AIMSDB.getConnection().createStatement();
     }
 
+    /**
+     * All function here are all communicational cohesion
+     * because all are used for purpose get  media information
+     */
+
     public Media (int id, String title, String category, int price, int quantity, String type) throws SQLException{
         this.id = id;
         this.title = title;

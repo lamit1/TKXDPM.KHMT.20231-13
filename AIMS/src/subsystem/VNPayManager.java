@@ -14,17 +14,16 @@ public class VNPayManager {
     public PaymentTransaction payOrder(double amounts, String content) {
         try {
             /*
-             * Content coupling
+             * Data coupling
              */
             if (validator.validate(amounts, content)) {
                 Request request = new Request();
                 /*
-                  Content coupling
+                  Data coupling
                  */
                 String url = request.createUrl(content, amounts);
-                System.out.println(url);
                 /*
-                  Content coupling
+                  Data coupling
                  */
                 String responseString = view.query(url);
                 Response response = new Response(responseString);

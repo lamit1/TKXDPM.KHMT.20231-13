@@ -8,16 +8,18 @@ public class CartMedia {
     private int quantity;
     private int price;
 
-    public CartMedia(){
-
-    }
 
     public CartMedia(Media media, Cart cart, int quantity, int price) {
         this.media = media;
         this.quantity = quantity;
         this.price = price;
     }
-    
+
+    /**
+     * All function here are all communicational cohesion
+     * because all are used for purpose get cart media information
+     */
+
     public Media getMedia() {
         return this.media;
     }
@@ -42,13 +44,6 @@ public class CartMedia {
         this.price = price;
     }
 
-    @Override
-    public String toString() {
-        return "{" 
-            + " media='" + media + "'" 
-            + ", quantity='" + quantity + "'" 
-            + "}";
-    }
 
 }
 

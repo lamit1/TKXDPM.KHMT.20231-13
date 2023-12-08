@@ -33,8 +33,15 @@ public class Request {
     private String vnp_ExpireDate;
     private String vnp_SecureHash;
     public Request() {
+        //Create a request instance
     }
-    // Functional cohesion
+
+    /** Functional cohesion with Request()
+     *
+     * @param contents
+     * @param amounts
+     * @return url
+     */
     public String createUrl(String contents, double amounts) {
 
         vnp_OrderInfo = contents;

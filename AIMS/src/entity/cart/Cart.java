@@ -21,6 +21,12 @@ public class Cart {
         lstCartMedia = new ArrayList<>();
     }
 
+    /**
+     * addCartMedia, removeCartMedia, getListMedia, emptyCart
+     * getTotalMedia, calSubtotal, checkMediaInCart
+     * are communicational cohesion because work on
+     * the same data Cart
+     */
     public void addCartMedia(CartMedia cm){
         lstCartMedia.add(cm);
     }
@@ -55,6 +61,10 @@ public class Cart {
         return total;
     }
 
+    /**
+     * Coincedential cohesion because
+     * this function have no relation to cart
+     */
     public void checkAvailabilityOfProduct() throws SQLException{
         boolean allAvai = true;
         for (Object object : lstCartMedia) {

@@ -8,8 +8,9 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib1" level="project" />
-    <orderEntry type="library" name="lib2" level="project" />
-    <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="library" name="sqlite-jdbc-3.7.2" level="project" />
+  </component>
+  <component name="SonarLintModuleSettings">
+    <option name="uniqueId" value="5fb90970-2415-4b62-a30f-590c58d86498" />
   </component>
 </module>

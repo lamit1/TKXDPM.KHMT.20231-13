@@ -1,5 +1,4 @@
 import java.io.IOException;
-
 import javafx.animation.FadeTransition;
 import javafx.application.Application;
 import javafx.fxml.FXML;
