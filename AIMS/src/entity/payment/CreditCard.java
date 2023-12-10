@@ -8,6 +8,14 @@ public class CreditCard {
 	private int cvvCode;
 	private String dateExpired;
 
+	/** Functional cohesion
+	 *
+	 * @param cardCode
+	 * @param owner
+	 * @param cvvCode
+	 * @param dateExpired
+	 */
+
 	public CreditCard(String cardCode, String owner, int cvvCode, String dateExpired) {
 		super();
 		this.cardCode = cardCode;

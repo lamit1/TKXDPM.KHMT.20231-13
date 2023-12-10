@@ -27,6 +27,10 @@ public class User {
             "}";
     }
 
+    /**
+     * All function here are all communicational cohesion
+     * because all are used for purpose get user information
+     */
     // getter and setter
     public String getName() {
         return this.name;

@@ -20,9 +20,9 @@ public class VNPayView {
     public WebView getWebView() {
         return vnpayWebView;
     }
-
+    // Functional cohesion with 2 function, because need the instance to work
     public VNPayView() {}
-    // Functional cohesion
+    // Functional cohesion with getWebView to serve 1 purpose query for url
     public String query(String url) {
         try {
             CompletableFuture<String> responseUrlFuture = new CompletableFuture<>();

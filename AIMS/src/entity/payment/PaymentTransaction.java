@@ -5,6 +5,14 @@ public class PaymentTransaction {
 	private String transactionContent;
 	private double amount;
 	private String createdAt;
+
+	/**
+	 * Functional cohesion
+	 * @param transactionId
+	 * @param transactionContent
+	 * @param amount
+	 * @param createdAt
+	 */
 	
 	public PaymentTransaction(String transactionId, String transactionContent,
 			double amount, String createdAt) {

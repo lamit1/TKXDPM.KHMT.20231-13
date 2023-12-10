@@ -49,7 +49,11 @@ public class Response {
         Date parsedDate = dateFormat.parse(parameters.get("vnp_PayDate"));
         payTime = new Timestamp(parsedDate.getTime()).toString();
     }
-    // Coincidental cohesion
+
+    /** Functional cohesion with Response(responseString)
+     *
+     * @return transaction
+     */
     public PaymentTransaction getTransaction() throws CanceledPaymentException {
         /**
          *
@@ -63,17 +67,5 @@ public class Response {
                 throw new CanceledPaymentException("Payment was canceled!");
         }
         return transaction;
-    }
-
-    // Coincidental cohesion
-    @Override
-    public String toString() {
-        return "Response{" +
-                "id='" + id + '\'' +
-                ", contents='" + contents + '\'' +
-                ", responseCode='" + responseCode + '\'' +
-                ", amounts=" + amounts +
-                ", payTime='" + payTime + '\'' +
-                '}';
     }
 }

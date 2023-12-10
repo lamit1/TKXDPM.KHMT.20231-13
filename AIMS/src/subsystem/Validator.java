@@ -5,7 +5,7 @@ import common.exception.InvalidInputException;
 import java.util.regex.Pattern;
 
 public class Validator {
-    // Functional cohesion
+    // No cohesion
     public boolean validate(double amounts, String content) throws InvalidInputException {
         if (amounts >= 5000) {
             if(Pattern.compile("^[0-9a-zA-Z]*$").matcher(content).matches()) {
