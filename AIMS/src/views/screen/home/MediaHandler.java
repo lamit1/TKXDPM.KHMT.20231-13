@@ -46,6 +46,7 @@ public class MediaHandler extends FXMLScreenHandler{
     private Media media;
     private HomeScreenHandler home;
 // Stamp coupling
+//  Functional cohesion
     public MediaHandler(String screenPath, Media media, HomeScreenHandler home) throws SQLException, IOException{
         super(screenPath);
         this.media = media;
@@ -86,11 +87,12 @@ public class MediaHandler extends FXMLScreenHandler{
         setMediaInfo();
     }
 // no coupling
+// Coincidental cohesion
     public Media getMedia(){
         return media;
     }
     // no coupling
-
+    // Procedural cohesion
     private void setMediaInfo() throws SQLException {
         // set the cover image of media
         File file = new File(media.getImageURL());

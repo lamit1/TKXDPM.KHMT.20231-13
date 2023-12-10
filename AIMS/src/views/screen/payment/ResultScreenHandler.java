@@ -16,7 +16,7 @@ public class ResultScreenHandler extends BaseScreenHandler {
 
 	private String result;
 	private String message;
-
+	//  Functional cohesion
 	public ResultScreenHandler(Stage stage, String screenPath, String result, String message) throws IOException {
 		super(stage, screenPath);
 		resultLabel.setText(result);
@@ -36,7 +36,7 @@ public class ResultScreenHandler extends BaseScreenHandler {
 	private Label messageLabel;
 
 	@FXML// no coupling
-
+	// Coincidental cohesion
 	void confirmPayment(MouseEvent event) throws IOException {
 		homeScreenHandler.show();
 	}

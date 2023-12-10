@@ -14,7 +14,7 @@ public class SplashScreenHandler implements Initializable {
     @FXML
     ImageView logo;
 // no coupling
-
+// Functional cohesion
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         File file = new File("assets/images/Logo.png");

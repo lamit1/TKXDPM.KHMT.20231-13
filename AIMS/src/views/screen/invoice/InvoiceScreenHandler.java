@@ -57,12 +57,14 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 
 	private Invoice invoice;
 	// data coupling
+	// Coincidental cohesion
 	public InvoiceScreenHandler(Stage stage, String screenPath, Invoice invoice) throws IOException {
 		super(stage, screenPath);
 		this.invoice = invoice;
 		setInvoiceInfo();
 	}
 	//no coupling
+	//Procedural cohesion
 	private void setInvoiceInfo(){
 		HashMap<String, String> deliveryInfo = invoice.getOrder().getDeliveryInfo();
 		name.setText(deliveryInfo.get("name"));
@@ -88,6 +90,7 @@ public class InvoiceScreenHandler extends BaseScreenHandler {
 
 	}
 	//no coupling
+	//Coincidental cohesion
 	@FXML
 	void confirmInvoice(MouseEvent event) throws IOException {
 		BaseScreenHandler paymentScreen = new PaymentScreenHandler(this.stage, Configs.PAYMENT_SCREEN_PATH, invoice);
