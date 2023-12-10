@@ -22,10 +22,12 @@ public class Utils {
 	}
 
 	//control coupling
+	// Coincidental cohesion
 	public static Logger getLogger(String className) {
 		return Logger.getLogger(className);
 	}
 
+	// Coincidental cohesion
 	public static String getCurrencyFormat(int num) {
 		Locale vietname = new Locale("vi", "VN");
 		NumberFormat defaultFormat = NumberFormat.getCurrencyInstance(vietname);
@@ -38,6 +40,8 @@ public class Utils {
 	 * @author hieudm
 	 * @return the current time as {@link java.lang.String String}.
 	 */
+
+	// Coincidental cohesion
 	public static String getToday() {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	    Date date = new Date();
@@ -54,6 +58,7 @@ public class Utils {
 	 */
 
 	//Data coupling
+	// Coincidental cohesion
 	public static String md5(String message) {
 		String digest = null;
 		try {

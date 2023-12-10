@@ -46,6 +46,7 @@ public class PaymentController extends BaseController {
 	 */
 
 	// no coupling
+	//Coincidental cohesion vì khoong lieen quan đến các phương thức khác
 	private String getExpirationDate(String date) throws InvalidCardException {
 		String[] strs = date.split("/");
 		if (strs.length != 2) {

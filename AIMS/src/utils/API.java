@@ -26,6 +26,7 @@ public class API {
 	/*
 	* Data coupling
 	* */
+	/*Communicational cohesion dùng chung url với post*/
 	public static String get(String url, String token) throws Exception {
 		LOGGER.info("Request URL: " + url + "\n");
 		URL line_api_url = new URL(url);
@@ -48,6 +49,7 @@ public class API {
 
 	int var;
 	/*Stamp coupling with data */
+	/*Communicational cohesion dùng chung url với get*/
 	public static String post(String url, String data
 //			, String token
 	) throws IOException {
@@ -81,6 +83,8 @@ public class API {
 
 	/*Stamp coupling
 	* */
+
+	/*Logical cohesion */
 	private static void allowMethods(String... methods) {
 		try {
 			Field methodsField = HttpURLConnection.class.getDeclaredField("methods");

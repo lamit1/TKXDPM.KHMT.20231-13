@@ -59,7 +59,7 @@ public class PlaceOrderController extends BaseController{
      */
 
     // Data coupling
-    // Coincidental cohesion
+    // coincidental cohesion
     public Invoice createInvoice(Order order) {
         return new Invoice(order);
     }
@@ -71,7 +71,7 @@ public class PlaceOrderController extends BaseController{
      * @throws IOException
      */
     //no coupling
-    //coincedential cohesion
+    //Coincedential cohesion
     public void processDeliveryInfo(HashMap info) throws InterruptedException, IOException{
         LOGGER.info("Process Delivery Info");
         LOGGER.info(info.toString());
@@ -86,7 +86,7 @@ public class PlaceOrderController extends BaseController{
    */
 
     //no coupling
-    //procedural cohesion
+    //Procedural cohesion
     public void validateDeliveryInfo(HashMap<String, String> info) throws InterruptedException, IOException{
 
     }

@@ -19,7 +19,7 @@ public class BaseController {
      */
 
     //data coupling
-    //coincidental cohesion
+    //coincidental cohesion vì độc lập chức năng với getListCartMedia
     public CartMedia checkMediaInCart(Media media){
         return Cart.getCart().checkMediaInCart(media);
     }
@@ -28,7 +28,7 @@ public class BaseController {
      * This method gets the list of items in cart
      * @return List[CartMedia]
      */
-    //coincidental cohesion
+    //coincidental cohesion vì độc lập chức năng với checkMediaCart
     //no coupling
     public List getListCartMedia(){
         return Cart.getCart().getListMedia();
