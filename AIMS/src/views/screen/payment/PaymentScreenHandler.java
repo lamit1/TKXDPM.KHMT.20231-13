@@ -29,11 +29,12 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 
 	private Invoice invoice;
 // no coupling
-
+// Coincidental cohesion
 	public PaymentScreenHandler(Stage stage, String screenPath, int amount, String contents) throws IOException {
 		super(stage, screenPath);
 	}
 //data coupling
+//Functional  cohetion
 	public PaymentScreenHandler(Stage stage, String screenPath, Invoice invoice) throws IOException {
 		super(stage, screenPath);
 		this.invoice = invoice;
@@ -62,6 +63,7 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 	@FXML
 	private TextField securityCode;
 	// no coupling
+	//Procedural cohesion
 	void confirmToPayOrder() throws IOException{
 		String contents = "payorder";
 		PaymentController ctrl = (PaymentController) getBController();

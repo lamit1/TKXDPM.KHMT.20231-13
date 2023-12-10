@@ -45,12 +45,13 @@ public class ShippingScreenHandler extends BaseScreenHandler implements Initiali
 
 	private Order order;
 // data coupling
+// Functional cohesion
 	public ShippingScreenHandler(Stage stage, String screenPath, Order order) throws IOException {
 		super(stage, screenPath);
 		this.order = order;
 	}
 // no coupling
-
+// Functional cohesion
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		final BooleanProperty firstTime = new SimpleBooleanProperty(true); // Variable to store the focus on stage load
@@ -63,7 +64,7 @@ public class ShippingScreenHandler extends BaseScreenHandler implements Initiali
 		this.province.getItems().addAll(Configs.PROVINCES);
 	}
 // no coupling
-
+// Coincidental cohesion
 	@FXML
 	void submitDeliveryInfo(MouseEvent event) throws IOException, InterruptedException, SQLException {
 
@@ -96,7 +97,7 @@ public class ShippingScreenHandler extends BaseScreenHandler implements Initiali
 		InvoiceScreenHandler.show();
 	}
 // no coupling
-
+//  Procedural cohesion
 	public PlaceOrderController getBController(){
 		return (PlaceOrderController) super.getBController();
 	}

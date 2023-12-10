@@ -13,7 +13,7 @@ public class FXMLScreenHandler {
 	protected FXMLLoader loader;
 	protected AnchorPane content;
 // no coupling
-
+// Functional cohesion
 	public FXMLScreenHandler(String screenPath) throws IOException {
 		this.loader = new FXMLLoader(getClass().getResource(screenPath));
 		// Set this class as the controller
@@ -29,7 +29,7 @@ public class FXMLScreenHandler {
 		return this.loader;
 	}
 // no coupling
-
+// Coincidental cohesion
 	public void setImage(ImageView imv, String path){
 		File file = new File(path);
 		Image img = new Image(file.toURI().toString());

@@ -55,7 +55,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 	private Button btnPlaceOrder;
 
 	//no coupling
-
+	// Functional cohesion
 	public CartScreenHandler(Stage stage, String screenPath) throws IOException {
 		super(stage, screenPath);
 
@@ -142,11 +142,14 @@ public class CartScreenHandler extends BaseScreenHandler {
 	}
 
 	//no coupling
+	// Coincidental cohesion
+	
 	public void updateCart() throws SQLException{
 		getBController().checkAvailabilityOfProduct();
 		displayCartWithMediaAvailability();
 	}
-	//no coupling
+	//no coupling	
+	// Procedural cohesion
 	void updateCartAmount(){
 		// calculate subtotal and amount
 		int subtotal = getBController().getCartSubtotal();
@@ -160,6 +163,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 		labelAmount.setText(Utils.getCurrencyFormat(amount));
 	}
 	//no coupling
+	//Functional cohesion
 	private void displayCartWithMediaAvailability(){
 		// clear all old cartMedia
 		vboxCart.getChildren().clear();

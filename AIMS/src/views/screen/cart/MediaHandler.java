@@ -60,6 +60,7 @@ public class MediaHandler extends FXMLScreenHandler {
 	private CartScreenHandler cartScreen;
 
 	// Functional cohesion
+	// Procedural cohesion
 	public MediaHandler(String screenPath, CartScreenHandler cartScreen) throws IOException {
 		super(screenPath);
 		this.cartScreen = cartScreen;
@@ -102,6 +103,7 @@ public class MediaHandler extends FXMLScreenHandler {
 
 
 	// no coupling
+	//  Procedural cohesion
 	private void initializeSpinner(){
 		SpinnerValueFactory<Integer> valueFactory = //
 			new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, cartMedia.getQuantity());

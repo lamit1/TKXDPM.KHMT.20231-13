@@ -11,6 +11,8 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
+import javax.swing.JScrollPane.ScrollBar;
+
 import common.exception.ViewCartException;
 import controller.BaseController;
 import controller.HomeController;
@@ -62,25 +64,32 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
 
     private List homeItems;
 
+
     public HomeScreenHandler(Stage stage, String screenPath) throws IOException{
         super(stage, screenPath);
     }
+
     //no coupling
+    // Coincidental cohesion
     public Label getNumMediaCartLabel(){
         return this.numMediaInCart;
     }
     //no coupling
+    // Procedural cohesion
     public HomeController getBController() {
         return (HomeController) super.getBController();
     }
     //no coupling
+        // Coincidental cohesion
+
+    
     @Override
     public void show() {
         numMediaInCart.setText(String.valueOf(Cart.getCart().getListMedia().size()) + " media");
         super.show();
     }
     //no coupling
-
+    // Functional cohesion
     @Override
     public void initialize(URL arg0, ResourceBundle arg1) {
         setBController(new HomeController());
@@ -120,7 +129,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         addMenuItem(2, "CD", splitMenuBtnSearch);
     }
     //no coupling
-
+    // Coincidental cohesion
     public void setImage(){
         // fix image path caused by fxml
         File file1 = new File(Configs.IMAGE_PATH + "/" + "Logo.png");
@@ -132,6 +141,8 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
         cartImage.setImage(img2);
     }
 
+    // Procedural cohesion
+    //
     public void addMediaHome(List items){
         ArrayList mediaItems = (ArrayList)((ArrayList) items).clone();
         hboxMedia.getChildren().forEach(node -> {
