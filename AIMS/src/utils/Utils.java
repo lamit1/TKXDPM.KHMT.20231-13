@@ -22,7 +22,7 @@ public class Utils {
 	}
 
 	//control coupling
-	// Coincidental cohesion
+	// Coincidental cohesion ///
 	public static Logger getLogger(String className) {
 		return Logger.getLogger(className);
 	}
@@ -41,7 +41,7 @@ public class Utils {
 	 * @return the current time as {@link java.lang.String String}.
 	 */
 
-	// Coincidental cohesion
+	// Coincidental cohesion ////
 	public static String getToday() {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 	    Date date = new Date();
@@ -58,7 +58,7 @@ public class Utils {
 	 */
 
 	//Data coupling
-	// Coincidental cohesion
+	// Coincidental cohesion ////////
 	public static String md5(String message) {
 		String digest = null;
 		try {
