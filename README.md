@@ -9,8 +9,6 @@ Template for managing Capstone's project in the Software Design and Construction
   - [What's included](#whats-included)
   - [Report Content](#report-content)
   - [Pull request template](#pull-request-template)
-  - [QA](#qa)
-  - [Creators](#creators)
 
 ## Quick start
 
@@ -134,41 +132,60 @@ The recommended report structure will have a format as follows:
   - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/7]](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/6)
   - Specific implementation details:
     - Add comment cohesion in folder screen
+</detals>
 
 </details>
-<summary>Team Member 1</summary>
+
+</details>
+
+---
+
+<details>
+  <summary>W15: 10/12/2023~17/12/2023 </summary>
+<br>
+<details>
+<summary>Nông Hoàng Lâm</summary>
 <br>
 
 - Assigned tasks:
-  - Task 1
-  - Task 2
-  - ...
+  - Refactor folder entity and subsystem
+  - Comment SOLID on both folder entity and subsystem
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/8](Pull request week 15)
   - Specific implementation details:
-    - Describe specific in detail what you did last week
-    - You can attach images if you want
+    - Refactor folder entity (Cart, CartMedia, OrderMedia, ...) and subsystem(VNPayManager)
+    - Comment SOLID on both folder entity and subsystem
 
 </details>
 
 <details>
-<summary>Team Member 2</summary>
+<summary>Nguyễn Ngọc Linh</summary>
 <br>
 
 - Assigned tasks:
-  - Task 1
-  - Task 2
-  - ...
+  - Cohesion Comment on controller and ultil folder
 
 - Implementation details:
-  - Pull Request(s): [Attach links to your pull requests here. You can attach multiple pull requests]()
+  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/6]](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/6)
   - Specific implementation details:
-    - Describe specific in detail what you did last week
-    - You can attach images if you want
+    - Add comment cohesion in folder controller and ultil
 
 </details>
 
+
+<details>
+<summary>VŨ VĂN LỢI</summary>
+<br>
+
+- Assigned tasks:
+  - Cohesion Comment on screen folder
+
+- Implementation details:
+  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/7]](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/6)
+  - Specific implementation details:
+    - Add comment cohesion in folder screen
+</details>
 </details>
 
 ---
