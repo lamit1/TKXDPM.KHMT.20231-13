@@ -11,7 +11,7 @@ import common.exception.MediaNotAvailableException;
 import common.exception.PlaceOrderException;
 import controller.PlaceOrderController;
 import controller.ViewCartController;
-import entity.cart.CartMedia;
+import entity.media.QuantityMedia;
 import entity.order.Order;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -55,7 +55,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 	private Button btnPlaceOrder;
 
 	//no coupling
-
+	// Functional cohesion
 	public CartScreenHandler(Stage stage, String screenPath) throws IOException {
 		super(stage, screenPath);
 
@@ -142,11 +142,14 @@ public class CartScreenHandler extends BaseScreenHandler {
 	}
 
 	//no coupling
+	// Coincidental cohesion
+	
 	public void updateCart() throws SQLException{
 		getBController().checkAvailabilityOfProduct();
 		displayCartWithMediaAvailability();
 	}
-	//no coupling
+	//no coupling	
+	// Procedural cohesion
 	void updateCartAmount(){
 		// calculate subtotal and amount
 		int subtotal = getBController().getCartSubtotal();
@@ -160,6 +163,7 @@ public class CartScreenHandler extends BaseScreenHandler {
 		labelAmount.setText(Utils.getCurrencyFormat(amount));
 	}
 	//no coupling
+	//Functional cohesion
 	private void displayCartWithMediaAvailability(){
 		// clear all old cartMedia
 		vboxCart.getChildren().clear();
@@ -171,9 +175,9 @@ public class CartScreenHandler extends BaseScreenHandler {
 			for (Object cm : lstMedia) {
 
 				// display the attribute of vboxCart media
-				CartMedia cartMedia = (CartMedia) cm;
+				QuantityMedia quantityMedia = (QuantityMedia) cm;
 				MediaHandler mediaCartScreen = new MediaHandler(Configs.CART_MEDIA_PATH, this);
-				mediaCartScreen.setCartMedia(cartMedia);
+				mediaCartScreen.setCartMedia(quantityMedia);
 
 				// add spinner
 				vboxCart.getChildren().add(mediaCartScreen.getContent());

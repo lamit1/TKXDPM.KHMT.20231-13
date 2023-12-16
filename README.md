@@ -109,17 +109,33 @@ The recommended report structure will have a format as follows:
 </details>
 
 <details>
-<summary>Team Member 2</summary>
+<summary>Nguyễn Ngọc Linh</summary>
 <br>
 
 - Assigned tasks:
-  - Task 1
-  - Task 2
-  - ...
+  - Cohesion Comment on controller and ultil folder
+
+- Implementation details:
+  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/6]](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/6)
+  - Specific implementation details:
+    - Add comment cohesion in folder controller and ultil
+
+</details>
+
+
 <details>
-  <summary>W2: 01/10/2023~08/10/2023 </summary>
+<summary>VŨ VĂN LỢI</summary>
 <br>
-<details>
+
+- Assigned tasks:
+  - Cohesion Comment on screen folder
+
+- Implementation details:
+  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/7]](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/6)
+  - Specific implementation details:
+    - Add comment cohesion in folder screen
+
+</details>
 <summary>Team Member 1</summary>
 <br>
 

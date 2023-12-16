@@ -18,7 +18,7 @@ public class HomeController extends BaseController{
      * @throws SQLException
      */
 
-    //coincidental cohesion
+    //Coincidental Cohesion
     // no coupling
     public List getAllMedia() throws SQLException{
         return new Media().getAllMedia();

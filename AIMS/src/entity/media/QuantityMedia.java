@@ -1,15 +1,18 @@
-package entity.cart;
+package entity.media;
 
-import entity.media.Media;
 
-public class CartMedia {
+/**
+ * Thực hiện đúng Single Responsibility:
+ * Thực hiện các lưu trữ dữ liệu của Media và các lớp khác như Cart và Order
+ */
+public class QuantityMedia {
     
     private Media media;
     private int quantity;
     private int price;
 
 
-    public CartMedia(Media media, Cart cart, int quantity, int price) {
+    public QuantityMedia(Media media, int quantity, int price) {
         this.media = media;
         this.quantity = quantity;
         this.price = price;
@@ -19,7 +22,6 @@ public class CartMedia {
      * All function here are all communicational cohesion
      * because all are used for purpose get cart media information
      */
-
     public Media getMedia() {
         return this.media;
     }

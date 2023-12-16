@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import entity.payment.PaymentTransaction;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -13,30 +14,19 @@ import javafx.stage.Stage;
 import views.screen.BaseScreenHandler;
 
 public class ResultScreenHandler extends BaseScreenHandler {
-
-	private String result;
-	private String message;
-
-	public ResultScreenHandler(Stage stage, String screenPath, String result, String message) throws IOException {
-		super(stage, screenPath);
-		resultLabel.setText(result);
-		messageLabel.setText(message);
-	}
-
-	@FXML
-	private Label pageTitle;
-
 	@FXML
 	private Label resultLabel;
-
-	@FXML
-	private Button okButton;
-
 	@FXML
 	private Label messageLabel;
+	//  Functional cohesion
+	public ResultScreenHandler(Stage stage, String screenPath, PaymentTransaction transaction) throws IOException {
+		super(stage, screenPath);
+		resultLabel.setText(transaction.getStatus());
+		messageLabel.setText(transaction.getTransactionContent());
+	}
 
 	@FXML// no coupling
-
+	// Coincidental cohesion
 	void confirmPayment(MouseEvent event) throws IOException {
 		homeScreenHandler.show();
 	}

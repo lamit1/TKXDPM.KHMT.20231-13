@@ -3,7 +3,7 @@ package controller;
 import java.util.List;
 
 import entity.cart.Cart;
-import entity.cart.CartMedia;
+import entity.media.QuantityMedia;
 import entity.media.Media;
 
 /**
@@ -19,8 +19,8 @@ public class BaseController {
      */
 
     //data coupling
-    //coincidental cohesion
-    public CartMedia checkMediaInCart(Media media){
+    //coincidental cohesion vì độc lập chức năng với getListCartMedia
+    public QuantityMedia checkMediaInCart(Media media){
         return Cart.getCart().checkMediaInCart(media);
     }
 
@@ -28,7 +28,7 @@ public class BaseController {
      * This method gets the list of items in cart
      * @return List[CartMedia]
      */
-    //coincidental cohesion
+    //coincidental cohesion vì độc lập chức năng với checkMediaCart
     //no coupling
     public List getListCartMedia(){
         return Cart.getCart().getListMedia();

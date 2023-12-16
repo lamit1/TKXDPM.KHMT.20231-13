@@ -24,6 +24,7 @@ public class MyMap extends LinkedHashMap<String, Object> {
 	 *         https://hg.openjdk.java.net/jdk8/jdk8/jdk/file/tip/src/share/classes/java/util/Hashtable.java
 	 * @return a {@link java.lang.String String}.
 	 */
+	/*Coincidental cohesion */
 	public String toJSON() {
 		int max = size() - 1;
 		if (max == -1)
@@ -98,6 +99,7 @@ public class MyMap extends LinkedHashMap<String, Object> {
 
 	/*
 	* Data coupling */
+	/*Logical cohesion */
 	private static String getNextTerm(String str, int idx) {
 		if (str == null || idx >= str.length() || str.charAt(idx) != '"') {
 			throw new IllegalArgumentException("Cannot resolve the input.");
@@ -134,6 +136,7 @@ public class MyMap extends LinkedHashMap<String, Object> {
 
 	/*
 	 * Data coupling */
+	/* Logical cohesion*/
 	public static MyMap toMyMap(String str, int idx) throws IllegalArgumentException {
 		if (str == null || str.length() < 2 || str.charAt(idx) != '{') {
 			throw new IllegalArgumentException("Cannot resolve the input.");
