@@ -7,7 +7,10 @@ import java.util.Date;
 import java.util.List;
 
 import entity.db.AIMSDB;
-
+/**
+ * Thực hiện đúng Single Responsibility:
+ * Thực hiện các lưu trữ dữ liệu của Book
+ */
 public class Book extends Media {
 
     String author;

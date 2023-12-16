@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import common.exception.MediaUpdateException;
 import common.exception.ViewCartException;
 import entity.cart.Cart;
-import entity.cart.CartMedia;
+import entity.media.QuantityMedia;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -55,7 +55,7 @@ public class MediaHandler extends FXMLScreenHandler {
 	@FXML
 	protected Button btnDelete;
 
-	private CartMedia cartMedia;
+	private QuantityMedia quantityMedia;
 	private Spinner<Integer> spinner;
 	private CartScreenHandler cartScreen;
 
@@ -69,16 +69,16 @@ public class MediaHandler extends FXMLScreenHandler {
 
 	// functional cohesion
 	//no coupling
-	public void setCartMedia(CartMedia cartMedia) {
-		this.cartMedia = cartMedia;
+	public void setCartMedia(QuantityMedia quantityMedia) {
+		this.quantityMedia = quantityMedia;
 		setMediaInfo();
 	}
 	//no coupling
 	// functional cohesion
 	private void setMediaInfo() {
-		title.setText(cartMedia.getMedia().getTitle());
-		price.setText(Utils.getCurrencyFormat(cartMedia.getPrice()));
-		File file = new File(cartMedia.getMedia().getImageURL());
+		title.setText(quantityMedia.getMedia().getTitle());
+		price.setText(Utils.getCurrencyFormat(quantityMedia.getPrice()));
+		File file = new File(quantityMedia.getMedia().getImageURL());
 		Image im = new Image(file.toURI().toString());
 		image.setImage(im);
 		image.setPreserveRatio(false);
@@ -89,9 +89,9 @@ public class MediaHandler extends FXMLScreenHandler {
 		btnDelete.setFont(Configs.REGULAR_FONT);
 		btnDelete.setOnMouseClicked(e -> {
 			try {
-				Cart.getCart().removeCartMedia(cartMedia); // update user cart
+				Cart.getCart().removeCartMedia(quantityMedia); // update user cart
 				cartScreen.updateCart(); // re-display user cart
-				LOGGER.info("Deleted " + cartMedia.getMedia().getTitle() + " from the cart");
+				LOGGER.info("Deleted " + quantityMedia.getMedia().getTitle() + " from the cart");
 			} catch (SQLException exp) {
 				exp.printStackTrace();
 				throw new ViewCartException();
@@ -106,25 +106,25 @@ public class MediaHandler extends FXMLScreenHandler {
 	//  Procedural cohesion
 	private void initializeSpinner(){
 		SpinnerValueFactory<Integer> valueFactory = //
-			new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, cartMedia.getQuantity());
+			new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 100, quantityMedia.getQuantity());
 		spinner = new Spinner<Integer>(valueFactory);
 		spinner.setOnMouseClicked( e -> {
 			try {
 				int numOfProd = this.spinner.getValue();
-				int remainQuantity = cartMedia.getMedia().getQuantity();
+				int remainQuantity = quantityMedia.getMedia().getQuantity();
 				LOGGER.info("NumOfProd: " + numOfProd + " -- remainOfProd: " + remainQuantity);
 				if (numOfProd > remainQuantity){
-					LOGGER.info("product " + cartMedia.getMedia().getTitle() + " only remains " + remainQuantity + " (required " + numOfProd + ")");
+					LOGGER.info("product " + quantityMedia.getMedia().getTitle() + " only remains " + remainQuantity + " (required " + numOfProd + ")");
 					labelOutOfStock.setText("Sorry, Only " + remainQuantity + " remain in stock");
 					spinner.getValueFactory().setValue(remainQuantity);
 					numOfProd = remainQuantity;
 				}
 
 				// update quantity of mediaCart in useCart
-				cartMedia.setQuantity(numOfProd);
+				quantityMedia.setQuantity(numOfProd);
 
 				// update the total of mediaCart
-				price.setText(Utils.getCurrencyFormat(numOfProd*cartMedia.getPrice()));
+				price.setText(Utils.getCurrencyFormat(numOfProd* quantityMedia.getPrice()));
 
 				// update subtotal and amount of Cart
 				cartScreen.updateCartAmount();

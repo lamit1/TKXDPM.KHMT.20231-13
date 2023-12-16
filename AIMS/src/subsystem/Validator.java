@@ -4,6 +4,12 @@ import common.exception.InvalidInputException;
 
 import java.util.regex.Pattern;
 
+
+/* Sử dụng đúng nguyên lý Single Responsibility bởi vì
+lớp Validator chỉ có duy nhất một nhiệm vụ là tạo validate content
+Sai về nguyên lý Open Close vì như này sẽ không dễ dàng để mở rộng nếu có thay đổi
+ */
+
 public class Validator {
     // No cohesion
     public boolean validate(double amounts, String content) throws InvalidInputException {

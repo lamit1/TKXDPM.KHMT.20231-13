@@ -1,15 +1,15 @@
 package entity.invoice;
 
 import entity.order.Order;
-
+/**
+ * Thực hiện đúng Single Responsibility:
+ * Thực hiện các lưu trữ dữ liệu của DVD
+ */
 public class Invoice {
 
     private Order order;
     private int amount;
-    
-    public Invoice(){
 
-    }
     /**
      * All function here are all communicational cohesion
      * because all are used for purpose get invoice information
@@ -22,15 +22,15 @@ public class Invoice {
         return order;
     }
 
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public void saveInvoice(){
+        
     }
 
     public int getAmount() {
         return amount;
     }
 
-    public void saveInvoice(){
-        
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }

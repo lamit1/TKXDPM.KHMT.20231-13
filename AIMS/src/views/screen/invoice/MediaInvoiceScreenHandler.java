@@ -3,10 +3,9 @@ package views.screen.invoice;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import entity.order.OrderMedia;
+import entity.media.QuantityMedia;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -39,7 +38,7 @@ public class MediaInvoiceScreenHandler extends FXMLScreenHandler{
     @FXML
     private Label price;
 
-    private OrderMedia orderMedia;
+    private QuantityMedia orderMedia;
     // no coupling
     // Coincidental cohesion
     public MediaInvoiceScreenHandler(String screenPath) throws IOException{
@@ -47,7 +46,7 @@ public class MediaInvoiceScreenHandler extends FXMLScreenHandler{
     }
 // data coupling
     // Coincidental cohesion
-    public void setOrderMedia(OrderMedia orderMedia) throws SQLException{
+    public void setOrderMedia(QuantityMedia orderMedia) throws SQLException{
         this.orderMedia = orderMedia;
         setMediaInfo();
     }

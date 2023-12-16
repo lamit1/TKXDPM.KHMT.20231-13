@@ -1,45 +1,20 @@
 package entity.order;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 
-import utils.Configs;
+import entity.cart.Cart;
 
+/**
+ * Thực hiện đúng Single Responsibility:
+ * Thực hiện các lưu trữ dữ liệu của Order
+ */
 public class Order {
-    
     private int shippingFees;
-    private List lstOrderMedia;
     private HashMap<String, String> deliveryInfo;
-
     /**
      * All function here are all communicational cohesion
      * because all are used for purpose get order media information
      */
-    public Order(){
-        this.lstOrderMedia = new ArrayList<>();
-    }
-
-    public Order(List lstOrderMedia) {
-        this.lstOrderMedia = lstOrderMedia;
-    }
-
-    public void addOrderMedia(OrderMedia om){
-        this.lstOrderMedia.add(om);
-    }
-
-    public void removeOrderMedia(OrderMedia om){
-        this.lstOrderMedia.remove(om);
-    }
-
-    public List getlstOrderMedia() {
-        return this.lstOrderMedia;
-    }
-
-    public void setlstOrderMedia(List lstOrderMedia) {
-        this.lstOrderMedia = lstOrderMedia;
-    }
-
     public void setShippingFees(int shippingFees) {
         this.shippingFees = shippingFees;
     }
@@ -56,13 +31,8 @@ public class Order {
         this.deliveryInfo = deliveryInfo;
     }
 
-    public int getAmount(){
-        double amount = 0;
-        for (Object object : lstOrderMedia) {
-            OrderMedia om = (OrderMedia) object;
-            amount += om.getPrice();
-        }
-        return (int) (amount + (Configs.PERCENT_VAT/100)*amount);
+    public int getOrderAmount(){
+        return Cart.getCart().calSubtotal() + shippingFees;
     }
 
 }

@@ -7,6 +7,7 @@ import controller.PaymentController;
 import entity.cart.Cart;
 import common.exception.PlaceOrderException;
 import entity.invoice.Invoice;
+import entity.payment.PaymentTransaction;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -20,13 +21,10 @@ import views.screen.BaseScreenHandler;
 import views.screen.popup.PopupScreen;
 
 public class PaymentScreenHandler extends BaseScreenHandler {
-
 	@FXML
 	private Button btnConfirmPayment;
-
 	@FXML
 	private ImageView loadingImage;
-
 	private Invoice invoice;
 // no coupling
 // Coincidental cohesion
@@ -47,28 +45,14 @@ public class PaymentScreenHandler extends BaseScreenHandler {
 			}
 		});
 	}
-
-	@FXML
-	private Label pageTitle;
-
-	@FXML
-	private TextField cardNumber;
-
-	@FXML
-	private TextField holderName;
-
-	@FXML
-	private TextField expirationDate;
-
-	@FXML
-	private TextField securityCode;
 	// no coupling
 	//Procedural cohesion
 	void confirmToPayOrder() throws IOException{
-		String contents = "payorder";
+		String contents = "Success";
 		PaymentController ctrl = (PaymentController) getBController();
-		Map<String, String> response = ctrl.payOrder(invoice.getAmount(), contents);
-		BaseScreenHandler resultScreen = new ResultScreenHandler(this.stage, Configs.RESULT_SCREEN_PATH, response.get("RESULT"), response.get("MESSAGE") );
+		PaymentTransaction transaction = ctrl.payOrder(invoice.getAmount(), contents);
+		// Stamp coupling
+		BaseScreenHandler resultScreen = new ResultScreenHandler(this.stage, Configs.RESULT_SCREEN_PATH, transaction);
 		resultScreen.setPreviousScreen(this);
 		resultScreen.setHomeScreenHandler(homeScreenHandler);
 		resultScreen.setScreenTitle("Result Screen");

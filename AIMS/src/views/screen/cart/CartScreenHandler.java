@@ -11,7 +11,7 @@ import common.exception.MediaNotAvailableException;
 import common.exception.PlaceOrderException;
 import controller.PlaceOrderController;
 import controller.ViewCartController;
-import entity.cart.CartMedia;
+import entity.media.QuantityMedia;
 import entity.order.Order;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -175,9 +175,9 @@ public class CartScreenHandler extends BaseScreenHandler {
 			for (Object cm : lstMedia) {
 
 				// display the attribute of vboxCart media
-				CartMedia cartMedia = (CartMedia) cm;
+				QuantityMedia quantityMedia = (QuantityMedia) cm;
 				MediaHandler mediaCartScreen = new MediaHandler(Configs.CART_MEDIA_PATH, this);
-				mediaCartScreen.setCartMedia(cartMedia);
+				mediaCartScreen.setCartMedia(quantityMedia);
 
 				// add spinner
 				vboxCart.getChildren().add(mediaCartScreen.getContent());

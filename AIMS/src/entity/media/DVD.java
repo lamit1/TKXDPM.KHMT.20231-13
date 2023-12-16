@@ -4,7 +4,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Date;
 import java.util.List;
-
+/**
+ * Thực hiện đúng Single Responsibility:
+ * Thực hiện các lưu trữ dữ liệu của DVD
+ */
 public class DVD extends Media {
 
     String discType;

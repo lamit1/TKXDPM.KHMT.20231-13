@@ -11,7 +11,6 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
-import javax.swing.JScrollPane.ScrollBar;
 
 import common.exception.ViewCartException;
 import controller.BaseController;

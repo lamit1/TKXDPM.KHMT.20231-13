@@ -1,10 +1,8 @@
 package controller;
 
 import entity.cart.Cart;
-import entity.cart.CartMedia;
 import entity.invoice.Invoice;
 import entity.order.Order;
-import entity.order.OrderMedia;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -41,15 +39,7 @@ public class PlaceOrderController extends BaseController{
     //no coupling
     //Coincedential cohesion
     public Order createOrder() throws SQLException{
-        Order order = new Order();
-        for (Object object : Cart.getCart().getListMedia()) {
-            CartMedia cartMedia = (CartMedia) object;
-            OrderMedia orderMedia = new OrderMedia(cartMedia.getMedia(),
-                                                   cartMedia.getQuantity(),
-                                                   cartMedia.getPrice());
-            order.getlstOrderMedia().add(orderMedia);
-        }
-        return order;
+        return new Order();
     }
 
     /**
@@ -121,8 +111,8 @@ public class PlaceOrderController extends BaseController{
     //coincidental cohesion
     public int calculateShippingFee(Order order){
         Random rand = new Random();
-        int fees = (int)( ( (rand.nextFloat()*10)/100 ) * order.getAmount() );
-        LOGGER.info("Order Amount: " + order.getAmount() + " -- Shipping Fees: " + fees);
+        int fees = (int)( ( (rand.nextFloat()*10)/100 ) * order.getOrderAmount() );
+        LOGGER.info("Order Amount: " + order.getOrderAmount() + " -- Shipping Fees: " + fees);
         return fees;
     }
 }
