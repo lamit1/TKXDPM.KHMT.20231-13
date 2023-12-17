@@ -26,6 +26,7 @@ import views.screen.BaseScreenHandler;
 import views.screen.popup.PopupScreen;
 import views.screen.shipping.ShippingScreenHandler;
 
+// S principle
 public class CartScreenHandler extends BaseScreenHandler {
 
 	private static Logger LOGGER = Utils.getLogger(CartScreenHandler.class.getName());
@@ -143,12 +144,12 @@ public class CartScreenHandler extends BaseScreenHandler {
 
 	//no coupling
 	// Coincidental cohesion
-	
+
 	public void updateCart() throws SQLException{
 		getBController().checkAvailabilityOfProduct();
 		displayCartWithMediaAvailability();
 	}
-	//no coupling	
+	//no coupling
 	// Procedural cohesion
 	void updateCartAmount(){
 		// calculate subtotal and amount
