@@ -179,12 +179,12 @@ The recommended report structure will have a format as follows:
 <br>
 
 - Assigned tasks:
-  - Cohesion Comment on screen folder
+  - add comment OO design and refactor code in screen package
 
 - Implementation details:
-  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/7]](https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/6)
+  - Pull Request(s): [https://github.com/lamit1/TKXDPM.KHMT.20231-13/pull/10]
   - Specific implementation details:
-    - Add comment cohesion in folder screen
+    -add comment OO design and refactor code in screen package
 </details>
 </details>
 
