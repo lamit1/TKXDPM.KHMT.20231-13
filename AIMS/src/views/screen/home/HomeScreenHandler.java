@@ -11,8 +11,6 @@ import java.util.Random;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
-import javax.swing.JScrollPane.ScrollBar;
-
 import common.exception.ViewCartException;
 import controller.BaseController;
 import controller.HomeController;
@@ -33,7 +31,10 @@ import utils.Utils;
 import views.screen.BaseScreenHandler;
 import views.screen.cart.CartScreenHandler;
 
+import static views.screen.home.MenuMediaItem.addMediaHome;
+import static views.screen.home.MenuMediaItem.addMenuItem;
 
+// S principle
 public class HomeScreenHandler extends BaseScreenHandler implements Initializable{
 
     public static Logger LOGGER = Utils.getLogger(HomeScreenHandler.class.getName());
@@ -82,7 +83,7 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
     //no coupling
         // Coincidental cohesion
 
-    
+
     @Override
     public void show() {
         numMediaInCart.setText(String.valueOf(Cart.getCart().getListMedia().size()) + " media");
@@ -143,55 +144,55 @@ public class HomeScreenHandler extends BaseScreenHandler implements Initializabl
 
     // Procedural cohesion
     //
-    public void addMediaHome(List items){
-        ArrayList mediaItems = (ArrayList)((ArrayList) items).clone();
-        hboxMedia.getChildren().forEach(node -> {
-            if (!node.getClass().equals(ScrollBar.class)) {
-                VBox vBox = (VBox) node;
-                vBox.getChildren().clear();
-            }
-        });
-        while(!mediaItems.isEmpty()){
-            hboxMedia.getChildren().forEach(node -> {
-                if (!node.getClass().equals(ScrollBar.class)) {
-                    int vid = hboxMedia.getChildren().indexOf(node);
-                    VBox vBox = (VBox) node;
-                    while(vBox.getChildren().size()<3 && !mediaItems.isEmpty()){
-                        MediaHandler media = (MediaHandler) mediaItems.get(0);
-                        vBox.getChildren().add(media.getContent());
-                        mediaItems.remove(media);
-                    }
-                }
-            });
-            return;
-        }
-    }
-    //no coupling
-    // functional cohesion
-    private void addMenuItem(int position, String text, MenuButton menuButton){
-        MenuItem menuItem = new MenuItem();
-        Label label = new Label();
-        label.prefWidthProperty().bind(menuButton.widthProperty().subtract(31));
-        label.setText(text);
-        label.setTextAlignment(TextAlignment.RIGHT);
-        menuItem.setGraphic(label);
-        menuItem.setOnAction(e -> {
-            hboxMedia.getChildren().forEach(node -> {
-                VBox vBox = (VBox) node;
-                vBox.getChildren().clear();
-            });
-            List filteredItems = new ArrayList<>();
-            homeItems.forEach(me -> {
-                MediaHandler media = (MediaHandler) me;
-                if (media.getMedia().getTitle().toLowerCase().startsWith(text.toLowerCase())){
-                    filteredItems.add(media);
-                }
-            });
-            addMediaHome(filteredItems);
-        });
-        menuButton.getItems().add(position, menuItem);
-    }
-
+//    public void addMediaHome(List items){
+//        ArrayList mediaItems = (ArrayList)((ArrayList) items).clone();
+//        hboxMedia.getChildren().forEach(node -> {
+//            if (!node.getClass().equals(ScrollBar.class)) {
+//                VBox vBox = (VBox) node;
+//                vBox.getChildren().clear();
+//            }
+//        });
+//        while(!mediaItems.isEmpty()){
+//            hboxMedia.getChildren().forEach(node -> {
+//                if (!node.getClass().equals(ScrollBar.class)) {
+//                    int vid = hboxMedia.getChildren().indexOf(node);
+//                    VBox vBox = (VBox) node;
+//                    while(vBox.getChildren().size()<3 && !mediaItems.isEmpty()){
+//                        MediaHandler media = (MediaHandler) mediaItems.get(0);
+//                        vBox.getChildren().add(media.getContent());
+//                        mediaItems.remove(media);
+//                    }
+//                }
+//            });
+//            return;
+//        }
+//    }
+//    //no coupling
+//    // functional cohesion
+//    private void addMenuItem(int position, String text, MenuButton menuButton){
+//        MenuItem menuItem = new MenuItem();
+//        Label label = new Label();
+//        label.prefWidthProperty().bind(menuButton.widthProperty().subtract(31));
+//        label.setText(text);
+//        label.setTextAlignment(TextAlignment.RIGHT);
+//        menuItem.setGraphic(label);
+//        menuItem.setOnAction(e -> {
+//            hboxMedia.getChildren().forEach(node -> {
+//                VBox vBox = (VBox) node;
+//                vBox.getChildren().clear();
+//            });
+//            List filteredItems = new ArrayList<>();
+//            homeItems.forEach(me -> {
+//                MediaHandler media = (MediaHandler) me;
+//                if (media.getMedia().getTitle().toLowerCase().startsWith(text.toLowerCase())){
+//                    filteredItems.add(media);
+//                }
+//            });
+//            addMediaHome(filteredItems);
+//        });
+//        menuButton.getItems().add(position, menuItem);
+//    }
+//
 
 
 }
