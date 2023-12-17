@@ -1,6 +1,8 @@
 package subsystem;
 
 import common.exception.CanceledPaymentException;
+import common.exception.PaymentException;
+import common.exception.UnrecognizedException;
 import config.Config;
 import entity.payment.PaymentTransaction;
 
@@ -14,7 +16,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
+/* Sử dụng đúng nguyên lý Single Responsibility bởi vì
+ lớp Response chỉ có duy nhất một nhiệm vụ là tạo get Transaction
+Vi phạm nguyên lý Open Close vì lớp Response hiện tại chỉ có thể
+phục vụ duy nhất cho VNPay
+ */
 public class Response {
     private String id;
     private String contents;
@@ -22,7 +30,7 @@ public class Response {
     private double amounts;
     private String payTime;
     //Func
-    public Response(String responseString) throws CanceledPaymentException, MalformedURLException, UnsupportedEncodingException, ParseException {
+    public Response(String responseString) throws CanceledPaymentException, UnsupportedEncodingException, MalformedURLException, ParseException {
         /**
          * Common couping with Config class
          */
@@ -55,15 +63,13 @@ public class Response {
      * @return transaction
      */
     public PaymentTransaction getTransaction() throws CanceledPaymentException {
-        /**
-         *
-         */
         PaymentTransaction transaction = new PaymentTransaction(id, contents, amounts,  payTime);
         switch (responseCode){
             case "00":
+                transaction.setStatus("Payment success!");
                 //TODO: Change invoice status.
                 break;
-            default:
+            case "24":
                 throw new CanceledPaymentException("Payment was canceled!");
         }
         return transaction;

@@ -5,7 +5,10 @@ import java.util.logging.Logger;
 
 import java.sql.Connection;
 import utils.*;
-
+/**
+ * Thực hiện đúng Single Responsibility:
+ * Thực hiện các chức năng kết nối Database
+ */
 public class AIMSDB {
 
 	private static Logger LOGGER = Utils.getLogger(Connection.class.getName());

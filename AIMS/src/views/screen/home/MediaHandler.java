@@ -7,7 +7,7 @@ import java.util.logging.Logger;
 
 import common.exception.MediaNotAvailableException;
 import entity.cart.Cart;
-import entity.cart.CartMedia;
+import entity.media.QuantityMedia;
 import entity.media.Media;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -16,10 +16,8 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.shape.Rectangle;
 import utils.Utils;
 import views.screen.FXMLScreenHandler;
-import views.screen.home.HomeScreenHandler;
 import views.screen.popup.PopupScreen;
 
 public class MediaHandler extends FXMLScreenHandler{
@@ -56,15 +54,14 @@ public class MediaHandler extends FXMLScreenHandler{
                 if (spinnerChangeNumber.getValue() > media.getQuantity()) throw new MediaNotAvailableException();
                 Cart cart = Cart.getCart();
                 // if media already in cart then we will increase the quantity by 1 instead of create the new cartMedia
-                CartMedia mediaInCart = home.getBController().checkMediaInCart(media);
+                QuantityMedia mediaInCart = home.getBController().checkMediaInCart(media);
                 if (mediaInCart != null) {
-                    mediaInCart.setQuantity(mediaInCart.getQuantity() + 1);
-                }else{
-                    CartMedia cartMedia = new CartMedia(media, cart, spinnerChangeNumber.getValue(), media.getPrice());
-                    cart.getListMedia().add(cartMedia);
-                    LOGGER.info("Added " + cartMedia.getQuantity() + " " + media.getTitle() + " to cart");
+                    mediaInCart.setQuantity(mediaInCart.getQuantity() + spinnerChangeNumber.getValue());
+                } else{
+                    QuantityMedia quantityMedia = new QuantityMedia(media, spinnerChangeNumber.getValue(), media.getPrice());
+                    cart.addCartMedia(quantityMedia);
+                    LOGGER.info("Added " + quantityMedia.getQuantity() + " " + media.getTitle() + " to cart");
                 }
-
                 // subtract the quantity and redisplay
                 media.setQuantity(media.getQuantity() - spinnerChangeNumber.getValue());
                 mediaAvail.setText(String.valueOf(media.getQuantity()));

@@ -7,6 +7,13 @@ import java.nio.charset.StandardCharsets;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+
+/* Sử dụng đúng nguyên lý Single Responsibility bởi vì
+ lớp Request chỉ có duy nhất một nhiệm vụ là tạo request url
+Vi phạm nguyên lý Open Close vì lớp Request hiện tại chỉ có thể
+phục vụ duy nhất cho VNPay
+ */
+
 public class Request {
     private final String vnp_Version = "2.1.0";
     private final String vnp_Command = "pay";
@@ -32,9 +39,6 @@ public class Request {
     private String vnp_CreateDate;
     private String vnp_ExpireDate;
     private String vnp_SecureHash;
-    public Request() {
-        //Create a request instance
-    }
 
     /** Functional cohesion with Request()
      *
@@ -47,7 +51,7 @@ public class Request {
         vnp_OrderInfo = contents;
         vnp_Amount = String.valueOf((long) (amounts * 100));
 
-        Map vnp_Params = new HashMap<>();
+        Map<String, String> vnp_Params = new HashMap<>();
         vnp_Params.put("vnp_Version", vnp_Version);
         vnp_Params.put("vnp_Command", vnp_Command);
         vnp_Params.put("vnp_TmnCode", vnp_TmnCode);
@@ -72,36 +76,6 @@ public class Request {
         vnp_ExpireDate = formatter.format(cld.getTime());
         vnp_Params.put("vnp_ExpireDate", vnp_ExpireDate);
 
-
-
-        //Add Params of 2.1.0 Version
-        //Billing
-//        String email = card.get
-//        vnp_Params.put("vnp_Bill_Mobile", req.getParameter("txt_billing_mobile"));
-//        vnp_Params.put("vnp_Bill_Email", req.getParameter("txt_billing_email"));
-//        String fullName = (req.getParameter("txt_billing_fullname")).trim();
-//        if (fullName != null && !fullName.isEmpty()) {
-//            int idx = fullName.indexOf(' ');
-//            String firstName = fullName.substring(0, idx);
-//            String lastName = fullName.substring(fullName.lastIndexOf(' ') + 1);
-//            vnp_Params.put("vnp_Bill_FirstName", firstName);
-//            vnp_Params.put("vnp_Bill_LastName", lastName);
-//
-//        }
-//        vnp_Params.put("vnp_Bill_Address", req.getParameter("txt_inv_addr1"));
-//        vnp_Params.put("vnp_Bill_City", req.getParameter("txt_bill_city"));
-//        vnp_Params.put("vnp_Bill_Country", req.getParameter("txt_bill_country"));
-//        if (req.getParameter("txt_bill_state") != null && !req.getParameter("txt_bill_state").isEmpty()) {
-//            vnp_Params.put("vnp_Bill_State", req.getParameter("txt_bill_state"));
-//        }
-        // Invoice
-//        vnp_Params.put("vnp_Inv_Phone", req.getParameter("txt_inv_mobile"));
-//        vnp_Params.put("vnp_Inv_Email", req.getParameter("txt_inv_email"));
-//        vnp_Params.put("vnp_Inv_Customer", req.getParameter("txt_inv_customer"));
-//        vnp_Params.put("vnp_Inv_Address", req.getParameter("txt_inv_addr1"));
-//        vnp_Params.put("vnp_Inv_Company", req.getParameter("txt_inv_company"));
-//        vnp_Params.put("vnp_Inv_Taxcode", req.getParameter("txt_inv_taxcode"));
-//        vnp_Params.put("vnp_Inv_Type", req.getParameter("cbo_inv_type"));
         //Build data to hash and querystring
 
         List fieldNames = new ArrayList(vnp_Params.keySet());
