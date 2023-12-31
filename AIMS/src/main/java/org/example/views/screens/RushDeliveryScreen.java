@@ -36,16 +36,15 @@ public class RushDeliveryScreen {
 
     private void loadData(){
         try {
-            totalAmountsLabel.setText(String.valueOf(rushDeliveryController.getTotalAmounts()) + " đồng");
-            cartAmountsLabel.setText(String.valueOf(rushDeliveryController.getCartAmounts())+" đồng");
-            shipAmountsLabel.setText(String.valueOf(rushDeliveryController.getRushShipAmounts())+" đồng");
+            totalAmountsLabel.setText(rushDeliveryController.getTotalAmounts() + " đồng");
+            cartAmountsLabel.setText(rushDeliveryController.getCartAmounts() +" đồng");
+            shipAmountsLabel.setText(rushDeliveryController.getRushShipAmounts() +" đồng");
         } catch (AddressNotSupportRushDeliveryException | NoRushMediaException e) {
             throw new RuntimeException(e);
         }
     }
 
     public void initData() {
-
         mediaContainer.getChildren().addListener((ListChangeListener.Change<? extends Node> change) -> {
             while (change.next()) {
                 if (change.wasAdded() || change.wasRemoved()) {

@@ -10,6 +10,10 @@ import java.net.MalformedURLException;
 import java.text.ParseException;
 
 public class VNPaySubsystem  implements IPayment {
+    @Override
+    public void refund(Transaction transaction) {
+        return;
+    }
 
     public VNPayManager manager;
 

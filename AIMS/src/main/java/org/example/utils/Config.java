@@ -55,7 +55,7 @@ public class Config {
 
     public static String hmacSHA512(final String key, final String data) {
         try {
-
+            System.out.println(data);
             if (key == null || data == null) {
                 throw new NullPointerException();
             }
@@ -85,4 +85,6 @@ public class Config {
         }
         return sb.toString();
     }
+
+
 }

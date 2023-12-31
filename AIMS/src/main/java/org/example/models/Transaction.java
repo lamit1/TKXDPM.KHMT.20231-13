@@ -114,4 +114,33 @@ public class Transaction {
     public int getTransactionId() {
         return id;
     }
+
+    public static Transaction findById(int transactionId) {
+        String sql = "SELECT * FROM transaction WHERE transaction_id = ?";
+        Transaction foundTransaction = null;
+
+        try (Connection connection = new DBConnection().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+
+            preparedStatement.setInt(1, transactionId);
+
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                if (resultSet.next()) {
+                    int id = resultSet.getInt("transaction_id");
+                    double amount = resultSet.getDouble("amount");
+                    String content = resultSet.getString("contents");
+                    Timestamp time = resultSet.getTimestamp("time");
+
+                    foundTransaction = new Transaction(id, amount, content, time);
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle the exception according to your needs
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+
+        return foundTransaction;
+    }
+
 }

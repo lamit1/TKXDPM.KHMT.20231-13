@@ -67,7 +67,8 @@ public class DeliveryScreen {
                         openRushDeliveryForm();
                     } catch (IOException | AddressNotSupportRushDeliveryException | NoMediaInCartException |
                              NoRushMediaException e) {
-                        throw new RuntimeException(e);
+                        errorLabel.setText("Address not suppport rush delivery");
+                        System.err.println(e);
                     }
                 } else {
                     rushAddressField.setDisable(true);
@@ -82,17 +83,20 @@ public class DeliveryScreen {
         provinceChoiceBox.setItems(provinces);
         // init cart amount
         cartAmountsLabel.setText(deliveryController.getCartAmounts() + " đồng");
-
         //implement when choose provinceChoicebox
         provinceChoiceBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue)->{
             if (oldValue == newValue) return;
             Delivery newDelivery = getDeliveryFromForm();
             deliveryController.setDelivery(newDelivery);
-            try {
-                shipAmountsLabel.setText( deliveryController.getShipAmounts() + " đồng");
-                totalAmountsLabel.setText(deliveryController.getTotalAmounts() + " đồng");
-            } catch (AddressNotSupportRushDeliveryException | NoMediaInCartException | NoRushMediaException e) {
-                throw new RuntimeException(e);
+            if (newValue.equals("Hà Nội")) {
+                try {
+                    shipAmountsLabel.setText( deliveryController.getShipAmounts() + " đồng");
+                    totalAmountsLabel.setText(deliveryController.getTotalAmounts() + " đồng");
+                } catch (AddressNotSupportRushDeliveryException | NoMediaInCartException | NoRushMediaException e) {
+                    throw new RuntimeException(e);
+                }
+            } else {
+                rushCheckBox.setSelected(false);
             }
         });
         Delivery delivery = getDeliveryFromForm();
@@ -120,7 +124,6 @@ public class DeliveryScreen {
         cartAmountsLabel.setText(deliveryController.getCartAmounts() + " đồng");
         shipAmountsLabel.setText( deliveryController.getShipAmounts() + " đồng");
         totalAmountsLabel.setText(deliveryController.getTotalAmounts()+ " đồng");
-
     }
 
 

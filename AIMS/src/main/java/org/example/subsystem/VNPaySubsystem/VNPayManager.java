@@ -3,10 +3,8 @@ package org.example.subsystem.VNPaySubsystem;
 import org.example.exceptions.CanceledPaymentException;
 import org.example.exceptions.InvalidInputException;
 import org.example.models.Transaction;
-import org.example.subsystem.ExceptionHandler;
-import org.example.subsystem.Request;
-import org.example.subsystem.Response;
-import org.example.subsystem.Validator;
+import org.example.subsystem.VNPaySubsystem.pay.PayRequest;
+import org.example.subsystem.VNPaySubsystem.pay.Response;
 
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
@@ -25,8 +23,8 @@ public class VNPayManager {
     public Transaction payOrder(double amounts, String content) {
         try {
             if (validator.validate(amounts, content)) {
-                Request request = new Request();
-                String url = request.createUrl(content, amounts);
+                PayRequest payRequest = new PayRequest();
+                String url = payRequest.createUrl(content, amounts);
                 Response response = new Response(view.query(url));
                 return response.getTransaction();
             }
