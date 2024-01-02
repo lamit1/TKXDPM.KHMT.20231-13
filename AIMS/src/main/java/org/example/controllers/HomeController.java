@@ -20,6 +20,9 @@ import java.util.List;
 import static java.sql.DriverManager.getConnection;
 
 public class HomeController {
+
+
+    //Lấy danh sách sản phẩm
     public List<Media> getMediaItems() {
         List<Media> mediaItems = new ArrayList<>();
         Connection connection = null;

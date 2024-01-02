@@ -10,6 +10,7 @@ import java.util.List;
 
 public class Cart {
     private List<HashMap<Media,Integer>> mediaList = new ArrayList<HashMap<Media,Integer>>();
+    private List<HashMap<Media,Integer>> mediaBuyList = new ArrayList<HashMap<Media,Integer>>();
     private Cart() {}
     private static Cart cart;
     public static Cart  getCart() {
@@ -18,7 +19,28 @@ public class Cart {
         }
         return cart;
     }
+    //Thêm sản phẩm trong giỏ hàng muốn mua
+    public void addBuyMedia(Media media, int quantity) throws NotEnoughQuantityException, InvalidQuantityException {
+        if (quantity<0) {
+            throw new InvalidQuantityException("Invalid quantity!");
+        }
+        if (quantity > media.getAvailable()) {
+            throw new NotEnoughQuantityException("There are only " + media.getAvailable() + " available. You ask " + quantity);
+        }
+//        for (HashMap<Media, Integer> mediaBuy : mediaBuyList) {
+//            if (mediaBuy.containsKey(media)) {
+//                Integer currentQuantity = mediaBuy.get(media);
+//                mediaBuy.put(media, currentQuantity + quantity);
+//                return;
+//            }
+//        }
 
+        HashMap<Media, Integer> newMediaBuyMap = new HashMap<>();
+        newMediaBuyMap.put(media, quantity);
+        mediaBuyList.add(newMediaBuyMap);
+    }
+
+    //Thêm sản phẩm vào giỏ hàng với số lượng cụ thể
     public void addMedia(Media media, int quantity) throws NotEnoughQuantityException, InvalidQuantityException {
         if (quantity<0) {
             throw new InvalidQuantityException("Invalid quantity!");
@@ -38,8 +60,10 @@ public class Cart {
         mediaList.add(newMediaMap);
     }
 
+    //Giảm số lượng sản phẩm
     public void decreaseMedia(Media media){
         int quantity = 1;
+        decreaseBuyMedia(media);
         for (HashMap<Media, Integer> mediaMap : mediaList) {
             if (mediaMap.containsKey(media)) {
                 Integer currentQuantity = mediaMap.get(media);
@@ -48,11 +72,25 @@ public class Cart {
             }
         }
     }
+
+    public void decreaseBuyMedia(Media media){
+        int quantity = 1;
+        for (HashMap<Media, Integer> mediaMap : mediaBuyList) {
+            if (mediaMap.containsKey(media)) {
+                Integer currentQuantity = mediaMap.get(media);
+                mediaMap.put(media, Math.max(0, currentQuantity - quantity)); // Ensure quantity doesn't go below 0
+                return;
+            }
+        }
+    }
+
+    //Tăng số lượng sản phẩm
     public void increaseMedia(Media media) throws NotEnoughQuantityException {
         int quantity = 1; // Increase by 1
         if (quantity > media.getAvailable()) {
             throw new NotEnoughQuantityException("There are only " + media.getAvailable() + " available. You asked for " + quantity);
         }
+        increaseBuyMedia(media);
         for (HashMap<Media, Integer> mediaMap : mediaList) {
             if (mediaMap.containsKey(media)) {
                 Integer currentQuantity = mediaMap.get(media);
@@ -62,7 +100,24 @@ public class Cart {
         }
     }
 
+    public void increaseBuyMedia(Media media) throws NotEnoughQuantityException {
+        int quantity = 1; // Increase by 1
+        if (quantity > media.getAvailable()) {
+            throw new NotEnoughQuantityException("There are only " + media.getAvailable() + " available. You asked for " + quantity);
+        }
+        for (HashMap<Media, Integer> mediaMap : mediaBuyList) {
+            if (mediaMap.containsKey(media)) {
+                Integer currentQuantity = mediaMap.get(media);
+                mediaMap.put(media, currentQuantity + quantity);
+                return;
+            }
+        }
+    }
+
+
+    //Xóa sản phẩm khỏi giỏ hàng
     public void removeMedia(Media media) {
+        removeBuyMedia(media);
         for (HashMap<Media, Integer> mediaMap : mediaList) {
             if (mediaMap.containsKey(media)) {
                 mediaList.remove(mediaMap);
@@ -72,11 +127,24 @@ public class Cart {
         }
     }
 
+    //Loại sản phẩm đã chọn
+    public void removeBuyMedia(Media media) {
+        for (HashMap<Media, Integer> mediaMap : mediaBuyList) {
+            if (mediaMap.containsKey(media)) {
+                mediaBuyList.remove(mediaMap);
+                System.out.println("Removed media in Cart");
+                return;
+            }
+        }
+    }
+
+
+    //Lấy tổng số tiền sản phẩm trong giỏ hàng
     public double getCartAmounts() throws NoMediaInCartException {
         if (isCartEmpty())
                 throw new NoMediaInCartException("No media in cart");
         double cartAmounts = 0;
-        for (HashMap<Media, Integer> mediaMap: mediaList) {
+        for (HashMap<Media, Integer> mediaMap: mediaBuyList) {
             for (Media media : mediaMap.keySet()) {
                 int quantity = mediaMap.get(media);
                 double mediaPrice = media.getPrice();
@@ -86,13 +154,21 @@ public class Cart {
         return cartAmounts;
     }
 
+
+    //Làm sạch giỏ hàng
     public void clearCart() {
         mediaList.clear();
     }
 
+    public void clearByCart() {
+        mediaBuyList.clear();
+    }
+
+
+    //Lấy tổng khối lượng sản phẩm
     public double getWeights() {
         double totalWeights = 0;
-        for (HashMap<Media, Integer> mediaMap: mediaList) {
+        for (HashMap<Media, Integer> mediaMap: mediaBuyList) {
             for (Media media : mediaMap.keySet()) {
                 int quantity = mediaMap.get(media);
                 double mediaWeight = media.getWeight();
@@ -103,7 +179,7 @@ public class Cart {
     }
 
     public double getRushAmounts() {
-        List<HashMap<Media, Integer>> rushMediaList =  mediaList.stream()
+        List<HashMap<Media, Integer>> rushMediaList =  mediaBuyList.stream()
                 .filter(mediaMap -> mediaMap.keySet().stream().anyMatch(Media::isRushDelivery))
                 .toList();
         double rushAmounts = 0;
@@ -121,8 +197,13 @@ public class Cart {
         return currentMediaList;
     }
 
+    public List<HashMap<Media, Integer>> getMediaBuyItems() {
+        List<HashMap<Media, Integer>> currentMediaList = new ArrayList<>(mediaBuyList);
+        return currentMediaList;
+    }
+
     public boolean isRushDeliverySupport() {
-        for (HashMap<Media, Integer> mediaMap : mediaList) {
+        for (HashMap<Media, Integer> mediaMap : mediaBuyList) {
             for (Media media : mediaMap.keySet()) {
                 if (media.isRushDelivery()) {
                     return true;

@@ -34,6 +34,7 @@ public class CartScreen implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        List<HashMap<Media, Integer>> mediaBuyList = cartController.getMediaBuyItems();
         List<HashMap<Media, Integer>> mediaList = cartController.getMediaItems();
         List<Pane> mediaPanes = new ArrayList<>();
         mediaList.forEach(media -> {
@@ -58,6 +59,7 @@ public class CartScreen implements Initializable {
         FXMLLoader deliveryLoader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
         Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
         stage.setScene(new Scene(deliveryLoader.load()));
+        cartController.clearListBuyMedia();
     }
 
     @FXML
