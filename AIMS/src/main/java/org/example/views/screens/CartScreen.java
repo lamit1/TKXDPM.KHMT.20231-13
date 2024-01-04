@@ -32,6 +32,7 @@ public class CartScreen implements Initializable {
     public Label totalPriceLabel;
     private CartController cartController = new CartController();
 
+    //data coupling
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         List<HashMap<Media, Integer>> mediaBuyList = cartController.getMediaBuyItems();
@@ -54,6 +55,8 @@ public class CartScreen implements Initializable {
         totalPriceLabel.setText(cartController.getCartAmounts() + " đồng");
     }
 
+
+    //no coupling
     @FXML
     public void backToHome(ActionEvent e) throws IOException {
         FXMLLoader deliveryLoader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
@@ -62,6 +65,8 @@ public class CartScreen implements Initializable {
         cartController.clearListBuyMedia();
     }
 
+
+    //no coupling
     @FXML
     public void placeOrder(ActionEvent e) throws IOException {
         if (totalPriceLabel.getText().equals("0.0 đồng")) {

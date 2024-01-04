@@ -27,6 +27,8 @@ public class HomeMediaItem implements Initializable {
     public Label availableLabel;
     public Label typeLabel;
 
+
+    //data coupling
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         incrementButton.setOnAction(e-> {
@@ -52,6 +54,7 @@ public class HomeMediaItem implements Initializable {
         });
     }
 
+    //data coupling
     public void setInfo(Media media) {
         this.media = media;
         mediaLabel.textProperty().set(media.getName());

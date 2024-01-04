@@ -16,12 +16,14 @@ public class ResultScreen {
     public Button backButton;
     public Label resultLabel;
     public Label contentLabel;
-
+    // no coupling
     public void backToHome(ActionEvent e) throws IOException {
         Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         FXMLLoader homeLoader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
         stage.setScene(new Scene(homeLoader.load()));
     }
+
+    // control coupling
     public void setResult(Transaction transaction) {
         if (transaction.getAmount() == -1) {
             resultLabel.setText("Giao dịch thất bại");

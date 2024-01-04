@@ -20,7 +20,7 @@ public class RushDeliveryMediaItem {
     public Label deliveryTypeLabel;
     private VBox mediaContainer;
 
-
+    //no coupling
     public void removeMedia() {
         controller.removeMedia(media);
         if (mediaContainer != null) {
@@ -28,10 +28,13 @@ public class RushDeliveryMediaItem {
         }
     }
 
+    //no coupling
+
     public void setItemContainer(VBox mediaContainer) {
         this.mediaContainer = mediaContainer;
     }
 
+    //data coupling
     public void setInfo(HashMap<Media, Integer> media) {
         Media mediaItem = media.keySet().iterator().next();
         int quantity = media.get(mediaItem);
@@ -41,7 +44,7 @@ public class RushDeliveryMediaItem {
         deliveryTypeLabel.setText(mediaItem.isRushDelivery() ? "Giao hàng nhanh" : "Giao hàng thường");
         mediaQuantityLabel.setText(String.valueOf(quantity));
     }
-
+    //data coupling
     public void setController(RushDeliveryController controller) {
         this.controller = controller;
     }

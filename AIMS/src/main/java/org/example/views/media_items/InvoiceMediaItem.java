@@ -18,7 +18,7 @@ public class InvoiceMediaItem {
     public Label priceLabel;
     public Label availableLabel;
     public Label typeLabel;
-
+//data coupling
     public void setInfo(HashMap<Media, Integer> mediaMap) {
         for (Map.Entry<Media, Integer> entry : mediaMap.entrySet()) {
             Media media = entry.getKey();

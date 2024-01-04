@@ -40,10 +40,10 @@ public class HomeScreen implements Initializable {
     public HomeScreen() {
         this.homeController = new HomeController();
     }
-
+    // data coupling
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        searchType.getItems().addAll("NAME", "CATEGORY","PRICE","WEIGHT");
+        searchType.getItems().addAll("NAME", "CATEGORY","PRICE");
         searchType.setValue("NAME");
 
         List<Media> mediaList = homeController.getMediaItems();
@@ -65,6 +65,8 @@ public class HomeScreen implements Initializable {
         mediaAnchorPane.getChildren().addAll(sp);
     }
 
+
+    // data coupling
     @FXML
     public void searchMedia(ActionEvent ae) {
         List<Media> mediaList = homeController.searchMediaList(searchType.getValue().toString(), searchField.getText());
@@ -108,12 +110,10 @@ public class HomeScreen implements Initializable {
             mediaContainer.getChildren().clear();
             mediaContainer.getChildren().addAll(mediaPanes);
             sp.setContent(mediaContainer);
-
-//            mediaAnchorPane.getChildren().addAll(sp);
         }
     }
 
-
+    //no coupling
     @FXML
     public void viewCart(ActionEvent e) throws IOException {
         FXMLLoader cartLoader = new FXMLLoader(getClass().getResource("/fxml/cart.fxml"));

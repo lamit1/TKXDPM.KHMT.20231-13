@@ -33,10 +33,12 @@ public class InvoiceScreen{
     @FXML
     public VBox mediaContainer;
 
+    // data coupling
     public void setInvoice(Invoice invoice) {
         invoiceController.setInvoice(invoice);
     }
 
+    // no coupling
     @FXML
     public void backToHome(ActionEvent e) throws IOException {
         //Load home screen
@@ -45,6 +47,7 @@ public class InvoiceScreen{
         stage.setScene(new Scene(deliveryLoader.load()));
     }
 
+    //data coupling
     @FXML
     public void confirmInvoice(ActionEvent e) throws IOException, AddressNotSupportRushDeliveryException, NoRushMediaException {
         //Set invoice for the next screen
@@ -59,6 +62,7 @@ public class InvoiceScreen{
         paymentScreen.initData();
     }
 
+    //data coupling
     public void initData () {
 
         java.util.List<HashMap<Media, Integer>> mediaList = invoiceController.getMediaItems();

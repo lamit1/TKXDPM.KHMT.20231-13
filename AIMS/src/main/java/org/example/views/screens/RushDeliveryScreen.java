@@ -29,11 +29,13 @@ public class RushDeliveryScreen {
     public Label totalAmountsLabel;
     private RushDeliveryController rushDeliveryController = new RushDeliveryController();
 
+    // no coupling
     public void confirmRushDelivery(ActionEvent e) {
         Stage stage = (Stage)((Node)e.getSource()).getScene().getWindow();
         stage.close();
     }
 
+    //data coupling
     private void loadData(){
         try {
             totalAmountsLabel.setText(rushDeliveryController.getTotalAmounts() + " đồng");
@@ -44,6 +46,7 @@ public class RushDeliveryScreen {
         }
     }
 
+    //no coupling
     public void initData() {
         mediaContainer.getChildren().addListener((ListChangeListener.Change<? extends Node> change) -> {
             while (change.next()) {
@@ -73,7 +76,7 @@ public class RushDeliveryScreen {
         });
         mediaContainer.getChildren().addAll(paneList);
     }
-
+    //control coupling
     public void setOrder(Order order) {
         if (order != null) {
             rushDeliveryController.setOrder(order);
