@@ -4,9 +4,11 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Orientation;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
+import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -23,7 +25,16 @@ import java.util.ResourceBundle;
 public class HomeScreen implements Initializable {
     public Button redirectPayBtn;
     private final HomeController homeController;
+
     public VBox mediaContainer;
+
+    public AnchorPane mediaAnchorPane;
+
+    public TextField searchField;
+    public ChoiceBox searchType;
+
+    final ScrollPane sp = new ScrollPane();
+
 
     public HomeScreen() {
         this.homeController = new HomeController();
@@ -31,8 +42,12 @@ public class HomeScreen implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        searchType.getItems().addAll("NAME", "CATEGORY","PRICE","WEIGHT");
+        searchType.setValue("NAME");
+
         List<Media> mediaList = homeController.getMediaItems();
         List<Pane> mediaPanes = new ArrayList<>();
+
         mediaList.forEach(media -> {
             try {
                 FXMLLoader mediaLoader = new FXMLLoader(getClass().getResource("/fxml/home_media.fxml"));
@@ -44,7 +59,50 @@ public class HomeScreen implements Initializable {
                 throw new RuntimeException(e);
             }
         });
+        sp.setContent(mediaContainer);
         mediaContainer.getChildren().addAll(mediaPanes);
+        mediaAnchorPane.getChildren().addAll(sp);
+    }
+
+    @FXML
+    public void searchMedia(ActionEvent ae) {
+        List<Media> mediaList = homeController.searchMediaList(searchType.getValue().toString(), searchField.getText());
+        if (mediaList.isEmpty()) {
+            List<Media> mediaList1 = homeController.getMediaItems();
+            List<Pane> mediaPanes1 = new ArrayList<>();
+            mediaList1.forEach(media -> {
+                try {
+                    FXMLLoader mediaLoader = new FXMLLoader(getClass().getResource("/fxml/home_media.fxml"));
+                    Pane item = mediaLoader.load();
+                    HomeMediaItem mediaItemController = mediaLoader.getController();
+                    mediaItemController.setInfo(media);
+                    mediaPanes1.add(item);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+            mediaContainer.getChildren().clear();
+            mediaContainer.getChildren().addAll(mediaPanes1);
+            sp.setContent(mediaContainer);
+        } else {
+            List<Pane> mediaPanes = new ArrayList<>();
+            mediaList.forEach(media -> {
+                try {
+                    FXMLLoader mediaLoader = new FXMLLoader(getClass().getResource("/fxml/home_media.fxml"));
+                    Pane item = mediaLoader.load();
+                    HomeMediaItem mediaItemController = mediaLoader.getController();
+                    mediaItemController.setInfo(media);
+                    mediaPanes.add(item);
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
+            });
+            mediaContainer.getChildren().clear();
+            mediaContainer.getChildren().addAll(mediaPanes);
+            sp.setContent(mediaContainer);
+
+//            mediaAnchorPane.getChildren().addAll(sp);
+        }
     }
 
 
