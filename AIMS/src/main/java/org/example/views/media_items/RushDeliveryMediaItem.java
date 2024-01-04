@@ -21,6 +21,7 @@ public class RushDeliveryMediaItem {
     private VBox mediaContainer;
 
     //no coupling
+    // Functional cohesion
     public void removeMedia() {
         controller.removeMedia(media);
         if (mediaContainer != null) {
@@ -29,12 +30,13 @@ public class RushDeliveryMediaItem {
     }
 
     //no coupling
-
+//    Coincidental
     public void setItemContainer(VBox mediaContainer) {
         this.mediaContainer = mediaContainer;
     }
 
     //data coupling
+    // Coincidental
     public void setInfo(HashMap<Media, Integer> media) {
         Media mediaItem = media.keySet().iterator().next();
         int quantity = media.get(mediaItem);
@@ -45,6 +47,7 @@ public class RushDeliveryMediaItem {
         mediaQuantityLabel.setText(String.valueOf(quantity));
     }
     //data coupling
+    //Coincidental
     public void setController(RushDeliveryController controller) {
         this.controller = controller;
     }

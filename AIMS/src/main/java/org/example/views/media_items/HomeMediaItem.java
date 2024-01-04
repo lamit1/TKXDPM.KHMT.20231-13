@@ -29,6 +29,8 @@ public class HomeMediaItem implements Initializable {
 
 
     //data coupling
+    // Functional cohesion
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         incrementButton.setOnAction(e-> {
@@ -55,6 +57,7 @@ public class HomeMediaItem implements Initializable {
     }
 
     //data coupling
+    //Coincidental
     public void setInfo(Media media) {
         this.media = media;
         mediaLabel.textProperty().set(media.getName());

@@ -41,6 +41,7 @@ public class HomeScreen implements Initializable {
         this.homeController = new HomeController();
     }
     // data coupling
+    //Functional cohesion
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         searchType.getItems().addAll("NAME", "CATEGORY","PRICE");
@@ -67,6 +68,7 @@ public class HomeScreen implements Initializable {
 
 
     // data coupling
+    //    Coincidental
     @FXML
     public void searchMedia(ActionEvent ae) {
         List<Media> mediaList = homeController.searchMediaList(searchType.getValue().toString(), searchField.getText());
@@ -114,6 +116,7 @@ public class HomeScreen implements Initializable {
     }
 
     //no coupling
+    // no cohesion
     @FXML
     public void viewCart(ActionEvent e) throws IOException {
         FXMLLoader cartLoader = new FXMLLoader(getClass().getResource("/fxml/cart.fxml"));

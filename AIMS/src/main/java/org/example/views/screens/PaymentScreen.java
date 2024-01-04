@@ -21,10 +21,12 @@ public class PaymentScreen {
     public Label contentLabel;
     private PaymentController paymentController = new PaymentController();
     // data coupling
+    // no cohesion
     public void setInvoice(Invoice invoice) {
         this.paymentController.setInvoice(invoice);
     }
     //data coupling
+    //no cohesion
     @FXML
     public void requestPayment() throws AddressNotSupportRushDeliveryException, IOException, NoRushMediaException {
         double amounts = paymentController.getTotalAmounts();
@@ -33,6 +35,7 @@ public class PaymentScreen {
         loadResultScreen(transaction);
     }
     //no coupling
+    // Procedural cohesion
     private void loadResultScreen(Transaction transaction) throws IOException {
         Stage stage = (Stage)(contentLabel.getScene()).getWindow();
         FXMLLoader resultLoader = new FXMLLoader(getClass().getResource("/fxml/result.fxml"));

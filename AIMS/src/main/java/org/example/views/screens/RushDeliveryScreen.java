@@ -47,6 +47,7 @@ public class RushDeliveryScreen {
     }
 
     //no coupling
+    //Functional cohesion
     public void initData() {
         mediaContainer.getChildren().addListener((ListChangeListener.Change<? extends Node> change) -> {
             while (change.next()) {
@@ -77,6 +78,7 @@ public class RushDeliveryScreen {
         mediaContainer.getChildren().addAll(paneList);
     }
     //control coupling
+    //no cohesion
     public void setOrder(Order order) {
         if (order != null) {
             rushDeliveryController.setOrder(order);

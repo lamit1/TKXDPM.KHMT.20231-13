@@ -37,6 +37,7 @@ public class CartMediaItem implements Initializable {
 
 
     //data coupling
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         incrementButton.setOnAction(e-> {

@@ -34,11 +34,13 @@ public class InvoiceScreen{
     public VBox mediaContainer;
 
     // data coupling
+    // Coincidental
     public void setInvoice(Invoice invoice) {
         invoiceController.setInvoice(invoice);
     }
 
     // no coupling
+    // no cohesion
     @FXML
     public void backToHome(ActionEvent e) throws IOException {
         //Load home screen
@@ -48,6 +50,7 @@ public class InvoiceScreen{
     }
 
     //data coupling
+    // no cohesion
     @FXML
     public void confirmInvoice(ActionEvent e) throws IOException, AddressNotSupportRushDeliveryException, NoRushMediaException {
         //Set invoice for the next screen
@@ -63,6 +66,7 @@ public class InvoiceScreen{
     }
 
     //data coupling
+    //Functional cohesion
     public void initData () {
 
         java.util.List<HashMap<Media, Integer>> mediaList = invoiceController.getMediaItems();
