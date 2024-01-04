@@ -1,6 +1,7 @@
 package org.example.views.screens;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -68,6 +69,13 @@ public class HomeScreen implements Initializable {
     public void searchMedia(ActionEvent ae) {
         List<Media> mediaList = homeController.searchMediaList(searchType.getValue().toString(), searchField.getText());
         if (mediaList.isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+
+            alert.setHeaderText("Invalid media!!! ");
+            alert.setContentText("Please try again :)");
+            alert.showAndWait();
+
+
             List<Media> mediaList1 = homeController.getMediaItems();
             List<Pane> mediaPanes1 = new ArrayList<>();
             mediaList1.forEach(media -> {
