@@ -1,4 +1,7 @@
 package org.example.views.media_items;
+import javafx.scene.control.Alert;
+import javafx.scene.control.CheckBox;
+import org.example.exceptions.InvalidQuantityException;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -8,6 +11,7 @@ import javafx.scene.layout.VBox;
 import org.example.controllers.CartController;
 import org.example.exceptions.NotEnoughQuantityException;
 import org.example.models.Media;
+import org.example.utils.MessageBox;
 
 import java.net.URL;
 import java.util.HashMap;
@@ -18,6 +22,7 @@ public class CartMediaItem implements Initializable {
     private Media media;
     public Button decrementButton;
     public Button incrementButton;
+    public CheckBox selectCheckbox;
     public ImageView imageView;
     public Label mediaQuantityLabel;
     public Button removeMediaButton;
@@ -28,7 +33,10 @@ public class CartMediaItem implements Initializable {
     private VBox parentVBox;
     private Label totalPriceLabel;
 
+    private boolean isSelected = false;
 
+
+    //data coupling
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -56,6 +64,26 @@ public class CartMediaItem implements Initializable {
             }
             cartController.removeMedia(media);
             totalPriceLabel.setText(cartController.getCartAmounts() + " đồng");
+        });
+        selectCheckbox.setOnAction(e -> {
+            try {
+                isSelected = !isSelected;
+                if(isSelected) {
+                    cartController.addBuyMedia(media, Integer.parseInt(mediaQuantityLabel.getText()));
+                    totalPriceLabel.setText(cartController.getCartAmounts() + " đồng");
+
+                    selectCheckbox.setText("Đã chọn");
+                }
+                else {
+                    cartController.removeBuyMedia(media);
+                    totalPriceLabel.setText(cartController.getCartAmounts() + " đồng");
+                    selectCheckbox.setText("Chọn");
+                }
+            } catch (NotEnoughQuantityException ex) {
+                throw new RuntimeException(ex);
+            } catch (InvalidQuantityException ex) {
+                throw new RuntimeException(ex);
+            }
         });
     }
 

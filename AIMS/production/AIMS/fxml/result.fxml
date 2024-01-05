@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.views.screens.ResultScreen">
+   <children>
+      <Button fx:id="backButton" layoutX="451.0" layoutY="567.0" mnemonicParsing="false" onAction="#backToHome" text="Quay lại màn hình chính" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="40.0" layoutY="27.0" text="Payment Result">
+         <font>
+            <Font name="Broadway" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="resultLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="193.0" layoutY="293.0" prefHeight="46.0" prefWidth="701.0" text="Kết quả" textAlignment="CENTER" textFill="#5085f7">
+         <font>
+            <Font name="System Bold" size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="contentLabel" alignment="CENTER" layoutX="183.0" layoutY="390.0" prefHeight="46.0" prefWidth="702.0" text="Nội dung Giao dịch" textAlignment="CENTER" textFill="#5085f7">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

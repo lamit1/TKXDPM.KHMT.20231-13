@@ -32,8 +32,11 @@ public class CartScreen implements Initializable {
     public Label totalPriceLabel;
     private CartController cartController = new CartController();
 
+    //data coupling
+    // Functional cohesion
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        List<HashMap<Media, Integer>> mediaBuyList = cartController.getMediaBuyItems();
         List<HashMap<Media, Integer>> mediaList = cartController.getMediaItems();
         List<Pane> mediaPanes = new ArrayList<>();
         mediaList.forEach(media -> {
@@ -53,13 +56,20 @@ public class CartScreen implements Initializable {
         totalPriceLabel.setText(cartController.getCartAmounts() + " đồng");
     }
 
+
+    //no coupling
+    // no cohesion
     @FXML
     public void backToHome(ActionEvent e) throws IOException {
         FXMLLoader deliveryLoader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
         Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
         stage.setScene(new Scene(deliveryLoader.load()));
+        cartController.clearListBuyMedia();
     }
 
+
+    //no coupling
+    //no cohesion
     @FXML
     public void placeOrder(ActionEvent e) throws IOException {
         if (totalPriceLabel.getText().equals("0.0 đồng")) {
