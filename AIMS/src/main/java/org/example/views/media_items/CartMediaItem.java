@@ -36,6 +36,7 @@ public class CartMediaItem implements Initializable {
     private boolean isSelected = false;
 
 
+    //data coupling
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

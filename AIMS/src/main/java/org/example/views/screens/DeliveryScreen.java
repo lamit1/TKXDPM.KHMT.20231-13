@@ -41,7 +41,8 @@ public class DeliveryScreen {
     public Label shipAmountsLabel;
     public Label cartAmountsLabel;
     public Label totalAmountsLabel;
-
+    // no coupling
+    //Functional cohesion
     @FXML
     private void initialize() {
         rushAddressField.setDisable(true);
@@ -110,6 +111,8 @@ public class DeliveryScreen {
         }
     }
 
+    // no coupling
+    //Logical cohesion
     private void openRushDeliveryForm() throws IOException, AddressNotSupportRushDeliveryException, NoMediaInCartException, NoRushMediaException {
         Stage newWindow = new Stage();
         newWindow.setTitle("Second Stage");
@@ -126,7 +129,8 @@ public class DeliveryScreen {
         totalAmountsLabel.setText(deliveryController.getTotalAmounts()+ " đồng");
     }
 
-
+    //no coupling
+    //Sequential Cohesion
     private Delivery getDeliveryFromForm() {
         String receiverName = nameTF.getText();
         String email = emailTF.getText();
@@ -142,7 +146,8 @@ public class DeliveryScreen {
             return new Delivery(receiverName, phoneNumber, email, province, address, instruction);
     }
 
-
+    // Control coupling
+    //no cohesion
     public void submitForm(ActionEvent e) throws IOException, SQLException, ClassNotFoundException {
         Delivery d = getDeliveryFromForm();
         try {
@@ -175,7 +180,7 @@ public class DeliveryScreen {
     }
 
 
-
+    // No coupling
 
     public void backToCart(ActionEvent e) throws IOException {
         FXMLLoader cartLoader = new FXMLLoader(getClass().getResource("/fxml/cart.fxml"));
