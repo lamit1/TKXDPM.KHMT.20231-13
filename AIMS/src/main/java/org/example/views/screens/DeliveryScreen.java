@@ -28,14 +28,14 @@ public class DeliveryScreen {
     public TextField rushTimeField;
     public TextField rushAddressField;
     public Label errorLabel;
-    private DeliveryController deliveryController = new DeliveryController();
-    public TextField nameTF;
-    public TextField phoneTF;
+    public TextField receiverField;
+    public TextField phoneField;
+    public TextField addressField;
+    public TextField emailField;
+    public TextArea instructionField;
+    private final DeliveryController deliveryController = new DeliveryController();
     public ChoiceBox provinceChoiceBox;
-    public Label addressTF;
-    public Label emailTF;
     public Button cancelButton;
-    public TextArea instructionTA;
     public Button submitButton;
     public CheckBox rushCheckBox;
     public Label shipAmountsLabel;
@@ -89,14 +89,13 @@ public class DeliveryScreen {
             if (oldValue == newValue) return;
             Delivery newDelivery = getDeliveryFromForm();
             deliveryController.setDelivery(newDelivery);
-            if (newValue.equals("Hà Nội")) {
-                try {
-                    shipAmountsLabel.setText( deliveryController.getShipAmounts() + " đồng");
-                    totalAmountsLabel.setText(deliveryController.getTotalAmounts() + " đồng");
-                } catch (AddressNotSupportRushDeliveryException | NoMediaInCartException | NoRushMediaException e) {
-                    throw new RuntimeException(e);
-                }
-            } else {
+            try {
+                shipAmountsLabel.setText( deliveryController.getShipAmounts() + " đồng");
+                totalAmountsLabel.setText(deliveryController.getTotalAmounts() + " đồng");
+            } catch (AddressNotSupportRushDeliveryException | NoMediaInCartException | NoRushMediaException e) {
+                throw new RuntimeException(e);
+            }
+            if (!newValue.equals("Hà Nội")) {
                 rushCheckBox.setSelected(false);
             }
         });
@@ -132,12 +131,12 @@ public class DeliveryScreen {
     //no coupling
     //Sequential Cohesion
     private Delivery getDeliveryFromForm() {
-        String receiverName = nameTF.getText();
-        String email = emailTF.getText();
-        String address = addressTF.getText();
-        String phoneNumber = phoneTF.getText();
+        String receiverName = receiverField.getText();
+        String email = emailField.getText();
+        String address = addressField.getText();
+        String phoneNumber = phoneField.getText();
         String province = (String) provinceChoiceBox.getValue();
-        String instruction = instructionTA.getText();
+        String instruction = instructionField.getText();
         String rushTime = rushTimeField.getText();
         String rushAddress = rushAddressField.getText();
         if (rushCheckBox.isSelected()) {

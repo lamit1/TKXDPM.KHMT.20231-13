@@ -14,7 +14,12 @@ public class PaymentController{
         VNPaySubsystem subsystem = new VNPaySubsystem();
         Transaction transaction = subsystem.payOrder(amounts,contents);
         Transaction.saveTransaction(transaction);
-        invoice.updateStatus(transaction);
+        invoice.updateTransaction(transaction.getTransactionId());
+        if (transaction.getAmount() == -1) {
+            Invoice.updateStatus(transaction.getTransactionId(),"canceled");
+        } else {
+            Invoice.updateStatus(transaction.getTransactionId(),"paid");
+        }
         emailToCustomer();
         clearCart();
         return transaction;

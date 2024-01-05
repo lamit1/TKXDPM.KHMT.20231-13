@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Response {
+    private int refId;
     private int id;
     private String contents;
     private String responseCode;
@@ -42,6 +43,7 @@ public class Response {
         id = Integer.parseInt(parameters.get("vnp_TransactionNo"));
         amounts = Double.parseDouble(parameters.get("vnp_Amount"))/100;
         responseCode =  parameters.get("vnp_ResponseCode");
+        refId = Integer.parseInt(parameters.get("vnp_TxnRef"));
         contents = parameters.get("vnp_OrderInfo");
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
         Date parsedDate = dateFormat.parse(parameters.get("vnp_PayDate"));
@@ -49,7 +51,7 @@ public class Response {
     }
 
     public Transaction getTransaction() throws CanceledPaymentException, UnsupportedEncodingException, ParseException {
-        Transaction transaction = new Transaction(id, amounts, contents, payTime);
+        Transaction transaction = new Transaction(id, amounts, contents, payTime, refId);
         switch (responseCode){
             case "00":
                 break;

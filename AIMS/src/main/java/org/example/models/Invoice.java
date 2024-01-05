@@ -69,6 +69,55 @@ public class Invoice {
         return invoice;
     }
 
+    public void updateTransaction(int transactionId) {
+        Connection connection = null;
+        String dropForeignKeyQuery = "ALTER TABLE `invoice` DROP FOREIGN KEY `invoice_ibfk_1`";
+        String updateInvoiceQuery = "UPDATE invoice SET transaction_id = ? WHERE invoice_id = ?";
+        String addForeignKeyQuery = "ALTER TABLE `invoice` ADD CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`transaction_id`) REFERENCES `transaction` (`transaction_id`) ON UPDATE CASCADE";
+
+        try {
+            connection = new DBConnection().getConnection();
+            connection.setAutoCommit(false); // Start transaction
+
+            try (Statement statement = connection.createStatement()) {
+                // Drop foreign key
+                statement.executeUpdate(dropForeignKeyQuery);
+
+                // Update the invoice
+                try (PreparedStatement preparedStatement = connection.prepareStatement(updateInvoiceQuery)) {
+                    preparedStatement.setInt(1, transactionId);
+                    preparedStatement.setInt(2, id);
+                    int affectedRows = preparedStatement.executeUpdate();
+                    if (affectedRows == 0) {
+                        throw new SQLException("Updating transaction failed, no rows affected.");
+                    }
+                }
+
+                // Re-add foreign key
+                statement.executeUpdate(addForeignKeyQuery);
+
+                connection.commit(); // Commit transaction
+            } catch (SQLException e) {
+                connection.rollback(); // Rollback transaction on error
+                throw e;
+            } finally {
+                connection.setAutoCommit(true); // Reset auto-commit to true
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            // Handle the exception appropriately
+        } finally {
+            if (connection != null) {
+                try {
+                    connection.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
+
+
     public int getId() {
         return 1;
     }
@@ -81,34 +130,21 @@ public class Invoice {
         return order.getMediaItems();
     }
 
-    public void updateStatus(Transaction transaction) {
-        Connection connection = null;
-        String dropForeignKeyQuery = "ALTER TABLE `invoice` DROP FOREIGN KEY `invoice_ibfk_1`";
-        String updateInvoiceQuery = "UPDATE invoice SET status = ?, transaction_id = ? WHERE invoice_id = ?";
-        String addForeignKeyQuery = "ALTER TABLE `invoice` ADD CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`transaction_id`) REFERENCES `transaction` (`transaction_id`) ON UPDATE CASCADE";
-        try {
-            connection = new DBConnection().getConnection();
-            Statement statement = connection.createStatement();
-            statement.executeUpdate(dropForeignKeyQuery);
-            String status;
-            if (transaction.getAmount() == -1) {
-                status = "canceled";
-            } else {
-                status = "complete";
-            }
-            // Update the invoice
-            try (PreparedStatement preparedStatement = connection.prepareStatement(updateInvoiceQuery)) {
-                preparedStatement.setString(1, status);
-                preparedStatement.setInt(2, transaction.getTransactionId());
-                preparedStatement.setInt(3, id);
-                preparedStatement.executeUpdate();
-            }
+    public static void updateStatus(int transactionId, String status) {
+        String updateInvoiceQuery = "UPDATE invoice SET status = ? WHERE invoice.transaction_id = ?";
 
-            statement.executeUpdate(addForeignKeyQuery);
+        try (Connection connection = new DBConnection().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(updateInvoiceQuery)) {
 
-            System.out.println("Invoice status and transaction_id updated for invoice_id: " + id);
+            preparedStatement.setString(1, status);
+            preparedStatement.setInt(2, transactionId);
+
+            int affectedRows = preparedStatement.executeUpdate();
+            if (affectedRows == 0) {
+                throw new SQLException("Updating status failed, no rows affected.");
+            }
         } catch (ClassNotFoundException | SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 

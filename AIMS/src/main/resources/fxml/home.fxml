@@ -21,5 +21,8 @@
    </AnchorPane>
    <TextField fx:id="searchField" layoutX="264.0" layoutY="26.0" onAction="#searchMedia" prefHeight="25.0" prefWidth="290.0" />
    <ChoiceBox fx:id="searchType" layoutX="146.0" layoutY="26.0" prefHeight="25.0" prefWidth="105.0" />
+       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+      </children></VBox>
+   <Button fx:id="orderGoButton" onAction="#viewOrderSearch" layoutX="546.0" layoutY="26.0" text="Tìm kiếm đơn hàng" textAlignment="CENTER" />
 
 </AnchorPane>

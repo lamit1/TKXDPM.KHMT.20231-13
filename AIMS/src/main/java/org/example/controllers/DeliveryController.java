@@ -50,9 +50,9 @@ public class DeliveryController {
 
     public void saveDelivery(Delivery delivery) throws SQLException, ClassNotFoundException {
         if(delivery.isRushDelivery()) {
-            Delivery.saveDelivery(delivery);
-        } else {
             RushDelivery.saveDelivery(delivery);
+        } else {
+            Delivery.saveDelivery(delivery);
         }
     }
 

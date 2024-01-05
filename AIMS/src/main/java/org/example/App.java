@@ -16,14 +16,6 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        //Test Json Refund request
-
-//        Transaction transaction = Transaction.findById(14266105);
-//        RefundRequest request =  new RefundRequest(transaction);
-//        JsonObject json = request.createJson();
-//        System.out.println(json);
-
-
         //Start
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/home.fxml"));
         Parent root = loader.load();

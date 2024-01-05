@@ -1,12 +1,12 @@
-package org.example.subsystem.VNPaySubsystem;
+package java.org.example.subsystem.VNPaySubsystem;
 
 import org.example.models.Transaction;
 import org.example.exceptions.CanceledPaymentException;
 import org.example.exceptions.InvalidInputException;
-import org.example.subsystem.Response;
-import org.example.subsystem.Validator;
+import org.example.subsystem.VNPaySubsystem.Validator;
+import org.example.subsystem.VNPaySubsystem.pay.Response;
+import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
 
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
@@ -16,9 +16,9 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.*;
 
-class PayOrderTest {
+public class PayOrderTest {
 
     private static Transaction successTransaction;
     private static final Validator validator = new Validator();
@@ -35,56 +35,56 @@ class PayOrderTest {
         successTransaction = new Transaction((long) 10000, "TestTransaction", new Timestamp(cld.getTime().getTime()));
     }
     @Test
-    void ValidateAmountLessThan5000AndContentNotHaveSpecialChar(){
+    public void ValidateAmountLessThan5000AndContentNotHaveSpecialChar(){
         String message = assertThrows(
                 InvalidInputException.class,
-                ()->validator.validate(numLessThan5000, contentNotHaveSpecialChar)
+                ()->validator.validatePaymentInput(numLessThan5000, contentNotHaveSpecialChar)
         ).getMessage();
         assertEquals(message, numLessThan5000 + " is less than 5000!");
     }
     @Test
-    void ValidateAmountEqual5000AndContentNotHaveSpecialChar(){
+    public void ValidateAmountEqual5000AndContentNotHaveSpecialChar(){
         try {
-            assertTrue(validator.validate(numEqual5000,contentNotHaveSpecialChar));
+            assertTrue(validator.validatePaymentInput(numEqual5000,contentNotHaveSpecialChar));
         } catch (InvalidInputException e) {
             throw new RuntimeException(e);
         }
     }
     @Test
-    void ValidateAmountMoreThan5000AndContentNotHaveSpecialChar(){
+    public void ValidateAmountMoreThan5000AndContentNotHaveSpecialChar(){
         try {
-            assertTrue(validator.validate(numMoreThan5000,contentNotHaveSpecialChar));
+            assertTrue(validator.validatePaymentInput(numMoreThan5000,contentNotHaveSpecialChar));
         } catch (InvalidInputException e) {
             throw new RuntimeException(e);
         }
     }
 
     @Test
-    void ValidateAmountMoreThan5000AndContentHaveSpecialChar(){
+    public void ValidateAmountMoreThan5000AndContentHaveSpecialChar(){
         String message = assertThrows(
                 InvalidInputException.class,
-                ()->validator.validate(numMoreThan5000, contentHaveSpecialChar)
+                ()->validator.validatePaymentInput(numMoreThan5000, contentHaveSpecialChar)
         ).getMessage();
         assertEquals(message, contentHaveSpecialChar + " have invalid character!");
     }
     @Test
-    void ValidateAmountEqual5000AndContentHaveSpecialChar() {
+    public void ValidateAmountEqual5000AndContentHaveSpecialChar() {
         String message = assertThrows(
                 InvalidInputException.class,
-                ()->validator.validate(numEqual5000, contentHaveSpecialChar)
+                ()->validator.validatePaymentInput(numEqual5000, contentHaveSpecialChar)
         ).getMessage();
     }
     @Test
-    void ValidateAmountLessThan5000AndContentHaveSpecialChar() {
+    public void ValidateAmountLessThan5000AndContentHaveSpecialChar() {
         String message = assertThrows(
                 InvalidInputException.class,
-                ()->validator.validate(numLessThan5000, contentNotHaveSpecialChar)
+                ()->validator.validatePaymentInput(numLessThan5000, contentNotHaveSpecialChar)
         ).getMessage();
         assertEquals(message, numLessThan5000+ " is less than 5000!");
     }
 
     @Test
-    void GetTransactionWithNullURL() {
+    public void GetTransactionWithNullURL() {
         String message = assertThrows(
                 CanceledPaymentException.class,
                 ()->new Response("").getTransaction()).getMessage();
@@ -93,7 +93,7 @@ class PayOrderTest {
 
 
     @Test
-    void GetTransactionWithCanceledPaymentURL() {
+    public void GetTransactionWithCanceledPaymentURL() {
         String message = assertThrows(
                 CanceledPaymentException.class,
                 ()->new Response("http://localhost:9999/web/vnpay_return.jsp" +
@@ -113,7 +113,7 @@ class PayOrderTest {
     }
 
     @Test
-    void GetTransactionWithSuccessPaymentURL() throws MalformedURLException {
+    public void GetTransactionWithSuccessPaymentURL() throws MalformedURLException {
         try {
             assertEquals(new Response(
                     "http://localhost:9999/web/vnpay_return.jsp" +
