@@ -1,8 +1,15 @@
 package org.example.utils;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.google.gson.stream.JsonReader;
+import org.example.subsystem.VNPaySubsystem.refund.RefundResponse;
+
 import javax.crypto.Mac;
 import javax.crypto.spec.SecretKeySpec;
-import java.io.UnsupportedEncodingException;
+import java.io.*;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -24,7 +31,6 @@ public class Config {
     public static List<String> rushSupportAddress = Arrays.asList(
             "Hà Nội", "Thành phố Hồ Chí Minh"
     );
-
 
     public static String vnp_PayUrl = "https://sandbox.vnpayment.vn/paymentv2/vpcpay.html";
     public static String vnp_ReturnUrl = "http://localhost:9999/web/vnpay_return.jsp";
@@ -85,6 +91,5 @@ public class Config {
         }
         return sb.toString();
     }
-
 
 }

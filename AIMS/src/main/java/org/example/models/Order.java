@@ -112,8 +112,7 @@ public class Order {
                     if (affectedRows > 0) {
                         try (ResultSet generatedKeys = orderStatement.getGeneratedKeys()) {
                             if (generatedKeys.next()) {
-                                int generatedId = generatedKeys.getInt(1);
-                                this.id = generatedId;
+                                this.id = generatedKeys.getInt(1);
                                 // Insert media items into the order_media table
                                 String insertOrderMediaQuery = "INSERT INTO order_media (media_id, order_id, delivery_info_id, quantity) VALUES (?, ?, ?, ?)";
                                 try (PreparedStatement orderMediaStatement = connection.prepareStatement(insertOrderMediaQuery)) {

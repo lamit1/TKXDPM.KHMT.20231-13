@@ -24,6 +24,7 @@ public class HomeScreen implements Initializable {
     public Button redirectPayBtn;
     private final HomeController homeController;
     public VBox mediaContainer;
+    public Button orderGoButton;
 
     public HomeScreen() {
         this.homeController = new HomeController();
@@ -51,6 +52,13 @@ public class HomeScreen implements Initializable {
     @FXML
     public void viewCart(ActionEvent e) throws IOException {
         FXMLLoader cartLoader = new FXMLLoader(getClass().getResource("/fxml/cart.fxml"));
+        Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(cartLoader.load()));
+    }
+
+    @FXML
+    public void viewOrderSearch(ActionEvent e) throws IOException {
+        FXMLLoader cartLoader = new FXMLLoader(getClass().getResource("/fxml/search_order.fxml"));
         Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
         stage.setScene(new Scene(cartLoader.load()));
     }

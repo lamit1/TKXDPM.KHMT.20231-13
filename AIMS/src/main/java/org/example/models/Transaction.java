@@ -9,6 +9,8 @@ public class Transaction {
     private double amount;
     private String content;
     private Timestamp time;
+    private int refId;
+
 
     public void setContent(String content) {
         this.content = content;
@@ -17,12 +19,12 @@ public class Transaction {
     public Transaction() {
     }
 
-
-    public Transaction(int id, double amount, String content, Timestamp time) {
+    public Transaction(int id, double amount, String content, Timestamp time, int refId) {
         this.id = id;
         this.amount = amount;
         this.content = content;
         this.time = time;
+        this.refId = refId;
     }
 
     public Transaction(double amount, String content, Timestamp time) {
@@ -36,6 +38,10 @@ public class Transaction {
         Transaction transaction = (Transaction) obj;
         return (this.content.equals(transaction.content)
                 && this.amount == transaction.amount);
+    }
+
+    public int getRefId() {
+        return refId;
     }
 
     public int getId() {
@@ -75,7 +81,7 @@ public class Transaction {
         try (Connection connection = new DBConnection().getConnection()) {
             String sql;
             if (transaction.getTransactionId() != 0) {
-                sql = "INSERT INTO transaction (amount, contents, error_message, time, transaction_id) VALUES (?, ?, ?, ?, ?)";
+                sql = "INSERT INTO transaction (amount, contents, error_message, time, transaction_id, ref_id) VALUES (?, ?, ?, ?, ?, ?)";
             } else {
                 sql = "INSERT INTO transaction (amount, contents, error_message, time) VALUES (?, ?, ?, ?)";
             }
@@ -88,6 +94,7 @@ public class Transaction {
 
                 if (transaction.getTransactionId() != 0) {
                     preparedStatement.setInt(5, transaction.getTransactionId());
+                    preparedStatement.setInt(6, transaction.getRefId());
                 }
 
                 preparedStatement.executeUpdate();
@@ -130,12 +137,12 @@ public class Transaction {
                     double amount = resultSet.getDouble("amount");
                     String content = resultSet.getString("contents");
                     Timestamp time = resultSet.getTimestamp("time");
-
-                    foundTransaction = new Transaction(id, amount, content, time);
+                    int refId = resultSet.getInt("ref_id") != 0 ? resultSet.getInt("ref_id") : -1;
+                    foundTransaction = new Transaction(id, amount, content, time, refId);
                 }
             }
         } catch (SQLException e) {
-            e.printStackTrace(); // Handle the exception according to your needs
+            e.printStackTrace();
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         }

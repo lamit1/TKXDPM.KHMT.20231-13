@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2023 at 10:13 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Dec 31, 2023 at 06:30 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -71,7 +71,7 @@ CREATE TABLE `cd` (
 
 CREATE TABLE `delivery_info` (
   `delivery_info_id` int(11) NOT NULL,
-  `name` varchar(10) DEFAULT NULL,
+  `name` varchar(50) DEFAULT NULL,
   `phone_number` varchar(45) DEFAULT NULL,
   `province` varchar(45) DEFAULT NULL,
   `instruction` varchar(45) DEFAULT NULL,
@@ -119,7 +119,20 @@ INSERT INTO `delivery_info` (`delivery_info_id`, `name`, `phone_number`, `provin
 (36, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
 (37, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
 (38, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(39, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0);
+(39, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
+(40, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
+(41, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 1),
+(42, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
+(43, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
+(44, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
+(45, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
+(46, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
+(47, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
+(48, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
+(49, '1w', 'qưeqw', 'An Giang', 'ưqeqweqw', 'Địa chỉ: ', 'Email', 0),
+(50, '', '', 'An Giang', '', 'Địa chỉ: ', 'Email', 0),
+(51, '123123adadwa', '0829318456', 'An Giang', 'adawdawdawd', 'Địa chỉ: ', 'Email', 0),
+(52, 'Nông Hoàng Lâm', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0);
 
 -- --------------------------------------------------------
 
@@ -151,6 +164,25 @@ CREATE TABLE `invoice` (
   `amount` float DEFAULT NULL,
   `status` char(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `invoice`
+--
+
+INSERT INTO `invoice` (`invoice_id`, `transaction_id`, `order_id`, `amount`, `status`) VALUES
+(1, 2, 38, 152000, 'canceled'),
+(2, 14260345, 39, 51000, 'complete'),
+(3, 14260346, 40, 41000, 'canceled'),
+(4, 14260347, 41, 155000, 'canceled'),
+(5, 14266102, 42, 60000, 'complete'),
+(6, 14266103, 43, 113000, 'complete'),
+(7, 14266105, 44, 128000, 'complete'),
+(8, 14266173, 45, 148000, 'complete'),
+(9, 14266177, 46, 121000, 'complete'),
+(10, NULL, 47, 101000, 'pending'),
+(11, NULL, 48, 174000, 'pending'),
+(12, NULL, 49, 110000, 'pending'),
+(13, NULL, 50, 186000, 'pending');
 
 -- --------------------------------------------------------
 
@@ -232,7 +264,20 @@ INSERT INTO `order` (`order_id`, `delivery_info_id`, `shipping_amounts`, `total_
 (34, 36, 22000, 60000, 38000, 0),
 (35, 37, 22000, 60000, 38000, 0),
 (36, 38, 37000, 94000, 57000, 0),
-(37, 39, 22000, 60000, 38000, 0);
+(37, 39, 22000, 60000, 38000, 0),
+(38, 40, 0, 152000, 152000, 0),
+(39, 41, 32000, 51000, 19000, 1),
+(40, 42, 22000, 41000, 19000, 0),
+(41, 43, 64000, 155000, 91000, 0),
+(42, 44, 22000, 60000, 38000, 0),
+(43, 45, 0, 113000, 113000, 0),
+(44, 46, 52000, 128000, 76000, 0),
+(45, 47, 61000, 148000, 87000, 0),
+(46, 48, 0, 121000, 121000, 0),
+(47, 49, 63000, 101000, 38000, 0),
+(48, 50, 0, 174000, 174000, 0),
+(49, 51, 0, 110000, 110000, 0),
+(50, 52, 0, 186000, 186000, 0);
 
 -- --------------------------------------------------------
 
@@ -284,12 +329,32 @@ INSERT INTO `order_media` (`media_id`, `order_id`, `delivery_info_id`, `quantity
 (1, 35, 37, 2),
 (1, 36, 38, 3),
 (1, 37, 39, 2),
+(1, 38, 40, 8),
+(1, 39, 41, 1),
+(1, 40, 42, 1),
+(1, 41, 43, 4),
+(1, 42, 44, 2),
+(1, 43, 45, 2),
+(1, 44, 46, 4),
+(1, 45, 47, 3),
+(1, 46, 48, 4),
+(1, 47, 49, 2),
+(1, 48, 50, 6),
+(1, 49, 51, 5),
+(1, 50, 52, 9),
 (2, 5, 7, 1),
 (2, 7, 9, 1),
 (2, 8, 10, 1),
 (2, 17, 19, 1),
 (2, 18, 20, 1),
 (2, 33, 35, 1),
+(2, 41, 43, 1),
+(2, 43, 45, 5),
+(2, 45, 47, 2),
+(2, 46, 48, 3),
+(2, 48, 50, 4),
+(2, 49, 51, 1),
+(2, 50, 52, 1),
 (3, 5, 7, 1),
 (3, 8, 10, 1),
 (3, 30, 32, 1);
@@ -317,15 +382,25 @@ CREATE TABLE `transaction` (
   `amount` float DEFAULT NULL,
   `contents` varchar(45) DEFAULT NULL,
   `error_message` varchar(45) DEFAULT NULL,
-  `time` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+  `time` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6),
+  `ref_id` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `transaction`
 --
 
-INSERT INTO `transaction` (`transaction_id`, `amount`, `contents`, `error_message`, `time`) VALUES
-(1, 41000, 'Paying for order 24 for 41000', '', '2023-12-21 19:28:20.000000');
+INSERT INTO `transaction` (`transaction_id`, `amount`, `contents`, `error_message`, `time`, `ref_id`) VALUES
+(1, 41000, 'Paying for order 24 for 41000', '', '2023-12-21 19:28:20.000000', NULL),
+(2, -1, 'Payment was canceled', '', '2023-12-25 15:45:09.000000', NULL),
+(14260345, 51000, 'Paying for order 1 for 51000', '', '2023-12-25 15:46:23.000000', NULL),
+(14260346, -1, 'Payment was canceled', '', '2023-12-25 15:48:39.000000', NULL),
+(14260347, -1, 'Payment was canceled', '', '2023-12-31 08:17:53.000000', NULL),
+(14266102, 60000, 'Paying for order 1 for 60000', '', '2023-12-31 08:18:57.000000', NULL),
+(14266103, 113000, 'Paying for order 1 for 113000', '', '2023-12-31 08:22:43.000000', NULL),
+(14266105, 128000, 'Paying for order 1 for 128000', '', '2023-12-31 08:25:48.000000', NULL),
+(14266173, 148000, 'Paying for order 1 for 148000', '', '2023-12-31 09:53:46.000000', NULL),
+(14266177, 121000, 'Paying for order 1 for 121000', '', '2023-12-31 09:59:30.000000', NULL);
 
 --
 -- Indexes for dumped tables
@@ -418,7 +493,7 @@ ALTER TABLE `cd`
 -- AUTO_INCREMENT for table `delivery_info`
 --
 ALTER TABLE `delivery_info`
-  MODIFY `delivery_info_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `delivery_info_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT for table `dvd`
@@ -430,7 +505,7 @@ ALTER TABLE `dvd`
 -- AUTO_INCREMENT for table `invoice`
 --
 ALTER TABLE `invoice`
-  MODIFY `invoice_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `invoice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `media`
@@ -442,13 +517,13 @@ ALTER TABLE `media`
 -- AUTO_INCREMENT for table `order`
 --
 ALTER TABLE `order`
-  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `order_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `transaction`
 --
 ALTER TABLE `transaction`
-  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `transaction_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14266178;
 
 --
 -- Constraints for dumped tables
@@ -476,7 +551,7 @@ ALTER TABLE `dvd`
 -- Constraints for table `invoice`
 --
 ALTER TABLE `invoice`
-  ADD CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`transaction_id`) REFERENCES `transaction` (`transaction_id`),
+  ADD CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`transaction_id`) REFERENCES `transaction` (`transaction_id`) ON UPDATE CASCADE,
   ADD CONSTRAINT `invoice_ibfk_2` FOREIGN KEY (`order_id`) REFERENCES `order` (`order_id`);
 
 --

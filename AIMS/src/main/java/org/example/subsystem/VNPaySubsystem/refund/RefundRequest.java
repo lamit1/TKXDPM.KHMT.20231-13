@@ -15,7 +15,7 @@ public class RefundRequest {
     private final String vnp_Command = "refund";
     private final String vnp_TmnCode = Config.vnp_TmnCode;
     private final String vnp_TransactionType = "02";
-    private final String vnp_TxnRef = Config.getRandomNumber(8);
+    private String vnp_TxnRef;
     private String vnp_Amount;
     private String vnp_OrderInfo;
     private String vnp_TransactionNo;
@@ -26,10 +26,11 @@ public class RefundRequest {
     private String vnp_SecureHash;
 
     public RefundRequest(Transaction transaction) throws ParseException {
-        vnp_Amount = String.valueOf((long)transaction.getAmount());
+        vnp_Amount = String.valueOf((long)transaction.getAmount()*100);
         vnp_OrderInfo = transaction.getContent();
         vnp_TransactionNo = String.valueOf(transaction.getId());
         vnp_TransactionDate = String.valueOf(transaction.getTime());
+        vnp_TxnRef = String.valueOf(transaction.getRefId());
 
         Calendar cld = Calendar.getInstance(TimeZone.getTimeZone("Etc/GMT+7"));
         SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMddHHmmss");
