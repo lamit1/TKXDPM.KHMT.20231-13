@@ -35,7 +35,7 @@ public class HomeScreen implements Initializable {
     public TextField searchField;
     public ChoiceBox searchType;
 
-    final ScrollPane sp = new ScrollPane();
+    public ScrollPane sp;
 
 
     public HomeScreen() {
@@ -64,7 +64,10 @@ public class HomeScreen implements Initializable {
         });
         sp.setContent(mediaContainer);
         mediaContainer.getChildren().addAll(mediaPanes);
-        mediaAnchorPane.getChildren().addAll(sp);
+        searchField.textProperty().addListener((observable, oldValue, newValue) -> {
+            // Call your searchMedia method here
+            searchMedia(new ActionEvent());
+        });
     }
 
 
@@ -74,11 +77,11 @@ public class HomeScreen implements Initializable {
     public void searchMedia(ActionEvent ae) {
         List<Media> mediaList = homeController.searchMediaList(searchType.getValue().toString(), searchField.getText());
         if (mediaList.isEmpty()) {
-            Alert alert = new Alert(Alert.AlertType.WARNING);
-
-            alert.setHeaderText("Invalid media!!! ");
-            alert.setContentText("Please try again :)");
-            alert.showAndWait();
+//            Alert alert = new Alert(Alert.AlertType.WARNING);
+//
+//            alert.setHeaderText("Invalid media!!! ");
+//            alert.setContentText("Please try again :)");
+//            alert.showAndWait();
 
 
             List<Media> mediaList1 = homeController.getMediaItems();

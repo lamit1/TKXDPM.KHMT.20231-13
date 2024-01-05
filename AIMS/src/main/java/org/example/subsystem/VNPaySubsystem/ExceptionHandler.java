@@ -9,12 +9,10 @@ import java.sql.Timestamp;
 import java.time.Instant;
 
 public class ExceptionHandler {
-    public ExceptionHandler() {
-
-    }
 
     public Transaction handleException(Exception e) {
         if (e instanceof CanceledPaymentException) {
+            // External coupling
             return new Transaction(-1, "Payment was canceled", Timestamp.from(Instant.now()));
         }
         return null;
