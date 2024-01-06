@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Context antiJARLocking="true" docBase="C:\Users\Admin\IdeaProjects\testing\web" path="/web">
+  <Resources cacheMaxSize="10240">
+    <PreResources base="C:/Users/Admin/IdeaProjects/testing/target/classes" className="org.apache.catalina.webresources.DirResourceSet" webAppMount="/WEB-INF/classes"/>
+    <PostResources base="C:/Users/Admin/.m2/repository/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/javax.servlet-api-3.1.0.jar"/>
+    <PostResources base="C:/Users/Admin/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/android-json-0.0.20131108.vaadin1.jar"/>
+    <PostResources base="C:/Users/Admin/.m2/repository/net/minidev/json-smart/2.5.0/json-smart-2.5.0.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/json-smart-2.5.0.jar"/>
+    <PostResources base="C:/Users/Admin/.m2/repository/net/minidev/accessors-smart/2.5.0/accessors-smart-2.5.0.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/accessors-smart-2.5.0.jar"/>
+    <PostResources base="C:/Users/Admin/.m2/repository/org/ow2/asm/asm/9.3/asm-9.3.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/asm-9.3.jar"/>
+    <PostResources base="C:/Users/Admin/IdeaProjects/testing/javafx-sdk-21.0.1/lib/javafx-swt.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/javafx-swt.jar"/>
+    <PostResources base="C:/Users/Admin/IdeaProjects/testing/javafx-sdk-21.0.1/lib/javafx.web.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/javafx.web.jar"/>
+    <PostResources base="C:/Users/Admin/IdeaProjects/testing/javafx-sdk-21.0.1/lib/javafx.base.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/javafx.base.jar"/>
+    <PostResources base="C:/Users/Admin/IdeaProjects/testing/javafx-sdk-21.0.1/lib/javafx.fxml.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/javafx.fxml.jar"/>
+    <PostResources base="C:/Users/Admin/IdeaProjects/testing/javafx-sdk-21.0.1/lib/javafx.media.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/javafx.media.jar"/>
+    <PostResources base="C:/Users/Admin/IdeaProjects/testing/javafx-sdk-21.0.1/lib/javafx.swing.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/javafx.swing.jar"/>
+    <PostResources base="C:/Users/Admin/IdeaProjects/testing/javafx-sdk-21.0.1/lib/javafx.controls.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/javafx.controls.jar"/>
+    <PostResources base="C:/Users/Admin/IdeaProjects/testing/javafx-sdk-21.0.1/lib/javafx.graphics.jar" className="org.apache.catalina.webresources.FileResourceSet" webAppMount="/WEB-INF/lib/javafx.graphics.jar"/>
+  </Resources>
+</Context>

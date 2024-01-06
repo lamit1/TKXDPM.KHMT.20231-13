@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="706.0" prefWidth="916.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.views.screens.CartScreen">
+   <children>
+      <Button fx:id="orderButton" layoutX="810.0" layoutY="636.0" mnemonicParsing="false" onAction="#placeOrder" text="Đặt hàng" />
+      <Label layoutX="14.0" layoutY="14.0" text="Cart Screen">
+         <font>
+            <Font name="Broadway" size="24.0" />
+         </font></Label>
+      <VBox fx:id="mediaContainer" layoutX="21.0" layoutY="75.0" prefHeight="538.0" prefWidth="856.0" />
+      <Button fx:id="backHomeButton" layoutX="813.0" layoutY="16.0" mnemonicParsing="false" onAction="#backToHome" text="Quay lại" />
+      <Label layoutX="449.0" layoutY="640.0" text="Thành tiền sản phẩm: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="totalPriceLabel" layoutX="615.0" layoutY="633.0" text="100.000 đồng" textFill="#1b75c9">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
