@@ -59,6 +59,7 @@ public class Config {
         return hmacSHA512(vnp_HashSecret,sb.toString());
     }
 
+    //Data Coupling
     public static String hmacSHA512(final String key, final String data) {
         try {
             System.out.println(data);
@@ -82,6 +83,8 @@ public class Config {
         }
     }
 
+
+    //Data Coupling
     public static String getRandomNumber(int len) {
         Random rnd = new Random();
         String chars = "0123456789";

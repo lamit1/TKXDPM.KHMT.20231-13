@@ -10,6 +10,7 @@ import org.example.subsystem.VNPaySubsystem.VNPaySubsystem;
 public class PaymentController{
     private Invoice invoice;
 
+    //Data Coupling
     public Transaction makePayment(double amounts, String contents) {
         VNPaySubsystem subsystem = new VNPaySubsystem();
         Transaction transaction = subsystem.payOrder(amounts,contents);
@@ -25,6 +26,7 @@ public class PaymentController{
         return transaction;
     }
 
+    //Data Coupling
     private void clearCart() {
         invoice.clearCart();
     }
@@ -34,13 +36,18 @@ public class PaymentController{
         //TODO: Implement send email
     }
 
+
+    //Data Coupling
     public double getTotalAmounts() throws AddressNotSupportRushDeliveryException, NoRushMediaException {
         return invoice.getTotalAmounts();
     }
 
+    //Data Coupling
     public String getOrderContent() throws AddressNotSupportRushDeliveryException, NoRushMediaException {
         return "Paying for order " + invoice.getId() + " for " + (int)invoice.getTotalAmounts();
     }
+
+    //Data Coupling
     public void setInvoice(Invoice invoice) {
         this.invoice = invoice;
     }
