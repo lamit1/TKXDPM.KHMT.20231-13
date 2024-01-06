@@ -4,6 +4,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import org.example.controllers.CartController;
 import org.example.exceptions.InvalidQuantityException;
@@ -60,6 +61,15 @@ public class HomeMediaItem implements Initializable {
     //Coincidental
     public void setInfo(Media media) {
         this.media = media;
+        try {
+            // Load the image from the resources folder
+            Image image = new Image(getClass().getResourceAsStream("/" + media.getImageUrl()));
+            imageView.setImage(image);
+            imageView.setPreserveRatio(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Handle the error, e.g., log it or set a default image
+        }
         mediaLabel.textProperty().set(media.getName());
         priceLabel.textProperty().set(media.getPrice() + " đồng");
         availableLabel.textProperty().set(String.valueOf(media.getAvailable()));

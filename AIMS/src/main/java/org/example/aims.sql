@@ -21,6 +21,7 @@ SET time_zone = "+00:00";
 -- Database: `aims`
 --
 
+
 -- --------------------------------------------------------
 
 --
@@ -39,14 +40,6 @@ CREATE TABLE `book` (
   `book_category` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `book`
---
-
-INSERT INTO `book` (`book_id`, `media_id`, `author`, `cover_type`, `publisher`, `publish_date`, `num_of_pages`, `language`, `book_category`) VALUES
-(1, 1, 'John Doe', 'Hardcover', 'Example Publisher', '2022-01-01', 300, 'English', 'Fiction'),
-(2, 2, 'Jane Smith', 'Paperback', 'Another Publisher', '2021-12-15', 250, 'Spanish', 'Non-Fiction'),
-(3, 3, 'Bob Johnson', 'Hardcover', 'Great Books Publishing', '2022-03-10', 400, 'French', 'Mystery');
 
 -- --------------------------------------------------------
 
@@ -84,55 +77,6 @@ CREATE TABLE `delivery_info` (
 -- Dumping data for table `delivery_info`
 --
 
-INSERT INTO `delivery_info` (`delivery_info_id`, `name`, `phone_number`, `province`, `instruction`, `address`, `email`, `is_rush`) VALUES
-(5, '1', '1', 'Hà Nội', '1', 'Địa chỉ: ', 'Email', 0),
-(6, '1', '1', 'Hà Nội', '1', 'Địa chỉ: ', 'Email', 0),
-(7, '1', '1', 'Điện Biên', '1', 'Địa chỉ: ', 'Email', 0),
-(8, '1', '1', 'Đắk Nông', '1', 'Địa chỉ: ', 'Email', 0),
-(9, '1', '1', 'Hà Nội', '1', 'Địa chỉ: ', 'Email', 0),
-(10, '1', '1', 'Hà Nội', '1', 'Địa chỉ: ', 'Email', 0),
-(11, '1', '1', 'Hà Nội', '1', 'Địa chỉ: ', 'Email', 0),
-(12, '1', '1', 'Hà Nội', '1', 'Địa chỉ: ', 'Email', 0),
-(13, '1', '1', 'Hà Nội', '1', 'Địa chỉ: ', 'Email', 0),
-(14, '1', '1', 'Hà Nội', '1', 'Địa chỉ: ', 'Email', 0),
-(15, '1', '1', 'Hà Nội', '1', 'Địa chỉ: ', 'Email', 0),
-(16, '1', '1', 'Hà Nội', '1', 'Địa chỉ: ', 'Email', 0),
-(17, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(18, '1', '1', 'Đắk Lắk', '1', 'Địa chỉ: ', 'Email', 0),
-(19, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(20, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(21, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(22, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(23, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(24, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(25, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(26, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(27, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(28, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(29, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(30, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(31, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(32, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(33, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(34, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(35, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(36, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(37, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(38, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(39, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(40, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(41, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 1),
-(42, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(43, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(44, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(45, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(46, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(47, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(48, '', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0),
-(49, '1w', 'qưeqw', 'An Giang', 'ưqeqweqw', 'Địa chỉ: ', 'Email', 0),
-(50, '', '', 'An Giang', '', 'Địa chỉ: ', 'Email', 0),
-(51, '123123adadwa', '0829318456', 'An Giang', 'adawdawdawd', 'Địa chỉ: ', 'Email', 0),
-(52, 'Nông Hoàng Lâm', '', 'Hà Nội', '', 'Địa chỉ: ', 'Email', 0);
 
 -- --------------------------------------------------------
 
@@ -165,25 +109,6 @@ CREATE TABLE `invoice` (
   `status` char(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `invoice`
---
-
-INSERT INTO `invoice` (`invoice_id`, `transaction_id`, `order_id`, `amount`, `status`) VALUES
-(1, 2, 38, 152000, 'canceled'),
-(2, 14260345, 39, 51000, 'complete'),
-(3, 14260346, 40, 41000, 'canceled'),
-(4, 14260347, 41, 155000, 'canceled'),
-(5, 14266102, 42, 60000, 'complete'),
-(6, 14266103, 43, 113000, 'complete'),
-(7, 14266105, 44, 128000, 'complete'),
-(8, 14266173, 45, 148000, 'complete'),
-(9, 14266177, 46, 121000, 'complete'),
-(10, NULL, 47, 101000, 'pending'),
-(11, NULL, 48, 174000, 'pending'),
-(12, NULL, 49, 110000, 'pending'),
-(13, NULL, 50, 186000, 'pending');
-
 -- --------------------------------------------------------
 
 --
@@ -201,14 +126,6 @@ CREATE TABLE `media` (
   `support_rush_delivery` smallint(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `media`
---
-
-INSERT INTO `media` (`media_id`, `price`, `available`, `name`, `imageURL`, `category`, `weight`, `support_rush_delivery`) VALUES
-(1, 19000, 50, 'Book Title 1', 'book_image_url_1.jpg', 'Book', 1.5, 1),
-(2, 15000, 30, 'Book Title 2', 'book_image_url_2.jpg', 'Book', 1.2, 0),
-(3, 23000, 25, 'Book Title 3', 'book_image_url_3.jpg', 'Book', 1.8, 1);
 
 -- --------------------------------------------------------
 
@@ -229,56 +146,6 @@ CREATE TABLE `order` (
 -- Dumping data for table `order`
 --
 
-INSERT INTO `order` (`order_id`, `delivery_info_id`, `shipping_amounts`, `total_amounts`, `cart_amounts`, `rush_order`) VALUES
-(3, 5, 37000, 94000, 57000, 0),
-(4, 6, 37000, 94000, 57000, 0),
-(5, 7, 78000, 135000, 57000, 0),
-(6, 8, 63000, 101000, 38000, 0),
-(7, 9, 22000, 56000, 34000, 0),
-(8, 10, 37000, 94000, 57000, 0),
-(9, 11, 22000, 41000, 19000, 0),
-(10, 12, 22000, 41000, 19000, 0),
-(11, 13, 22000, 41000, 19000, 0),
-(12, 14, 22000, 41000, 19000, 0),
-(13, 15, 22000, 41000, 19000, 0),
-(14, 16, 22000, 41000, 19000, 0),
-(15, 17, 22000, 41000, 19000, 0),
-(16, 18, 48000, 67000, 19000, 0),
-(17, 19, 22000, 37000, 15000, 0),
-(18, 20, 22000, 37000, 15000, 0),
-(19, 21, 22000, 41000, 19000, 0),
-(20, 22, 22000, 41000, 19000, 0),
-(21, 23, 22000, 41000, 19000, 0),
-(22, 24, 22000, 41000, 19000, 0),
-(23, 25, 22000, 41000, 19000, 0),
-(24, 26, 22000, 41000, 19000, 0),
-(25, 27, 22000, 60000, 38000, 0),
-(26, 28, 22000, 41000, 19000, 0),
-(27, 29, 22000, 60000, 38000, 0),
-(28, 30, 22000, 60000, 38000, 0),
-(29, 31, 22000, 60000, 38000, 0),
-(30, 32, 22000, 45000, 23000, 0),
-(31, 33, 22000, 60000, 38000, 0),
-(32, 34, 22000, 60000, 38000, 0),
-(33, 35, 22000, 56000, 34000, 0),
-(34, 36, 22000, 60000, 38000, 0),
-(35, 37, 22000, 60000, 38000, 0),
-(36, 38, 37000, 94000, 57000, 0),
-(37, 39, 22000, 60000, 38000, 0),
-(38, 40, 0, 152000, 152000, 0),
-(39, 41, 32000, 51000, 19000, 1),
-(40, 42, 22000, 41000, 19000, 0),
-(41, 43, 64000, 155000, 91000, 0),
-(42, 44, 22000, 60000, 38000, 0),
-(43, 45, 0, 113000, 113000, 0),
-(44, 46, 52000, 128000, 76000, 0),
-(45, 47, 61000, 148000, 87000, 0),
-(46, 48, 0, 121000, 121000, 0),
-(47, 49, 63000, 101000, 38000, 0),
-(48, 50, 0, 174000, 174000, 0),
-(49, 51, 0, 110000, 110000, 0),
-(50, 52, 0, 186000, 186000, 0);
-
 -- --------------------------------------------------------
 
 --
@@ -292,78 +159,7 @@ CREATE TABLE `order_media` (
   `quantity` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `order_media`
---
 
-INSERT INTO `order_media` (`media_id`, `order_id`, `delivery_info_id`, `quantity`) VALUES
-(1, 3, 5, 3),
-(1, 4, 6, 3),
-(1, 5, 7, 1),
-(1, 6, 8, 2),
-(1, 7, 9, 1),
-(1, 8, 10, 1),
-(1, 9, 11, 1),
-(1, 10, 12, 1),
-(1, 11, 13, 1),
-(1, 12, 14, 1),
-(1, 13, 15, 1),
-(1, 14, 16, 1),
-(1, 15, 17, 1),
-(1, 16, 18, 1),
-(1, 19, 21, 1),
-(1, 20, 22, 1),
-(1, 21, 23, 1),
-(1, 22, 24, 1),
-(1, 23, 25, 1),
-(1, 24, 26, 1),
-(1, 25, 27, 2),
-(1, 26, 28, 1),
-(1, 27, 29, 2),
-(1, 28, 30, 2),
-(1, 29, 31, 2),
-(1, 31, 33, 2),
-(1, 32, 34, 2),
-(1, 33, 35, 1),
-(1, 34, 36, 2),
-(1, 35, 37, 2),
-(1, 36, 38, 3),
-(1, 37, 39, 2),
-(1, 38, 40, 8),
-(1, 39, 41, 1),
-(1, 40, 42, 1),
-(1, 41, 43, 4),
-(1, 42, 44, 2),
-(1, 43, 45, 2),
-(1, 44, 46, 4),
-(1, 45, 47, 3),
-(1, 46, 48, 4),
-(1, 47, 49, 2),
-(1, 48, 50, 6),
-(1, 49, 51, 5),
-(1, 50, 52, 9),
-(2, 5, 7, 1),
-(2, 7, 9, 1),
-(2, 8, 10, 1),
-(2, 17, 19, 1),
-(2, 18, 20, 1),
-(2, 33, 35, 1),
-(2, 41, 43, 1),
-(2, 43, 45, 5),
-(2, 45, 47, 2),
-(2, 46, 48, 3),
-(2, 48, 50, 4),
-(2, 49, 51, 1),
-(2, 50, 52, 1),
-(3, 5, 7, 1),
-(3, 8, 10, 1),
-(3, 30, 32, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `rush_delivery_info`
---
 
 CREATE TABLE `rush_delivery_info` (
   `delivery_info_id` int(11) NOT NULL,
@@ -386,21 +182,6 @@ CREATE TABLE `transaction` (
   `ref_id` int(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `transaction`
---
-
-INSERT INTO `transaction` (`transaction_id`, `amount`, `contents`, `error_message`, `time`, `ref_id`) VALUES
-(1, 41000, 'Paying for order 24 for 41000', '', '2023-12-21 19:28:20.000000', NULL),
-(2, -1, 'Payment was canceled', '', '2023-12-25 15:45:09.000000', NULL),
-(14260345, 51000, 'Paying for order 1 for 51000', '', '2023-12-25 15:46:23.000000', NULL),
-(14260346, -1, 'Payment was canceled', '', '2023-12-25 15:48:39.000000', NULL),
-(14260347, -1, 'Payment was canceled', '', '2023-12-31 08:17:53.000000', NULL),
-(14266102, 60000, 'Paying for order 1 for 60000', '', '2023-12-31 08:18:57.000000', NULL),
-(14266103, 113000, 'Paying for order 1 for 113000', '', '2023-12-31 08:22:43.000000', NULL),
-(14266105, 128000, 'Paying for order 1 for 128000', '', '2023-12-31 08:25:48.000000', NULL),
-(14266173, 148000, 'Paying for order 1 for 148000', '', '2023-12-31 09:53:46.000000', NULL),
-(14266177, 121000, 'Paying for order 1 for 121000', '', '2023-12-31 09:59:30.000000', NULL);
 
 --
 -- Indexes for dumped tables
@@ -473,10 +254,13 @@ ALTER TABLE `rush_delivery_info`
 ALTER TABLE `transaction`
   ADD PRIMARY KEY (`transaction_id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
-
+INSERT INTO `media` (`media_id`, `price`, `available`, `name`, `imageURL`, `category`, `weight`, `support_rush_delivery`) VALUES
+(1, 500000, 10, 'The Great Gatsby', 'images/gatsby.png', 'Book', 0.5, 1),
+(2, 350000, 5, 'Kind of Blue - Miles Davis', 'images/kindofblue.jpg', 'CD', 0.2, 0),
+(3, 600000, 8, 'Inception', 'images/inception.png', 'DVD', 0.3, 1),
+(4, 400000, 15, '1984 - George Orwell', 'images/1984.png', 'Book', 0.6, 1),
+(5, 300000, 20, 'Abbey Road - The Beatles', 'images/abbeyroad.png', 'CD', 0.2, 0),
+(6, 750000, 4, 'The Godfather', 'images/godfather.png', 'DVD', 0.4, 1);
 --
 -- AUTO_INCREMENT for table `book`
 --

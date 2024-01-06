@@ -19,6 +19,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class OrderController {
+
+    //Data Coupling
     public boolean validatePhoneNumber(String phoneNumber) {
         if (phoneNumber == null) {
             return false;
@@ -29,6 +31,7 @@ public class OrderController {
         return matcher.matches();
     }
 
+    //Data Coupling
     public List<Parent> getSearchItems(String phoneNumber) throws ClassNotFoundException {
         List<Parent> uiItems = new ArrayList<>();
         if(!validatePhoneNumber(phoneNumber)) {

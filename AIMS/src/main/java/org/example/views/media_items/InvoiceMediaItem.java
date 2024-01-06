@@ -2,6 +2,7 @@ package org.example.views.media_items;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import org.example.models.Media;
 
@@ -23,6 +24,15 @@ public class InvoiceMediaItem {
     public void setInfo(HashMap<Media, Integer> mediaMap) {
         for (Map.Entry<Media, Integer> entry : mediaMap.entrySet()) {
             Media media = entry.getKey();
+            try {
+                // Load the image from the resources folder
+                Image image = new Image(getClass().getResourceAsStream("/" + media.getImageUrl()));
+                imageView.setImage(image);
+                imageView.setPreserveRatio(true);
+            } catch (Exception e) {
+                e.printStackTrace();
+                // Handle the error, e.g., log it or set a default image
+            }
             Integer quantity = entry.getValue();
             mediaQuantityLabel.setText(String.valueOf(quantity));
             mediaLabel.setText(media.getName());
