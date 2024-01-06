@@ -85,6 +85,7 @@ public class Config {
 
 
     //Data Coupling
+    //Coincidental cohesion
     public static String getRandomNumber(int len) {
         Random rnd = new Random();
         String chars = "0123456789";

@@ -11,6 +11,7 @@ public class OrderItemController {
     private final IPayment iPayment = new VNPaySubsystem();
 
     //Data Coupling
+    //Functional cohesion
     public void cancelOrder(String transactionId, String orderId) {
         RefundResponse refundResponse = iPayment.refund(transactionId);
         if (refundResponse != null) {

@@ -21,6 +21,7 @@ import java.util.regex.Pattern;
 public class OrderController {
 
     //Data Coupling
+    //Coincidental cohesion
     public boolean validatePhoneNumber(String phoneNumber) {
         if (phoneNumber == null) {
             return false;
@@ -32,6 +33,7 @@ public class OrderController {
     }
 
     //Data Coupling
+    // Functional cohesion
     public List<Parent> getSearchItems(String phoneNumber) throws ClassNotFoundException {
         List<Parent> uiItems = new ArrayList<>();
         if(!validatePhoneNumber(phoneNumber)) {

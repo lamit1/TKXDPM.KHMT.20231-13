@@ -13,6 +13,7 @@ public class InvoiceController {
     private Invoice invoice;
 
     //Data Coupling
+    //Functional cohesion
     public List<HashMap<Media, Integer>> getMediaItems() {
         if (invoice == null) {
             return new ArrayList<>();
@@ -21,6 +22,7 @@ public class InvoiceController {
     }
 
     //Data Coupling
+    //Functional cohesion
     public double getCartAmounts() throws AddressNotSupportRushDeliveryException {
         if (invoice == null) return 0;
         try {
@@ -31,11 +33,13 @@ public class InvoiceController {
     }
 
     //Stamp Coupling
+    //Functional cohesion
     public void setInvoice(Invoice invoice) {
         this.invoice = invoice;
     }
 
     //Stamp Coupling
+    //Functional cohesion
     public Invoice getInvoice() {
         return invoice;
     }

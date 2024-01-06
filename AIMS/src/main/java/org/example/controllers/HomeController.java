@@ -24,6 +24,7 @@ public class HomeController {
 
     //Lấy danh sách sản phẩm
     //Data Coupling
+    //Coincidental cohesion
     public List<Media> getMediaItems() {
         List<Media> mediaItems = new ArrayList<>();
         Connection connection = null;
@@ -63,6 +64,7 @@ public class HomeController {
     }
 
     //Data Coupling
+    //Coincidental cohesion
     public List<Media> searchMediaList(String type, String info) {
         List<Media> mediaItems = new ArrayList<>();
         Connection connection = null;
