@@ -23,7 +23,7 @@ public class HomeController {
 
 
     //Lấy danh sách sản phẩm
-
+    //Data Coupling
     public List<Media> getMediaItems() {
         List<Media> mediaItems = new ArrayList<>();
         Connection connection = null;
@@ -62,6 +62,7 @@ public class HomeController {
         return mediaItems;
     }
 
+    //Data Coupling
     public List<Media> searchMediaList(String type, String info) {
         List<Media> mediaItems = new ArrayList<>();
         Connection connection = null;
