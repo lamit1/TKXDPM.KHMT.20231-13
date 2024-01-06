@@ -1,6 +1,7 @@
 package org.example.views.media_items;
 import javafx.scene.control.Alert;
 import javafx.scene.control.CheckBox;
+import javafx.scene.image.Image;
 import org.example.exceptions.InvalidQuantityException;
 
 import javafx.fxml.Initializable;
@@ -37,6 +38,7 @@ public class CartMediaItem implements Initializable {
 
 
     //data coupling
+    // Functional cohesion
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -87,10 +89,21 @@ public class CartMediaItem implements Initializable {
         });
     }
 
+    //stamp coupling
+    //Coincidental
     public void setInfo(HashMap<Media, Integer> media) {
         Media mediaItem = media.keySet().iterator().next();
         int quantity = media.get(mediaItem);
         this.media = mediaItem;
+        try {
+            // Load the image from the resources folder
+            Image image = new Image(getClass().getResourceAsStream("/" + mediaItem.getImageUrl()));
+            imageView.setImage(image);
+            imageView.setPreserveRatio(true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            // Handle the error, e.g., log it or set a default image
+        }
         mediaLabel.setText(mediaItem.getName());
         priceLabel.setText(String.valueOf(mediaItem.getPrice()));
         availableLabel.setText(String.valueOf(mediaItem.getAvailable()));
@@ -98,11 +111,13 @@ public class CartMediaItem implements Initializable {
         mediaQuantityLabel.setText(String.valueOf(quantity));
         decrementButton.setDisable(quantity <= 1);
     }
-
+    //data coupling
+    //Coincidental
     public void setItemContainer(VBox parentVBox) {
         this.parentVBox = parentVBox;
     }
-
+    //data coupling
+    //Coincidental
     public void setTotalPriceLabel(Label totalPriceLabel) {
         this.totalPriceLabel = totalPriceLabel;
     }

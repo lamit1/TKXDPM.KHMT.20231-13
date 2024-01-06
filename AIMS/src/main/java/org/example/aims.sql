@@ -21,6 +21,7 @@ SET time_zone = "+00:00";
 -- Database: `aims`
 --
 
+
 -- --------------------------------------------------------
 
 --
@@ -39,14 +40,6 @@ CREATE TABLE `book` (
   `book_category` varchar(45) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `book`
---
-
-INSERT INTO `book` (`book_id`, `media_id`, `author`, `cover_type`, `publisher`, `publish_date`, `num_of_pages`, `language`, `book_category`) VALUES
-(1, 1, 'John Doe', 'Hardcover', 'Example Publisher', '2022-01-01', 300, 'English', 'Fiction'),
-(2, 2, 'Jane Smith', 'Paperback', 'Another Publisher', '2021-12-15', 250, 'Spanish', 'Non-Fiction'),
-(3, 3, 'Bob Johnson', 'Hardcover', 'Great Books Publishing', '2022-03-10', 400, 'French', 'Mystery');
 
 -- --------------------------------------------------------
 
@@ -133,14 +126,6 @@ CREATE TABLE `media` (
   `support_rush_delivery` smallint(6) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `media`
---
-
-INSERT INTO `media` (`media_id`, `price`, `available`, `name`, `imageURL`, `category`, `weight`, `support_rush_delivery`) VALUES
-(1, 19000, 50, 'Book Title 1', 'book_image_url_1.jpg', 'Book', 1.5, 1),
-(2, 15000, 30, 'Book Title 2', 'book_image_url_2.jpg', 'Book', 1.2, 0),
-(3, 23000, 25, 'Book Title 3', 'book_image_url_3.jpg', 'Book', 1.8, 1);
 
 -- --------------------------------------------------------
 
@@ -269,10 +254,13 @@ ALTER TABLE `rush_delivery_info`
 ALTER TABLE `transaction`
   ADD PRIMARY KEY (`transaction_id`);
 
---
--- AUTO_INCREMENT for dumped tables
---
-
+INSERT INTO `media` (`media_id`, `price`, `available`, `name`, `imageURL`, `category`, `weight`, `support_rush_delivery`) VALUES
+(1, 500000, 10, 'The Great Gatsby', 'images/gatsby.png', 'Book', 0.5, 1),
+(2, 350000, 5, 'Kind of Blue - Miles Davis', 'images/kindofblue.jpg', 'CD', 0.2, 0),
+(3, 600000, 8, 'Inception', 'images/inception.png', 'DVD', 0.3, 1),
+(4, 400000, 15, '1984 - George Orwell', 'images/1984.png', 'Book', 0.6, 1),
+(5, 300000, 20, 'Abbey Road - The Beatles', 'images/abbeyroad.png', 'CD', 0.2, 0),
+(6, 750000, 4, 'The Godfather', 'images/godfather.png', 'DVD', 0.4, 1);
 --
 -- AUTO_INCREMENT for table `book`
 --
