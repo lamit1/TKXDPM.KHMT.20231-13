@@ -9,6 +9,12 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Invoice {
+    /**
+     * Single responsibility:
+     * Invoice should have only 1 responsibility for store data,
+     * saveInvoice, updateTransaction, updateStatus should be stored in another class,
+     * clearCart, getCartAmounts should be placed in another class
+     */
     private int id;
     private Order order;
     private String status;

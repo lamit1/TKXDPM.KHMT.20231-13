@@ -9,6 +9,12 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Cart {
+    /**
+     * Not Single responsibility:
+     * Functions having 2 responsibility for mediaList and mediaBuyList.
+     * Cart is used by singleton design pattern
+     */
+
     private List<HashMap<Media,Integer>> mediaList = new ArrayList<HashMap<Media,Integer>>();
     private List<HashMap<Media,Integer>> mediaBuyList = new ArrayList<HashMap<Media,Integer>>();
     private Cart() {}
@@ -20,6 +26,7 @@ public class Cart {
         return cart;
     }
     //Thêm sản phẩm trong giỏ hàng muốn mua
+    // Communicational cohesion
     public void addBuyMedia(Media media, int quantity) throws NotEnoughQuantityException, InvalidQuantityException {
         if (quantity<0) {
             throw new InvalidQuantityException("Invalid quantity!");
@@ -41,6 +48,7 @@ public class Cart {
     }
 
     //Thêm sản phẩm vào giỏ hàng với số lượng cụ thể
+    // Communicational cohesion
     public void addMedia(Media media, int quantity) throws NotEnoughQuantityException, InvalidQuantityException {
         if (quantity<0) {
             throw new InvalidQuantityException("Invalid quantity!");
@@ -61,6 +69,7 @@ public class Cart {
     }
 
     //Giảm số lượng sản phẩm
+    // Communicational cohesion
     public void decreaseMedia(Media media){
         int quantity = 1;
         decreaseBuyMedia(media);
@@ -73,6 +82,7 @@ public class Cart {
         }
     }
 
+    // Communicational cohesion
     public void decreaseBuyMedia(Media media){
         int quantity = 1;
         for (HashMap<Media, Integer> mediaMap : mediaBuyList) {
@@ -85,6 +95,7 @@ public class Cart {
     }
 
     //Tăng số lượng sản phẩm
+    // Communicational cohesion
     public void increaseMedia(Media media) throws NotEnoughQuantityException {
         int quantity = 1; // Increase by 1
         if (quantity > media.getAvailable()) {
@@ -100,6 +111,7 @@ public class Cart {
         }
     }
 
+    // Communicational cohesion
     public void increaseBuyMedia(Media media) throws NotEnoughQuantityException {
         int quantity = 1; // Increase by 1
         if (quantity > media.getAvailable()) {
@@ -116,6 +128,7 @@ public class Cart {
 
 
     //Xóa sản phẩm khỏi giỏ hàng
+    // Communicational cohesion
     public void removeMedia(Media media) {
         removeBuyMedia(media);
         for (HashMap<Media, Integer> mediaMap : mediaList) {
@@ -128,6 +141,7 @@ public class Cart {
     }
 
     //Loại sản phẩm đã chọn
+    // Communicational cohesion
     public void removeBuyMedia(Media media) {
         for (HashMap<Media, Integer> mediaMap : mediaBuyList) {
             if (mediaMap.containsKey(media)) {
@@ -138,7 +152,7 @@ public class Cart {
         }
     }
 
-
+    // Functional cohesion
     //Lấy tổng số tiền sản phẩm trong giỏ hàng
     public double getCartAmounts() throws NoMediaInCartException {
         if (isCartEmpty())
@@ -155,6 +169,7 @@ public class Cart {
     }
 
 
+    // Communicational cohesion
     //Làm sạch giỏ hàng
     public void clearCart() {
         mediaList.clear();
@@ -165,6 +180,7 @@ public class Cart {
     }
 
 
+    // Functional cohesion
     //Lấy tổng khối lượng sản phẩm
     public double getWeights() {
         double totalWeights = 0;
@@ -177,7 +193,7 @@ public class Cart {
         }
         return totalWeights;
     }
-
+    // Functional cohesion
     public double getRushAmounts() {
         List<HashMap<Media, Integer>> rushMediaList =  mediaBuyList.stream()
                 .filter(mediaMap -> mediaMap.keySet().stream().anyMatch(Media::isRushDelivery))
@@ -192,16 +208,19 @@ public class Cart {
         return rushAmounts;
     }
 
+    // Data coupling
+    // Communicational cohesion
     public List<HashMap<Media, Integer>> getMediaItems() {
         List<HashMap<Media, Integer>> currentMediaList = new ArrayList<>(mediaList);
         return currentMediaList;
     }
-
+    // Data coupling
+    // Communicational cohesion
     public List<HashMap<Media, Integer>> getMediaBuyItems() {
         List<HashMap<Media, Integer>> currentMediaList = new ArrayList<>(mediaBuyList);
         return currentMediaList;
     }
-
+    // Functional cohesion
     public boolean isRushDeliverySupport() {
         for (HashMap<Media, Integer> mediaMap : mediaBuyList) {
             for (Media media : mediaMap.keySet()) {
@@ -212,7 +231,7 @@ public class Cart {
         }
         return false;
     }
-
+    // Functional cohesion
     public boolean isCartEmpty() {
         return mediaList.isEmpty();
     }

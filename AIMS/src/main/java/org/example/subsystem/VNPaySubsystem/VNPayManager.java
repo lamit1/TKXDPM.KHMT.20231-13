@@ -15,6 +15,11 @@ import java.net.MalformedURLException;
 import java.text.ParseException;
 
 public class VNPayManager {
+    /**
+     * Single responsibility:
+     * This class is having 2 responsibility to handle is refund and pay
+     * Should remove refund
+     */
     private VNPayView view= new VNPayView();
     private Validator validator = new Validator();
     private ExceptionHandler handler = new ExceptionHandler();

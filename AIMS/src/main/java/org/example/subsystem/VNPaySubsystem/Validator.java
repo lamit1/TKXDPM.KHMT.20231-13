@@ -6,6 +6,10 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Validator {
+    /**
+     * Single responsibility:
+     * This class have single responsibility to validate input
+     */
 
     public boolean validatePaymentInput(double amounts, String content) throws InvalidInputException {
         if (amounts >= 5000) {

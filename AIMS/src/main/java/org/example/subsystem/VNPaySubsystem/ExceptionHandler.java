@@ -9,7 +9,12 @@ import java.sql.Timestamp;
 import java.time.Instant;
 
 public class ExceptionHandler {
-
+    /**
+     * Single responsibility:
+     * This class have 1 responsibility to handle Exception
+     * Open close:
+     * e and the function name should be more clearly to avoid modification if there will be more exception to handle
+     */
     public Transaction handleException(Exception e) {
         if (e instanceof CanceledPaymentException) {
             // External coupling

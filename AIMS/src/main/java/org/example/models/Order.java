@@ -11,6 +11,13 @@ import java.util.HashMap;
 import java.util.List;
 
 public class Order {
+    /**
+     * Single responsibility:
+     * Order should have only 1 responsibility for store data, calculate order amounts should be in another class ,
+     * saveOrder should be stored in another class
+     * Open-close: If there are adding more type of delivery,
+     * meaning that it will need modification for some method
+     */
     private int id;
     private Delivery delivery;
     private Cart cart = Cart.getCart();
@@ -24,7 +31,7 @@ public class Order {
 
     public Order() {
     }
-
+    // Communicational cohesion
     public double getRushShipAmounts() throws AddressNotSupportRushDeliveryException, NoRushMediaException {
         if (!isRushDeliverySupported()) {
             throw new AddressNotSupportRushDeliveryException("Unsupported address!");
@@ -46,7 +53,7 @@ public class Order {
 
         return baseAmount + additionalWeightAmount + rushAmounts;
     }
-
+    // Communicational cohesion
     public double getShipAmounts() {
         try {
             // Common coupling

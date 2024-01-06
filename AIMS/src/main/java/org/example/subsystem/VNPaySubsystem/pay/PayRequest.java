@@ -8,6 +8,9 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class PayRequest {
+    /**
+     * this request class have only 1 responsibility for create the pay_url
+     */
     private final String vnp_Version = "2.1.0";
     private final String vnp_Command = "pay";
     private final String vnp_TmnCode = Config.vnp_TmnCode;

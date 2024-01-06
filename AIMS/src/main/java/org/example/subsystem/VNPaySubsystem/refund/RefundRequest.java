@@ -10,6 +10,9 @@ import java.text.SimpleDateFormat;
 import java.util.*;
 
 public class RefundRequest {
+    /**
+     * this request class have only 1 responsibility for create the JsonObject
+     */
     private final String vnp_RequestId = Config.getRandomNumber(8); // Assuming you need a random response ID
     private final String vnp_Version = "2.1.0";
     private final String vnp_Command = "refund";

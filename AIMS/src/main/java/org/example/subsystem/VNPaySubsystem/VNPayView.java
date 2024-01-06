@@ -14,6 +14,9 @@ import javafx.stage.WindowEvent;
 import java.util.concurrent.CompletableFuture;
 
 public class VNPayView {
+    /**
+     * This class have only 1 responsibility for view the VNPay Screen
+     */
     @FXML
     private WebView vnpayWebView;
 

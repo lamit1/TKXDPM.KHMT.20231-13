@@ -3,6 +3,10 @@ package org.example.models;
 import java.util.Date;
 
 public class Book extends Media {
+    /**
+     * Single responsibility:
+     * Book have 1 responsiblity for book  is store data
+     */
     private String id;
     private String author;
     private String coverType;

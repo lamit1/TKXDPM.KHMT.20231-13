@@ -3,6 +3,10 @@ package org.example.models;
 import java.util.Date;
 
 public class DVD extends Media {
+    /**
+     * Single responsibility:
+     * Book have 1 responsiblity for book  is store data
+     */
     private String id;
     private String discType;
     private String director;
