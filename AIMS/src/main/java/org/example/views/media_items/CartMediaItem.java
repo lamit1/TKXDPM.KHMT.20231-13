@@ -37,6 +37,7 @@ public class CartMediaItem implements Initializable {
 
 
     //data coupling
+    // Functional cohesion
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -87,6 +88,8 @@ public class CartMediaItem implements Initializable {
         });
     }
 
+    //stamp coupling
+    //Coincidental
     public void setInfo(HashMap<Media, Integer> media) {
         Media mediaItem = media.keySet().iterator().next();
         int quantity = media.get(mediaItem);
@@ -98,11 +101,13 @@ public class CartMediaItem implements Initializable {
         mediaQuantityLabel.setText(String.valueOf(quantity));
         decrementButton.setDisable(quantity <= 1);
     }
-
+    //data coupling
+    //Coincidental
     public void setItemContainer(VBox parentVBox) {
         this.parentVBox = parentVBox;
     }
-
+    //data coupling
+    //Coincidental
     public void setTotalPriceLabel(Label totalPriceLabel) {
         this.totalPriceLabel = totalPriceLabel;
     }
