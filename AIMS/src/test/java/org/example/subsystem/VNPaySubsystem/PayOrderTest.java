@@ -5,8 +5,8 @@ import org.example.exceptions.CanceledPaymentException;
 import org.example.exceptions.InvalidInputException;
 import org.example.subsystem.VNPaySubsystem.Validator;
 import org.example.subsystem.VNPaySubsystem.pay.Response;
-import org.junit.Test;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
 
 import java.io.UnsupportedEncodingException;
 import java.net.MalformedURLException;
@@ -16,7 +16,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 
 public class PayOrderTest {
 

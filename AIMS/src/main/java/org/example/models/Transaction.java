@@ -60,10 +60,6 @@ public class Transaction {
         return time;
     }
 
-    public void setAmount(double vnpAmount) {
-        this.amount = vnpAmount;
-    }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -72,14 +68,11 @@ public class Transaction {
         this.time = time;
     }
 
-    @Override
-    public String toString() {
-        return this.amount + " " + this.content;
-    }
-
     public static void saveTransaction(Transaction transaction) {
+        //External coupling
         try (Connection connection = new DBConnection().getConnection()) {
             String sql;
+            // Logical cohesion
             if (transaction.getTransactionId() != 0) {
                 sql = "INSERT INTO transaction (amount, contents, error_message, time, transaction_id, ref_id) VALUES (?, ?, ?, ?, ?, ?)";
             } else {
@@ -87,11 +80,12 @@ public class Transaction {
             }
 
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+                // Procedural cohesion
                 preparedStatement.setFloat(1, (float) transaction.getAmount());
                 preparedStatement.setString(2, transaction.getContent());
                 preparedStatement.setString(3, "");
                 preparedStatement.setTimestamp(4, transaction.getTime());
-
+                // Logical cohesion
                 if (transaction.getTransactionId() != 0) {
                     preparedStatement.setInt(5, transaction.getTransactionId());
                     preparedStatement.setInt(6, transaction.getRefId());
@@ -99,10 +93,11 @@ public class Transaction {
 
                 preparedStatement.executeUpdate();
 
-                // Retrieve the generated keys (if any)
+                // Logical cohesion
                 if (transaction.getTransactionId() == 0) {
                     try (ResultSet generatedKeys = preparedStatement.getGeneratedKeys()) {
                         if (generatedKeys.next()) {
+                            // Procedural cohesion
                             transaction.setId(generatedKeys.getInt(1));
                         } else {
                             throw new SQLException("Creating transaction failed, no ID obtained.");
@@ -125,14 +120,15 @@ public class Transaction {
     public static Transaction findById(int transactionId) {
         String sql = "SELECT * FROM transaction WHERE transaction_id = ?";
         Transaction foundTransaction = null;
-
+        // External coupling
         try (Connection connection = new DBConnection().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-
+            // Functional cohesion
             preparedStatement.setInt(1, transactionId);
 
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
+                    // Functional cohesion
                     int id = resultSet.getInt("transaction_id");
                     double amount = resultSet.getDouble("amount");
                     String content = resultSet.getString("contents");

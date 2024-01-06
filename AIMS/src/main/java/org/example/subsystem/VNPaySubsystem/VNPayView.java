@@ -18,9 +18,6 @@ public class VNPayView {
     private WebView vnpayWebView;
 
     @FXML
-    private Button backButton;
-
-    @FXML
     public void handleBackButton(ActionEvent e) {
         Stage stage = (Stage) ((Node)e.getSource()).getScene().getWindow();
         stage.fireEvent(new WindowEvent(stage,WindowEvent.WINDOW_CLOSE_REQUEST));
@@ -40,7 +37,9 @@ public class VNPayView {
             FXMLLoader newWindowLoader = new FXMLLoader(getClass().getResource("/fxml/vnpay_payment.fxml"));
             Parent newWindowRoot = newWindowLoader.load();
             VNPayView vnPayView = newWindowLoader.getController();
+            // Functional cohesion
             vnPayView.getWebView().getEngine().load(url);
+
 
             Stage newWindowStage = new Stage();
             newWindowStage.initModality(Modality.APPLICATION_MODAL);
@@ -48,6 +47,7 @@ public class VNPayView {
             newWindowStage.setScene(new Scene(newWindowRoot));
 
             newWindowStage.setOnCloseRequest(event -> {
+                // Functional cohesion
                 String responseUrl = vnPayView.getWebView().getEngine().getLocation();
                 responseUrlFuture.complete(responseUrl);
             });

@@ -26,7 +26,6 @@ public class Order {
     }
 
     public double getRushShipAmounts() throws AddressNotSupportRushDeliveryException, NoRushMediaException {
-        System.out.println(delivery.getProvince());
         if (!isRushDeliverySupported()) {
             throw new AddressNotSupportRushDeliveryException("Unsupported address!");
         }
@@ -40,7 +39,7 @@ public class Order {
         } catch (NoMediaInCartException e) {
             throw new RuntimeException(e);
         }
-
+        // Functional cohesion
         double baseAmount = getBaseShippingAmount();
         double additionalWeightAmount = calculateAdditionalWeightAmount();
         double rushAmounts = (delivery.getClass().equals(RushDelivery.class)) ? cart.getRushAmounts() : 0;
@@ -50,18 +49,21 @@ public class Order {
 
     public double getShipAmounts() {
         try {
+            // Common coupling
             if (cart.getCartAmounts() > 100000) {
                 return 0;
             }
         } catch (NoMediaInCartException e) {
             return 0;
         }
+        // Functional cohesion
         double baseAmount = getBaseShippingAmount();
         double additionalWeightAmount = calculateAdditionalWeightAmount();
         return baseAmount + additionalWeightAmount;
     }
 
     private boolean isRushDeliverySupported() {
+        // Common coupling
         return delivery.getClass().equals(RushDelivery.class) && Config.rushSupportAddress.contains(delivery.getProvince());
     }
 
@@ -75,14 +77,18 @@ public class Order {
 
     private double calculateAdditionalWeightAmount() {
         if (delivery.getClass().equals(Delivery.class)) {
+            // Functional cohesion
             return getBaseShippingAmount() - 22000;
         } else {
             return 0;
         }
     }
     public double getTotalAmounts() throws AddressNotSupportRushDeliveryException, NoRushMediaException {
+        // Logical cohesion
         if (delivery instanceof RushDelivery) {
             try {
+                // Common coupling
+                // Functional cohesion
                 return getRushShipAmounts() + cart.getCartAmounts();
             } catch (NoMediaInCartException e) {
                 return 0;
@@ -90,6 +96,8 @@ public class Order {
         }
         else {
             try {
+                // Functional cohesion
+                // Common coupling
                 return getShipAmounts() + cart.getCartAmounts();
             } catch (NoMediaInCartException e) {
                 return 0;
@@ -97,16 +105,20 @@ public class Order {
         }
     }
     public Order saveOrder(Delivery delivery) {
-        // Establish a database connection
+        // External coupling
         try (Connection connection = new DBConnection().getConnection()) {
+            // Logical cohesion
             if (!isRushDeliverySupported()) {
-                // Insert order details into the order table
                 String insertOrderQuery = "INSERT INTO `order` (delivery_info_id, shipping_amounts, total_amounts, cart_amounts, rush_order) VALUES (?, ?, ?, ?, ?)";
                 try (PreparedStatement orderStatement = connection.prepareStatement(insertOrderQuery, PreparedStatement.RETURN_GENERATED_KEYS)) {
-                    orderStatement.setInt(1, delivery.getId()); // Assuming delivery.getId() returns the delivery_info_id
-                    orderStatement.setDouble(2, getShipAmounts()); // Implement your shipping amount calculation logic
-                    orderStatement.setDouble(3, getTotalAmounts()); // Implement your total amount calculation logic
-                    orderStatement.setDouble(4, getCartAmounts()); // Implement your cart amount calculation logic
+                    // Data coupling
+                    orderStatement.setInt(1, delivery.getId());
+                    // Functional cohesion
+                    orderStatement.setDouble(2, getShipAmounts());
+                    // Functional cohesion
+                    orderStatement.setDouble(3, getTotalAmounts());
+                    // Functional cohesion
+                    orderStatement.setDouble(4, getCartAmounts());
                     orderStatement.setBoolean(5, delivery instanceof RushDelivery); // Assuming getRushDelivery returns a boolean
                     int affectedRows = orderStatement.executeUpdate();
                     if (affectedRows > 0) {
@@ -152,13 +164,17 @@ public class Order {
                             if (generatedKeys.next()) {
                                 int generatedId = generatedKeys.getInt(1);
                                 this.id = generatedId;
-                                // Insert media items into the order_media table
+                                //
                                 String insertOrderMediaQuery = "INSERT INTO order_media (media_id, order_id, delivery_info_id, quantity) VALUES (?, ?, ?, ?)";
                                 try (PreparedStatement orderMediaStatement = connection.prepareStatement(insertOrderMediaQuery)) {
+                                    //Common coupling
                                     for (HashMap<Media, Integer> mediaEntry : cart.getMediaItems()) {
                                         for (Media media : mediaEntry.keySet()) {
+                                            // Data coupling
                                             orderMediaStatement.setInt(1, media.getId());
+                                            // Functional cohesion
                                             orderMediaStatement.setInt(2, id); // Assuming you have a method to get the order_id
+                                            // Data coupling
                                             orderMediaStatement.setInt(3, delivery.getId()); // Assuming delivery.getId() returns the delivery_info_id
                                             orderMediaStatement.setInt(4, mediaEntry.get(media)); // Quantity
                                             orderMediaStatement.executeUpdate();

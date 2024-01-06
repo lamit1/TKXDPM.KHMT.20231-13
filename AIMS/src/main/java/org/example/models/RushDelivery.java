@@ -28,9 +28,11 @@ public class RushDelivery extends Delivery {
 
     public static RushDelivery saveRushDelivery(RushDelivery rushDelivery) throws SQLException, ClassNotFoundException {
         Delivery savedDelivery = saveDelivery(rushDelivery);
+        // External Coupling
         try (Connection connection = new DBConnection().getConnection()) {
             String sql = "INSERT INTO rush_delivery_info (delivery_info_id, rd_time, rd_address) VALUES (?, ?, ?)";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+                // Functional cohesion
                 preparedStatement.setInt(1, savedDelivery.getId());
                 preparedStatement.setString(2, rushDelivery.getReceiveTime());
                 preparedStatement.setString(3, rushDelivery.getRushAddress());

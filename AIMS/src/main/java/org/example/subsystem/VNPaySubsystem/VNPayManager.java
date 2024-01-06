@@ -17,12 +17,13 @@ import java.text.ParseException;
 public class VNPayManager {
     private VNPayView view= new VNPayView();
     private Validator validator = new Validator();
-
     private ExceptionHandler handler = new ExceptionHandler();
 
     public Transaction payOrder(double amounts, String content) {
         try {
+            // Data coupling
             if (validator.validatePaymentInput(amounts, content)) {
+                // Data coupling
                 PayRequest payRequest = new PayRequest();
                 String url = payRequest.createUrl(content, amounts);
                 Response response = new Response(view.query(url));
@@ -30,21 +31,27 @@ public class VNPayManager {
             }
         } catch (InvalidInputException | CanceledPaymentException | MalformedURLException |
                  UnsupportedEncodingException | ParseException e) {
+            // Data coupling
             return handler.handleException(e);
         }
         return null;
     }
 
     public RefundResponse refund(String transactionId) {
+        // Data coupling
         Transaction transaction = Transaction.findById(Integer.parseInt(transactionId));
         RefundRequest request = null;
         try {
+            // External coupling
             request = new RefundRequest(transaction);
         } catch (ParseException e) {
             throw new RuntimeException(e);
         }
+        // External coupling
         JsonObject jsonRequest = request.createJson();
+        // Common coupling
         JsonObject jsonResponse = API.post(jsonRequest);
+        // External coupling
         return new RefundResponse().fromJson(String.valueOf(jsonResponse));
     }
 }

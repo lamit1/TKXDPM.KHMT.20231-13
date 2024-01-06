@@ -34,10 +34,12 @@ public class Invoice {
         PreparedStatement statement = null;
 
         try {
+            // External coupling
             connection = new DBConnection().getConnection();
             String sql = "INSERT INTO invoice (order_id, amount, status) VALUES (?, ?, ?)";
 
             statement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            // External coupling
             statement.setInt(1, order.getId()); // Assuming getOrderId() returns the order ID
             statement.setDouble(2, order.getTotalAmounts()); // Assuming getTotalAmounts() returns the total amount
             statement.setString(3, "pending");
@@ -49,6 +51,7 @@ public class Invoice {
 
             try (ResultSet generatedKeys = statement.getGeneratedKeys()) {
                 if (generatedKeys.next()) {
+                    // External coupling
                     invoice = new Invoice(generatedKeys.getInt(1), order, "pending", null);
                 } else {
                     throw new SQLException("Creating invoice failed, no ID obtained.");
@@ -70,12 +73,14 @@ public class Invoice {
     }
 
     public void updateTransaction(int transactionId) {
+        // Stamp coupling
         Connection connection = null;
         String dropForeignKeyQuery = "ALTER TABLE `invoice` DROP FOREIGN KEY `invoice_ibfk_1`";
         String updateInvoiceQuery = "UPDATE invoice SET transaction_id = ? WHERE invoice_id = ?";
         String addForeignKeyQuery = "ALTER TABLE `invoice` ADD CONSTRAINT `invoice_ibfk_1` FOREIGN KEY (`transaction_id`) REFERENCES `transaction` (`transaction_id`) ON UPDATE CASCADE";
 
         try {
+            // External coupling
             connection = new DBConnection().getConnection();
             connection.setAutoCommit(false); // Start transaction
 
@@ -123,14 +128,17 @@ public class Invoice {
     }
 
     public double getTotalAmounts() throws AddressNotSupportRushDeliveryException, NoRushMediaException {
+        // Data coupling
         return order.getTotalAmounts();
     }
 
     public List<HashMap<Media, Integer>> getMediaItems() {
+        // Data coupling
         return order.getMediaItems();
     }
 
     public static void updateStatus(int transactionId, String status) {
+        // Stamp coupling
         String updateInvoiceQuery = "UPDATE invoice SET status = ? WHERE invoice.transaction_id = ?";
 
         try (Connection connection = new DBConnection().getConnection();
@@ -149,6 +157,7 @@ public class Invoice {
     }
 
     public void clearCart() {
+        // Data coupling
         order.clearCart();
     }
 }

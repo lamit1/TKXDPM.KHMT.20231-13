@@ -58,10 +58,12 @@ public class Delivery {
 
 
     public static Delivery saveDelivery(Delivery delivery) throws SQLException, ClassNotFoundException {
+        // External coupling
         try (Connection connection = new DBConnection().getConnection()) {
             String sql = "INSERT INTO delivery_info (name, phone_number, email, province, instruction, address, is_rush) " +
                     "VALUES (?, ?, ?, ?, ?, ?, ?)";
             try (PreparedStatement preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS)) {
+                // Sequential cohesion
                 preparedStatement.setString(1, delivery.getName());
                 preparedStatement.setString(2, delivery.getPhoneNumber());
                 preparedStatement.setString(3, delivery.getEmail());
