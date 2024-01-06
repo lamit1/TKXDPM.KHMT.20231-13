@@ -14,6 +14,7 @@ public class API {
     public static final String VNPAY_REFUND_URL = "https://sandbox.vnpayment.vn/merchant_webapi/api/transaction";
 
     //Data Coupling
+    //Functional cohesion
     public static JsonObject post(JsonObject jsonBody) {
         JsonObject responseJson = null;
         Gson gson = new Gson();

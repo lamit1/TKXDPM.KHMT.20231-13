@@ -13,22 +13,26 @@ public class DeliveryController {
     private Order order = new Order();
 
     //Data Coupling
+    //Functional cohesion
     public void setDelivery(Delivery delivery) {
         order.setDelivery(delivery);
     }
 
     //Data Coupling
+    //Coincidental cohesion
     public Invoice saveInvoice(Order order) throws SQLException, ClassNotFoundException {
         return Invoice.saveInvoice(order);
     }
 
     //Data Coupling
+    //Functional cohesion
     public Order saveOrder(Delivery delivery) {
         return order.saveOrder(delivery);
     }
 
 
     //Stamp Coupling
+    //Coincidental cohesion
     public boolean validateForm(Delivery d) {
         return true;
     }
@@ -37,22 +41,26 @@ public class DeliveryController {
     }
 
     //Data Coupling
+    //Coincidental cohesion
     public boolean checkCartEmpty() {
         return Cart.getCart().isCartEmpty();
     }
 
     //Data Coupling
+    //Functional cohesion
     public double getCartAmounts() {
         return order.getCartAmounts();
     }
 
     //Stamp Coupling
+    //Functional cohesion
     public double getShipAmounts() throws AddressNotSupportRushDeliveryException, NoMediaInCartException, NoRushMediaException {
         if (order.isRushDelivery()) return order.getRushShipAmounts();
         return order.getShipAmounts();
     }
 
     //Stamp coupling
+    //Functional cohesion
     public double getTotalAmounts() throws AddressNotSupportRushDeliveryException, NoRushMediaException {
         return order.getTotalAmounts();
     }

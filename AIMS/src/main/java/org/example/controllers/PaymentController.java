@@ -11,6 +11,7 @@ public class PaymentController{
     private Invoice invoice;
 
     //Data Coupling
+    //Functional cohesion
     public Transaction makePayment(double amounts, String contents) {
         VNPaySubsystem subsystem = new VNPaySubsystem();
         Transaction transaction = subsystem.payOrder(amounts,contents);
@@ -38,16 +39,19 @@ public class PaymentController{
 
 
     //Data Coupling
+    //Functional cohesion
     public double getTotalAmounts() throws AddressNotSupportRushDeliveryException, NoRushMediaException {
         return invoice.getTotalAmounts();
     }
 
     //Data Coupling
+    //Functional cohesion
     public String getOrderContent() throws AddressNotSupportRushDeliveryException, NoRushMediaException {
         return "Paying for order " + invoice.getId() + " for " + (int)invoice.getTotalAmounts();
     }
 
     //Data Coupling
+    //Functional cohesion
     public void setInvoice(Invoice invoice) {
         this.invoice = invoice;
     }
