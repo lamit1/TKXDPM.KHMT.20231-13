@@ -27,6 +27,7 @@ public class Cart {
     }
     //Thêm sản phẩm trong giỏ hàng muốn mua
     // Communicational cohesion
+    // Stamp coupling
     public void addBuyMedia(Media media, int quantity) throws NotEnoughQuantityException, InvalidQuantityException {
         if (quantity<0) {
             throw new InvalidQuantityException("Invalid quantity!");
