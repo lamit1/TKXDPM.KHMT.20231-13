@@ -48,6 +48,7 @@ public class RushDeliveryScreen {
 
     //no coupling
     //Functional cohesion
+    //S principle
     public void initData() {
         mediaContainer.getChildren().addListener((ListChangeListener.Change<? extends Node> change) -> {
             while (change.next()) {

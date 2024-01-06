@@ -43,6 +43,7 @@ public class DeliveryScreen {
     public Label totalAmountsLabel;
     // no coupling
     //Functional cohesion
+    //S principle
     @FXML
     private void initialize() {
         rushAddressField.setDisable(true);

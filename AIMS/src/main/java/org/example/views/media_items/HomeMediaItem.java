@@ -31,6 +31,7 @@ public class HomeMediaItem implements Initializable {
 
     //data coupling
     // Functional cohesion
+    //S principle
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
