@@ -16,7 +16,8 @@ public class OrderItem {
     public Label emailLabel;
     public Button cancelButton;
     public Label transactionIdIdLabel;
-
+    //data coupling
+     //Coincidental
     public void setInfo(String orderId, String transactionId, String totalAmount, String status,
                         String receiverName, String phoneNumber, String email,
                         String province, String address) {
@@ -32,7 +33,8 @@ public class OrderItem {
         cancelButton.setDisable(!statusLabel.getText().equals("paid"));
     }
 
-
+    //data coupling
+    //Coincidental
     public void cancelOrder() {
         String transactionId = transactionIdIdLabel.getText();
         String orderId = orderIdLabel.getText();
