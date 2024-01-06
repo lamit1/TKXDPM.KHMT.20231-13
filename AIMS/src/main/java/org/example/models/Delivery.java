@@ -5,6 +5,10 @@ import org.example.utils.DBConnection;
 import java.sql.*;
 
 public class Delivery {
+    /**
+     * Single responsibily:
+     * Delivery should have only 1 responsiblity for store data, saveDelvery should be stored in another class
+     */
     private int id;
     private String name;
     private String phoneNumber;

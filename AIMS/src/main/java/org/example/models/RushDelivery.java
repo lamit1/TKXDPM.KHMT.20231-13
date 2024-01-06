@@ -8,6 +8,11 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 
 public class RushDelivery extends Delivery {
+    /**
+     * Single responsibility:
+     * RushDelivery should have 1 responsibility for book  is store data,
+     * saveRushDelivery should be store in another class
+     */
     private String receiveTime;
     private  String rushAddress;
 

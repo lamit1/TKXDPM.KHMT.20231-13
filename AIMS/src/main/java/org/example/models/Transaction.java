@@ -5,6 +5,10 @@ import org.example.utils.DBConnection;
 import java.sql.*;
 
 public class Transaction {
+    /**
+     * Single responsibility: Should have 1 responsibility for storing data,
+     * saveTransaction should be placed in another class
+     */
     private int id;
     private double amount;
     private String content;

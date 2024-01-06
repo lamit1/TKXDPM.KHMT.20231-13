@@ -3,6 +3,10 @@ package org.example.models;
 import java.util.Date;
 
 public class CD extends Media {
+    /**
+     * Single responsibility:
+     * CD have 1 responsiblity for book  is store data
+     */
     private String id;
     private String artist;
     private Date releasedDate;

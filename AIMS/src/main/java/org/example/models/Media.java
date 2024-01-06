@@ -1,6 +1,10 @@
 package org.example.models;
 
 public class Media {
+    /**
+     * Single responsibility:
+     * This class have 1 responsibility for store data.
+     */
     private int id;
     private String name;
     private double price;

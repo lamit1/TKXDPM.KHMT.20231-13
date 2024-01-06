@@ -5,6 +5,10 @@ import org.example.subsystem.IPayment;
 import org.example.subsystem.VNPaySubsystem.refund.RefundResponse;
 
 public class VNPaySubsystem  implements IPayment {
+    /**
+     * Single responsibility:
+     * This class is having 1  responsibility to execute VNPAY functionality
+     */
     @Override
     public RefundResponse refund(String transactionId) {
         // Data coupling

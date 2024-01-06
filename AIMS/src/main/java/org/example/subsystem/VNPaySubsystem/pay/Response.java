@@ -16,6 +16,9 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Response {
+    /**
+     * This function have only 1 response is to make the transaction from the response_url
+     */
     private int refId;
     private int id;
     private String contents;
