@@ -4,6 +4,7 @@ import javafx.scene.control.Alert;
 import org.example.models.Invoice;
 import org.example.subsystem.IPayment;
 import org.example.subsystem.VNPaySubsystem.VNPaySubsystem;
+import org.example.subsystem.VNPaySubsystem.methods.TransactionRefundMethod;
 import org.example.subsystem.VNPaySubsystem.refund.RefundResponse;
 import org.example.utils.MessageBox;
 
@@ -13,7 +14,7 @@ public class OrderItemController {
     //Data Coupling
     //Functional cohesion
     public void cancelOrder(String transactionId, String orderId) {
-        RefundResponse refundResponse = iPayment.refund(transactionId);
+        RefundResponse refundResponse = iPayment.refund(new TransactionRefundMethod(transactionId));
         if (refundResponse != null) {
             Invoice.updateStatus(Integer.parseInt(transactionId), "refunded");
             MessageBox.showAlert("Cancel order result", "Cancel order success", "Cancel order with id " + orderId + " success", Alert.AlertType.INFORMATION);

@@ -5,7 +5,7 @@ import org.example.exceptions.CanceledPaymentException;
 import org.example.exceptions.InvalidInputException;
 import org.example.models.Transaction;
 import org.example.subsystem.VNPaySubsystem.pay.PayRequest;
-import org.example.subsystem.VNPaySubsystem.pay.Response;
+import org.example.subsystem.VNPaySubsystem.pay.PayResponse;
 import org.example.subsystem.VNPaySubsystem.refund.RefundRequest;
 import org.example.subsystem.VNPaySubsystem.refund.RefundResponse;
 import org.example.utils.API;
@@ -24,15 +24,15 @@ public class VNPayManager {
     private Validator validator = new Validator();
     private ExceptionHandler handler = new ExceptionHandler();
 
-    public Transaction payOrder(double amounts, String content) {
+    public Transaction payAmountOrder(double amounts, String content) {
         try {
             // Data coupling
             if (validator.validatePaymentInput(amounts, content)) {
                 // Data coupling
                 PayRequest payRequest = new PayRequest();
                 String url = payRequest.createUrl(content, amounts);
-                Response response = new Response(view.query(url));
-                return response.getTransaction();
+                PayResponse payResponse = new PayResponse(view.query(url));
+                return payResponse.getTransaction();
             }
         } catch (InvalidInputException | CanceledPaymentException | MalformedURLException |
                  UnsupportedEncodingException | ParseException e) {

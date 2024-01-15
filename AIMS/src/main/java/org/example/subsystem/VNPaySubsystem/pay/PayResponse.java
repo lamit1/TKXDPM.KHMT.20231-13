@@ -15,7 +15,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Response {
+public class PayResponse {
     /**
      * This function have only 1 response is to make the transaction from the response_url
      */
@@ -26,7 +26,7 @@ public class Response {
     private double amounts;
     private Timestamp payTime;
 
-    public Response(String responseString) throws CanceledPaymentException, MalformedURLException, UnsupportedEncodingException, ParseException {
+    public PayResponse(String responseString) throws CanceledPaymentException, MalformedURLException, UnsupportedEncodingException, ParseException {
         System.out.println(responseString);
         if (!responseString.startsWith(Config.vnp_ReturnUrl)){
             throw new CanceledPaymentException("Not follow enough paying step!");

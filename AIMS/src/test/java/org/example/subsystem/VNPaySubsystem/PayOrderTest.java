@@ -4,7 +4,7 @@ import org.example.models.Transaction;
 import org.example.exceptions.CanceledPaymentException;
 import org.example.exceptions.InvalidInputException;
 import org.example.subsystem.VNPaySubsystem.Validator;
-import org.example.subsystem.VNPaySubsystem.pay.Response;
+import org.example.subsystem.VNPaySubsystem.pay.PayResponse;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -88,7 +88,7 @@ public class PayOrderTest {
     public void GetTransactionWithNullURL() {
         String message = assertThrows(
                 CanceledPaymentException.class,
-                ()->new Response("").getTransaction()).getMessage();
+                ()->new PayResponse("").getTransaction()).getMessage();
         assertEquals(message , "Not follow enough paying step!");
     }
 
@@ -97,7 +97,7 @@ public class PayOrderTest {
     public void GetTransactionWithCanceledPaymentURL() {
         String message = assertThrows(
                 CanceledPaymentException.class,
-                ()->new Response("http://localhost:9999/web/vnpay_return.jsp" +
+                ()->new PayResponse("http://localhost:9999/web/vnpay_return.jsp" +
                         "?vnp_Amount=1000000" +
                         "&vnp_BankCode=NCB" +
                         "&vnp_BankTranNo=20170829152730" +
@@ -116,7 +116,7 @@ public class PayOrderTest {
     @Test
     public void GetTransactionWithSuccessPaymentURL() throws MalformedURLException {
         try {
-            assertEquals(new Response(
+            assertEquals(new PayResponse(
                     "http://localhost:9999/web/vnpay_return.jsp" +
                             "?vnp_Amount=1000000" +
                             "&vnp_BankCode=NCB" +
